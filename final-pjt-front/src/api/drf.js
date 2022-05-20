@@ -29,7 +29,7 @@ export default {
   },
 
   community: {
-    articles: () => HOST + COMMUNITY + 'articles/', 
+    articles: () => HOST + COMMUNITY + '', 
     article: articlePk => HOST + COMMUNITY + `${articlePk}/`,
     likeArticle: articlePk => HOST + COMMUNITY + `${articlePk}/` + 'like/',
     comments: articlePk => HOST + COMMUNITY + `${articlePk}/` + 'comments/',
