@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <nav-bar />
     <!-- <nav>
       <router-link to="/">Home</router-link> |
@@ -29,6 +29,13 @@ export default {
 
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+[v-cloak] {
+  display: none;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -37,8 +44,9 @@ export default {
 
 body {
   margin: 1.5em 10%;
-  /* background-color: #0a0a0a;
-  color: white; */
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #0a0a0af6;
+  color: white;
 }
 
 /* #app {

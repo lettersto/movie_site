@@ -98,8 +98,8 @@ export default {
       })
         .then(() => {
           dispatch('removeToken')
-          alert('로그아웃되었습니다.')
           router.push({ name: 'login' })
+          // alert('로그아웃되었습니다.')
         })
         .catch(err => {
           console.error(err.response)

@@ -1,21 +1,25 @@
 <template>
   <div>
-    <h1>Login</h1>
+    <div class="form-container">      
+      <h1>Login</h1>
+      <account-error-list v-if="authError" />
+      <form @submit.prevent="login(credentials)">
 
-    <account-error-list v-if="authError" />
-
-    <form @submit.prevent="login(credentials)">
-      <div>
-        <label for="username">아이디: </label>
-        <input v-model="credentials.username" type="text" id="username" required />
-      </div>
-      <div>
-        <label for="password">비밀번호: </label>
-        <input v-model="credentials.password" type="password" id="password" required />
-      </div>
-
-      <button>로그인</button>
-    </form>
+        <!-- <label for="username">아이디: </label> -->
+        <input 
+          v-model="credentials.username" type="text" 
+          id="username" required
+          placeholder="아이디"
+        />
+        <!-- <label for="password">비밀번호: </label> -->
+        <input 
+          v-model="credentials.password" type="password"
+          id="password" required 
+          placeholder="비밀번호"
+        />
+        <button>로그인</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -46,6 +50,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 25em;
+  height: 25em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 20px;
+}
+
+input {
+  width: 85%;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+  padding: 8px;
+} */
 
 </style>
