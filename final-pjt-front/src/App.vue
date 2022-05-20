@@ -11,11 +11,18 @@
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
   components: {
     NavBar,
+  },
+  methods: {
+    ...mapActions(['fetchCurrentUser'])
+  },
+  created() {
+    this.fetchCurrentUser()
   }
 }
 </script>
@@ -30,6 +37,8 @@ export default {
 
 body {
   margin: 1.5em 10%;
+  /* background-color: #0a0a0a;
+  color: white; */
 }
 
 /* #app {
