@@ -11,7 +11,7 @@ import AccountsUserView from '@/views/accounts/AccountsUserView.vue'
 import ProfileView from '@/views/accounts/ProfileView.vue'
 
 // community
-import CommunityView from '@/views/communities/CommunityView.vue'
+import CommunityView from '@/views/community/CommunityView.vue'
 
 // movies
 import MovieView from '@/views/movies/MovieView.vue'
