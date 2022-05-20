@@ -36,9 +36,9 @@ class MovieSerializer(serializers.ModelSerializer):
             model = Genre
             fields = ('name',)
 
-    review_set = ReviewSerializer(many=True, read_only=True)
+    reviews = ReviewSerializer(many=True, read_only=True)
     review_count = serializers.IntegerField(
-        source='review_set.count', read_only=True
+        source='reviews.count', read_only=True
     )
     actor = ActorName(many=True, read_only=True)
     director = DirectorName(many=True, read_only=True)

@@ -23,8 +23,8 @@ class Movie(models.Model):
 
 
 class Review(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="reviews")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="reviews")
     content = models.CharField(max_length=200)
     vote_rate = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
