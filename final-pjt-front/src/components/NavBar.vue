@@ -1,6 +1,14 @@
 <template>
   <nav>
-    <ul>
+    <router-link :to="{ name: 'home' }">Home</router-link>
+    <router-link :to="{ name: 'community' }">Community</router-link>
+    <search-bar />
+    <router-link :to="{ name: 'signup' }">Signup</router-link>
+    <router-link :to="{ name: 'login' }">Login</router-link>
+    <router-link :to="{ name: 'logout' }">Logout</router-link>
+    <router-link :to="{ name: 'profile' }">Profile</router-link>
+
+    <!-- <ul>
       <div>
         <li>
           <router-link :to="{ name: 'home' }">Home</router-link>
@@ -28,7 +36,7 @@
           <router-link :to="{ name: 'profile' }">Profile</router-link>
         </li>
       </div>
-    </ul>
+    </ul> -->
   </nav>
 </template>
 
@@ -43,6 +51,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+  *,
+  *:before,
+  *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+  }
 
 </style>

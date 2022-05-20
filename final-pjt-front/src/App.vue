@@ -30,6 +30,8 @@ export default {
 
 body {
   margin: 1.5em 10%;
+  /* background-color: #0a0a0a;
+  color: white; */
 }
 
 /* #app {
