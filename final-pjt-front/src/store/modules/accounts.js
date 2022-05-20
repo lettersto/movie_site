@@ -20,7 +20,7 @@ export default {
   mutations: {
     SET_TOKEN: (state, token) => state.token = token,
     SET_CURRENT_USER: (state, user) => state.currentUser = user,
-    SET_AUTH_Error: (state, err) => state.authError = err,
+    SET_AUTH_ERROR: (state, err) => state.authError = err,
   },
     
   actions: {
@@ -95,7 +95,7 @@ export default {
       })
         .then(() => {
           dispatch('removeToken')
-          alert('성공적으로 로그아웃되었습니다.')
+          alert('로그아웃되었습니다.')
           router.push({ name: 'login' })
         })
         .catch(err => {

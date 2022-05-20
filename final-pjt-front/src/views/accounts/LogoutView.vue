@@ -5,8 +5,24 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   name: 'LogoutView',
+  computed: {
+    ...mapGetters(['isLoggedIn'])
+  },
+  methods: {
+    ...mapActions(['logout'])
+  },
+  created() {
+    if (this.isLoggedIn) {
+      this.logout()
+    } else {
+      alert('잘못된 접근입니다.')
+      this.$router.back()
+    }
+  }
 }
 </script>
 
