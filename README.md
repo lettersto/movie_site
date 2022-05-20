@@ -59,6 +59,10 @@
 
 1. **DB 설계 - ERD**
 
+   ![ERD](../../../ERD.png)
+
+   
+
 2. **URL - API 주소**
 
    - HOST = `http://127.0.0.1:8000/api/v1/`
@@ -98,7 +102,33 @@
 
    
 
-3. Software 구조
+3. **Software 구조**
+
+   ![moviesite_대지 1](README.assets/moviesite_대지 1.png)
+
+![moviesite-02](README.assets/moviesite-02.png)
+
+![moviesite-03](README.assets/moviesite-03.png)
+
+![moviesite-04](README.assets/moviesite-04.png)
+
+![moviesite-05](README.assets/moviesite-05.png)
+
+![moviesite-06](README.assets/moviesite-06.png)
+
+
+
+![moviesite-07](README.assets/moviesite-07.png)
+
+![moviesite-08](README.assets/moviesite-08.png)
+
+
+
+![moviesite-09](README.assets/moviesite-09.png)
+
+
+
+![moviesite-10](README.assets/moviesite-10.png)
 
 ---
 
