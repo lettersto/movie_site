@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>SearchBar</h1>
+    <input type="text" />
+    <button>Search</button>
   </div>
 </template>
 
