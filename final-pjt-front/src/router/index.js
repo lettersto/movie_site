@@ -12,6 +12,9 @@ import ProfileView from '@/views/accounts/ProfileView.vue'
 
 // community
 import CommunityView from '@/views/community/CommunityView.vue'
+import ArticleDetailView from '@/views/community/ArticleDetailView.vue'
+import ArticleEditView from '@/views/community/ArticleEditView.vue'
+import ArticleNewView from '@/views/community/ArticleNewView.vue'
 
 // movies
 import MovieView from '@/views/movies/MovieView.vue'
@@ -65,6 +68,21 @@ const routes = [
     path: '/community',
     name: 'community',
     component: CommunityView
+  },
+  {
+    path: '/community/new',
+    name: 'articleNew',
+    component: ArticleNewView
+  },
+  {
+    path: '/community/:articlePk',
+    name: 'articleDetail',
+    component: ArticleDetailView
+  },
+  {
+    path: '/community/:articlePk/edit',
+    name: 'articleEdit',
+    component: ArticleEditView
   },
 
   // movies
