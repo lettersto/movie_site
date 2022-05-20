@@ -3,6 +3,6 @@ from . import views
 
 app_name = 'accounts'
 
-# urlpatterns = [
-#     path('profile/<str:username>/', views.profile),
-# ]
+urlpatterns = [
+    path('profile/<str:username>/', views.profile),
+]
