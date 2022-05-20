@@ -6,7 +6,8 @@
 - **팀원** : 문유주, 정혜령
 - **시작일** : 2022.05.20. (금)
 - **완료일** :
-- **기술 스택**
+- **기술 스택** : Python, Django, Javascript, Vue, HTML, CSS
+- **Notion** : https://utopian-manatee-ff7.notion.site/Movie-Site-Project-8b0d4ffc6118494e8a45aaf5a59e5880
 
 
 
@@ -20,7 +21,7 @@
 
 ### ✨ 프로젝트 컨셉 & 주요 기능
 
-1. ㅇㅇ
+1. ㅎㅎ
 
 
 
@@ -62,27 +63,38 @@
 
    - HOST = `http://127.0.0.1:8000/api/v1/`
 
-   | 번호        | url                                              | 기능                 |
-   | ----------- | ------------------------------------------------ | -------------------- |
-   | \<accounts> |                                                  |                      |
-   | 1           | admin/                                           | 관리자 페이지 렌더링 |
-   | 2           | accounts/password/reset/                         |                      |
-   | 3           | accounts/password/rest/confirm/                  |                      |
-   | 4           | accounts/login/                                  | 로그인 기능          |
-   | 5           | accounts/logout/                                 | 로그아웃 기능        |
-   | 6           | accounts/user/                                   | 개인 정보 조회       |
-   | 7           | accounts/password/change                         | 비밀번호 변경        |
-   | 8           | accounts/signup/                                 | 회원가입 기능        |
-   | \<movies>   |                                                  |                      |
-   | 1           | movies/\<int:movie_pk>/                          |                      |
-   | 2           | movies/\<int:movie_pk>/reviews/                  |                      |
-   | 3           | movies/\<int:movie_pk>/reviews/\<int:review_pk>/ |                      |
-   | 13          | movies/\<str:movie_name>/                        |                      |
-   | 14          |                                                  |                      |
-   | 15          |                                                  |                      |
-   | 16          |                                                  |                      |
-   | 17          |                                                  |                      |
-   | 18          |                                                  |                      |
+   | 번호 | url                                                     | 기능                                               |
+   | ---- | ------------------------------------------------------- | -------------------------------------------------- |
+   |      | **[accounts]**                                          |                                                    |
+   | 1    | admin/                                                  | 관리자 페이지 렌더링                               |
+   | 2    | accounts/password/reset/                                |                                                    |
+   | 3    | accounts/password/rest/confirm/                         |                                                    |
+   | 4    | accounts/login/                                         | 로그인 기능                                        |
+   | 5    | accounts/logout/                                        | 로그아웃 기능                                      |
+   | 6    | accounts/user/                                          | 개인 정보 조회                                     |
+   | 7    | accounts/password/change                                | 비밀번호 변경                                      |
+   | 8    | accounts/signup/                                        | 회원가입 기능                                      |
+   | 9    | accounts/profile/\<str:username>/                       | 유저 프로필 조회                                   |
+   |      | **[movies]**                                            |                                                    |
+   | 1    | movies/\<int:movie_pk>/                                 | 개별 영화 조회                                     |
+   | 2    | movies/\<int:movie_pk>/reviews/                         | 영화별 댓글 리스트 조회 및 댓글 생성               |
+   | 3    | movies/\<int:movie_pk>/reviews/\<int:review_pk>/        | 개별 댓글 수정 및 삭제                             |
+   | 4    | movies/\<str:movie_name>/                               | 영화 이름으로 영화 목록에서 영화 조회 (search bar) |
+   | 5    | movies/\<int:person_pk>/                                | 영화계 인물 조회                                   |
+   | 6    | movies/recommend/weathcer_rec/                          | 위치 정보 기반 날씨별 영화 추천                    |
+   | 7    | movies/recommend/random_rec/                            | 페이지 새로고침 할 때마다 장르별 랜덤 영화 추천    |
+   | 8    | movies/ranking/like/                                    | 좋아요 높은 순 랭킹 차트 조회                      |
+   | 9    | movies/ranking/new/                                     | release_date 순 랭킹 차트 조회                     |
+   | 10   | movies/ranking/community/                               | 커뮤니티 클 좋아요 순 랭킹 차트 조회               |
+   |      | **[community]**                                         |                                                    |
+   | 1    | community/\<int:article_pk>/                            | 개별 게시글 detail 조회                            |
+   | 2    | community/\<int:article_pk>/like/                       | 게시글 좋아요 기능                                 |
+   | 3    | community/\<int:article_pk>/comments/                   | 게시글 별 댓글 조회 및 생성                        |
+   | 4    | community/\<int:article_pk>/comments/\<int:comment_pk>/ | 댓글 수정 및 삭제                                  |
+   | 5    | community/\<article_title>/                             | 글 이름으로 글 찾기 (search bar)                   |
+   | 6    | community/announce/                                     | 공지 글 조회                                       |
+   | 7    | community/hottopic/                                     | 인기 글 조회                                       |
+   | 8    | community/articles/                                     | 전체 글 목록 조회 및 글 생성                       |
 
    
 
