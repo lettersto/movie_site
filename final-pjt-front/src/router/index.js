@@ -1,6 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
+
+// accounts
+import SignupView from '@/views/accounts/SignupView.vue'
+import LoginView from '@/views/accounts/LoginView.vue'
+import LogoutView from '@/views/accounts/LogoutView.vue'
+import PasswordView from '@/views/accounts/PasswordView.vue'
+import AccountsUserView from '@/views/accounts/AccountsUserView.vue'
+import ProfileView from '@/views/accounts/ProfileView.vue'
+
+// community
+import CommunityView from '@/views/community/CommunityView.vue'
+
+// movies
+import MovieView from '@/views/movies/MovieView.vue'
+import MoviePeopleView from '@/views/movies/MoviePeopleView.vue'
 
 Vue.use(VueRouter)
 
@@ -10,14 +25,57 @@ const routes = [
     name: 'home',
     component: HomeView
   },
+  // Accounts
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/signup',
+    name: 'signup',
+    component: SignupView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: LogoutView
+  },
+  {
+    path: '/password',
+    name: 'password',
+    component: PasswordView
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: AccountsUserView
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProfileView
+  },
+
+  // community
+  {
+    path: '/community',
+    name: 'community',
+    component: CommunityView
+  },
+
+  // movies
+  {
+    path: '/movies/:moviePk',
+    name: 'movies',
+    component: MovieView
+  },
+  {
+    path: '/movies/:personPK',
+    name: 'moviepeople',
+    component: MoviePeopleView
+  },
+
 ]
 
 const router = new VueRouter({

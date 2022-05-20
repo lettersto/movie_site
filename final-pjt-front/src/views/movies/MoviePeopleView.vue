@@ -1,12 +1,15 @@
 <template>
   <div>
+    <h1>Movie People</h1>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'HomeView',
-
+  name: 'MoviePeopleView',
 }
 </script>
+
+<style>
+
+</style>

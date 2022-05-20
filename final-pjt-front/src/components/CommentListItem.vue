@@ -1,12 +1,15 @@
 <template>
   <div>
+    <h1>CommentListItem</h1>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'HomeView',
-
+  name: 'CommentListItem',
 }
 </script>
+
+<style>
+
+</style>

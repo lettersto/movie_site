@@ -1,12 +1,15 @@
 <template>
   <div>
+    <h1>Weather Recommend</h1>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'HomeView',
-
+  name: 'WeatherRec',
 }
 </script>
+
+<style>
+
+</style>
