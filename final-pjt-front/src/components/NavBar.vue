@@ -6,7 +6,6 @@
     <router-link :to="{ name: 'signup' }">Signup</router-link>
     <router-link :to="{ name: 'login' }">Login</router-link>
     <router-link :to="{ name: 'logout' }">Logout</router-link>
-    <router-link :to="{ name: 'profile' }">Profile</router-link>
 
     <!-- <ul>
       <div>

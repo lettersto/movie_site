@@ -17,6 +17,9 @@ import CommunityView from '@/views/community/CommunityView.vue'
 import MovieView from '@/views/movies/MovieView.vue'
 import MoviePeopleView from '@/views/movies/MoviePeopleView.vue'
 
+// 404 Not Found
+import NotFound404 from '@/views/NotFound404.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -52,7 +55,7 @@ const routes = [
     component: AccountsUserView
   },
   {
-    path: '/profile',
+    path: '/profile/:username',
     name: 'profile',
     component: ProfileView
   },
@@ -76,6 +79,17 @@ const routes = [
     component: MoviePeopleView
   },
 
+  // 404
+  {
+    path: '/404',
+    name: 'NotFound404',
+    component: NotFound404
+  },
+  {
+    path: '*',
+    redirect: '/404'
+  }
+
 ]
 
 const router = new VueRouter({
@@ -83,5 +97,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// Navigation Guard 필요
 
 export default router
