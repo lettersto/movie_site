@@ -31,7 +31,7 @@
           </router-link>
         </li>
         <li>
-          <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username: currentUser.username }}" class="nav-item mr">
+          <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username } }" class="nav-item mr">
             Profile
           </router-link>            
         </li>
@@ -92,10 +92,11 @@ export default {
   },
   computed: {
     ...mapGetters(['isLoggedIn', 'currentUser']),
+    username() {
+      return this.currentUser.username ? this.currentUser.username : 'guest'
+    }
   },
-  // username() {
-  //   return this.currentUser.username ? this.currentUser.username : 'guest'
-  // }
+
 }
 </script>
 
