@@ -1,13 +1,15 @@
 <template>
-  <div>
-    <h1>Ranking Chart Item</h1>
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'RankingChartItem',
-}
+  export default {
+    name: 'RankingChartItem',
+  }
 </script>
 
 <style>

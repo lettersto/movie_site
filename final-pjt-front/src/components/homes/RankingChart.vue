@@ -1,13 +1,20 @@
 <template>
-  <div>
-    <h1>Ranking Chart</h1>
+  <div class="d-flex">
+    <ranking-chart-item class="flex-grow-1" />
+    <ranking-chart-item class="flex-grow-1" />
+    <ranking-chart-item class="flex-grow-1" />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'RankingChart',
-}
+import RankingChartItem from './RankingchartItem.vue'
+
+  export default {
+    name: 'RankingChart',
+    components: {
+      RankingChartItem
+    }
+  }
 </script>
 
 <style>

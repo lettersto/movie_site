@@ -1,84 +1,50 @@
 <template>
-  <nav>
-    <div class="container">
-      <div class="logo">
-        <i class="material-icons">movie_filter</i>
-        <h1>Cat's Movie</h1>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">로고위치</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+           <li class="nav-item">
+            <router-link :to="{ name: 'home' }" class="nav-link">
+              Home
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'community' }" class="nav-link">
+              Community
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link v-if="!isLoggedIn" :to="{ name: 'signup' }" class="nav-link">
+              Signup
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link v-if="!isLoggedIn" :to="{ name: 'login' }" class="nav-link">
+              Login
+            </router-link>
+          </li>
+          <li>
+            <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username } }" class="nav-link">
+              Profile
+            </router-link>            
+          </li>
+          <li class="nav-item">
+            <router-link v-if="isLoggedIn" :to="{ name: 'logout' }" class="nav-link">
+              Logout
+            </router-link>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+        <search-bar type="search" aria-label="Search"/>
       </div>
-
-      <ul class="nav-list">
-        <li>
-          <router-link :to="{ name: 'home' }" class="nav-item mr">
-            Home
-          </router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'community' }" class="nav-item">
-            Community
-          </router-link>
-        </li>
-        <li>
-          <search-bar />
-        </li>
-        <li>
-          <router-link v-if="!isLoggedIn" :to="{ name: 'signup' }" class="nav-item mr">
-            Signup
-          </router-link>
-        </li>
-        <li>
-          <router-link v-if="!isLoggedIn" :to="{ name: 'login' }" class="nav-item">
-            Login
-          </router-link>
-        </li>
-        <li>
-          <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username } }" class="nav-item mr">
-            Profile
-          </router-link>            
-        </li>
-        <li>
-          <router-link v-if="isLoggedIn" :to="{ name: 'logout' }" class="nav-item">
-            Logout
-          </router-link>
-        </li>
-      </ul>
     </div>
   </nav>
-  <!-- <nav>
-    <div class="container">
-      <div class="nav-items-left">
-        <div class="logo">
-          <i class="material-icons">movie_filter</i>
-          <h1>Cat's Movie</h1>
-        </div>
-    
-        <div class="nav-items-1">
-          <router-link :to="{ name: 'home' }" class="nav-item mr">
-            Home
-          </router-link>
-          <router-link :to="{ name: 'community' }" class="nav-item">
-            Community
-          </router-link>
-        </div>
-      </div>
-
-      <search-bar />
-
-      <div>
-        <router-link v-if="!isLoggedIn" :to="{ name: 'signup' }" class="nav-item mr">
-          Signup
-        </router-link>
-        <router-link v-if="!isLoggedIn" :to="{ name: 'login' }" class="nav-item">
-          Login
-        </router-link>
-        <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username: currentUser.username }}" class="nav-item mr">
-          Profile
-        </router-link>
-        <router-link v-if="isLoggedIn" :to="{ name: 'logout' }" class="nav-item">
-          Logout
-        </router-link>
-      </div>
-    </div>
-  </nav> -->
+   
 </template>
 
 <script>
@@ -105,43 +71,5 @@ export default {
   nav {
     font-family: 'Poppins', sans-serif;
   }
-
-  /* .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-  } */
-
-  /* .nav-items-left {
-    display: flex;
-    flex-direction: row;
-  }
-  
-
-  .nav-item {
-    text-decoration: none;
-    color: white;
-    font-size: 1.55em;
-    font-weight: bold;
-  }
-
-  .nav-item:hover {
-    color: rgb(164, 164, 164);
-  }
-
-  .mr {
-    margin-right: 10px;
-  }  */
-
-  /* .nav-items-1 {
-    padding: 0 .8em;
-  } */
-
 
 </style>
