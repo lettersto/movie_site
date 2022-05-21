@@ -1,20 +1,9 @@
 <template>
   <div>
     <event-carossel/>
-    <!-- <div class="container">
-      <event-carossel class="carousel">
-        <slide-items v-for="(slide, index) in carouselSlides" :key="index">
-          <div class="slide-info">
-            {{slide}}
-            <img :src=slide :alt="'img-' + index">
-          </div>
-        </slide-items>
-        
-      </event-carossel> -->
     <ranking-chart />
     <weather-rec />
     <time-rec />
-    <!-- </div> -->
   </div>
 </template>
 
