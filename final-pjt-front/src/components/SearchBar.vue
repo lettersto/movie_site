@@ -88,7 +88,8 @@ export default {
 input[type="text"] {
   width: 100%;
   padding: 13px 13px;
-  border: none;
+  /* border: none; */
+  border: 1px solid rgba(0, 0, 0, 0.3);
   outline: none;
   /* border-radius: 3px 3px 0 0; */
   background-color: #fffffffa;

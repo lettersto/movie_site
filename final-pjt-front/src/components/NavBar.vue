@@ -6,6 +6,7 @@
           <i class="material-icons">movie_filter</i>
           <span class="logo"> Cat's Movie</span>
         </div> -->
+    
         <div class="nav-items-1">
           <router-link :to="{ name: 'home' }" class="nav-item mr">
             Home
@@ -25,7 +26,7 @@
         <router-link v-if="!isLoggedIn" :to="{ name: 'login' }" class="nav-item">
           Login
         </router-link>
-        <router-link v-if="isLoggedIn" :to="{ name: 'proile', params: { username: currentUser.username } }" class="nav-item mr">
+        <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username: currentUser.username }}" class="nav-item mr">
           Profile
         </router-link>
         <router-link v-if="isLoggedIn" :to="{ name: 'logout' }" class="nav-item">
@@ -33,36 +34,6 @@
         </router-link>
       </div>
     </div>
-
-    <!-- <ul>
-      <div>
-        <li>
-          <router-link :to="{ name: 'home' }">Home</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'community' }">Community</router-link>
-        </li>
-      </div>
-      
-      <div>
-        <search-bar />
-      </div>
-
-      <div>
-        <li>
-          <router-link :to="{ name: 'signup' }">Signup</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'login' }">Login</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'logout' }">Logout</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'profile' }">Profile</router-link>
-        </li>
-      </div>
-    </ul> -->
   </nav>
 </template>
 
@@ -76,8 +47,11 @@ export default {
     SearchBar,
   },
   computed: {
-    ...mapGetters(['isLoggedIn', 'currentUser'])
-  }
+    ...mapGetters(['isLoggedIn', 'currentUser']),
+  },
+  // username() {
+  //   return this.currentUser.username ? this.currentUser.username : 'guest'
+  // }
 }
 </script>
 
@@ -103,7 +77,8 @@ export default {
 
   .nav-item {
     text-decoration: none;
-    color: white;
+    /* color: white; */
+    color: black;
     font-size: 1.55em;
     font-weight: bold;
   }

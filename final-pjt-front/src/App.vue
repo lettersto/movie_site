@@ -45,8 +45,8 @@ export default {
 body {
   margin: 1.5em 10%;
   font-family: 'Noto Sans KR', sans-serif;
-  background-color: #0a0a0af6;
-  color: white;
+  /* background-color: #0a0a0af6;
+  color: white; */
 }
 
 /* #app {

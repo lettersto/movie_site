@@ -1,8 +1,31 @@
 <template>
   <div>
-    <h1>{{ userProfile }}'s Profile</h1>
+    <h1>{{ profile.username }}'s Profile</h1>
 
-
+    <p v-if="profile.email">email: {{ profile.email }}</p>
+    <hr>
+    <!-- 좋아요 -->
+    <p>좋아요 누른 게시글</p>
+    <hr>
+    <div v-for="article in profile.like_articles" :key="article.id">
+    <!-- <div v-if="profile.like_articles.length !== 0"> -->
+      <router-link :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
+        {{ article }}
+      </router-link>
+    </div>
+    <!-- 쓴 게시글 -->
+    <!-- <div v-if="profile.articles.length !== 0"> -->
+    <div>
+      <p>{{ profile.username }}님이 작성한 글</p>
+      <hr>
+      <div v-for="article in profile.articles" :key="article.id">
+        <router-link :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
+          <p>{{ article.title }}</p>
+          <p>{{ article.content }}</p>
+        </router-link>
+        <hr>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,7 +35,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'ProfileView',
   computed: {
-    ...mapGetters(['userProfile'])
+    ...mapGetters(['profile'])
   },
   methods: {
     ...mapActions(['fetchProfile'])
