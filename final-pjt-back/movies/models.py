@@ -1,15 +1,27 @@
 from django.db import models
 from django.conf import settings
 
-# Create your models here.
+
 class Genre(models.Model):
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
 
 class Actor(models.Model):
     name = models.CharField(max_length=150)
 
+    def __str__(self):
+        return self.name
+
+
 class Director(models.Model):
-    name = models.CharField(max_length=150)    
+    name = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.name    
+
 
 class Movie(models.Model):
     genres = models.ManyToManyField(Genre)
@@ -21,6 +33,9 @@ class Movie(models.Model):
     release_date = models.DateField()
     poster_url = models.CharField(max_length=200)
 
+    def __str__(self):
+        return f'{self.title} ({self.release_date})'
+
 
 class Review(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="reviews")
@@ -29,3 +44,6 @@ class Review(models.Model):
     vote_rate = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.movie}의 comment: ({self.content})'
