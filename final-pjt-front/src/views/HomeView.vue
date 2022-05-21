@@ -1,11 +1,20 @@
 <template>
   <div>
-    <div class="container">
-      <event-carossel class="row" />
-      <ranking-chart class="row" />
-      <weather-rec class="row" />
-      <time-rec class="row" />
-    </div>
+    <event-carossel/>
+    <!-- <div class="container">
+      <event-carossel class="carousel">
+        <slide-items v-for="(slide, index) in carouselSlides" :key="index">
+          <div class="slide-info">
+            {{slide}}
+            <img :src=slide :alt="'img-' + index">
+          </div>
+        </slide-items>
+        
+      </event-carossel> -->
+    <ranking-chart />
+    <weather-rec />
+    <time-rec />
+    <!-- </div> -->
   </div>
 </template>
 
@@ -22,24 +31,18 @@
       EventCarossel,
       RankingChart,
       WeatherRec,
-      TimeRec
+      TimeRec,
+    },
+    data() {
+      return {
+
+      }
     }
 
   }
 </script>
 
 <style scoped>
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    
-  }
-
-  /* .row {
-    background-color: rgb(197, 255, 255);
-  } */
 
 
 </style>

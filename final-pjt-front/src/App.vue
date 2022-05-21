@@ -29,44 +29,27 @@ export default {
 
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* font-family: 'Noto Sans KR', sans-serif; */
+/* font-family: 'Poppins', sans-serif; */
 
 [v-cloak] {
   display: none;
 }
 
-* {
+*, *::before, *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
+/* body {
   margin: 1.5em 10%;
-  font-family: 'Noto Sans KR', sans-serif;
+  
   background-color: #0a0a0af6;
   color: white;
-}
-
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 } */
+
 </style>

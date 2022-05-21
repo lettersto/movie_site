@@ -1,11 +1,56 @@
 <template>
   <nav>
     <div class="container">
+      <div class="logo">
+        <i class="material-icons">movie_filter</i>
+        <h1>Cat's Movie</h1>
+      </div>
+
+      <ul class="nav-list">
+        <li>
+          <router-link :to="{ name: 'home' }" class="nav-item mr">
+            Home
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'community' }" class="nav-item">
+            Community
+          </router-link>
+        </li>
+        <li>
+          <search-bar />
+        </li>
+        <li>
+          <router-link v-if="!isLoggedIn" :to="{ name: 'signup' }" class="nav-item mr">
+            Signup
+          </router-link>
+        </li>
+        <li>
+          <router-link v-if="!isLoggedIn" :to="{ name: 'login' }" class="nav-item">
+            Login
+          </router-link>
+        </li>
+        <li>
+          <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username: currentUser.username }}" class="nav-item mr">
+            Profile
+          </router-link>            
+        </li>
+        <li>
+          <router-link v-if="isLoggedIn" :to="{ name: 'logout' }" class="nav-item">
+            Logout
+          </router-link>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- <nav>
+    <div class="container">
       <div class="nav-items-left">
-        <!-- <div >
+        <div class="logo">
           <i class="material-icons">movie_filter</i>
-          <span class="logo"> Cat's Movie</span>
-        </div> -->
+          <h1>Cat's Movie</h1>
+        </div>
+    
         <div class="nav-items-1">
           <router-link :to="{ name: 'home' }" class="nav-item mr">
             Home
@@ -25,7 +70,7 @@
         <router-link v-if="!isLoggedIn" :to="{ name: 'login' }" class="nav-item">
           Login
         </router-link>
-        <router-link v-if="isLoggedIn" :to="{ name: 'proile', params: { username: currentUser.username } }" class="nav-item mr">
+        <router-link v-if="isLoggedIn" :to="{ name: 'profile', params: { username: currentUser.username }}" class="nav-item mr">
           Profile
         </router-link>
         <router-link v-if="isLoggedIn" :to="{ name: 'logout' }" class="nav-item">
@@ -33,37 +78,7 @@
         </router-link>
       </div>
     </div>
-
-    <!-- <ul>
-      <div>
-        <li>
-          <router-link :to="{ name: 'home' }">Home</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'community' }">Community</router-link>
-        </li>
-      </div>
-      
-      <div>
-        <search-bar />
-      </div>
-
-      <div>
-        <li>
-          <router-link :to="{ name: 'signup' }">Signup</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'login' }">Login</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'logout' }">Logout</router-link>
-        </li>
-        <li>
-          <router-link :to="{ name: 'profile' }">Profile</router-link>
-        </li>
-      </div>
-    </ul> -->
-  </nav>
+  </nav> -->
 </template>
 
 <script>
@@ -76,14 +91,21 @@ export default {
     SearchBar,
   },
   computed: {
-    ...mapGetters(['isLoggedIn', 'currentUser'])
-  }
+    ...mapGetters(['isLoggedIn', 'currentUser']),
+  },
+  // username() {
+  //   return this.currentUser.username ? this.currentUser.username : 'guest'
+  // }
 }
 </script>
 
 <style scoped>
 
-  .container {
+  nav {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -95,7 +117,7 @@ export default {
     font-weight: bold;
   } */
 
-  .nav-items-left {
+  /* .nav-items-left {
     display: flex;
     flex-direction: row;
   }
@@ -114,7 +136,7 @@ export default {
 
   .mr {
     margin-right: 10px;
-  }
+  }  */
 
   /* .nav-items-1 {
     padding: 0 .8em;

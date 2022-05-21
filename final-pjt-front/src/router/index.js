@@ -92,7 +92,7 @@ const routes = [
     component: MovieView
   },
   {
-    path: '/movies/:personPK',
+    path: '/movies/:personPk',
     name: 'moviepeople',
     component: MoviePeopleView
   },
