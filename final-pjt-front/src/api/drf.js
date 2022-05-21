@@ -11,7 +11,7 @@ export default {
     logout: () => HOST + ACCOUNTS + 'logout/',
     user: () => HOST + ACCOUNTS + 'user/',
     passwordChange: () => HOST + ACCOUNTS + 'password/change/',
-    profile: username => HOST + ACCOUNTS + 'profile/' + `${username}` +'/',
+    profile: username => HOST + ACCOUNTS + 'profile/' + username,
     // passwordReset: () => HOST + ACCOUNTS + 'password/reset/'
     // passwordRestComfirm: () => HOST + ACCOUNTS + 'password/rest/confirm/'
   },
