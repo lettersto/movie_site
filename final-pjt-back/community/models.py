@@ -11,7 +11,7 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.title} ({self.user})'
+        return self.title
 
 
 class Comment(models.Model):
@@ -22,4 +22,4 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.article}의 Comment: {self.content}'
+        return self.content

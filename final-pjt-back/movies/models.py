@@ -46,4 +46,4 @@ class Review(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.movie}의 comment: ({self.content})'
+        return self.content
