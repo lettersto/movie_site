@@ -6,7 +6,7 @@ import HomeView from '@/views/HomeView.vue'
 import SignupView from '@/views/accounts/SignupView.vue'
 import LoginView from '@/views/accounts/LoginView.vue'
 import LogoutView from '@/views/accounts/LogoutView.vue'
-import PasswordView from '@/views/accounts/PasswordView.vue'
+import PasswordChangeView from '@/views/accounts/PasswordChangeView.vue'
 import AccountsUserView from '@/views/accounts/AccountsUserView.vue'
 import ProfileView from '@/views/accounts/ProfileView.vue'
 
@@ -48,9 +48,9 @@ const routes = [
     component: LogoutView
   },
   {
-    path: '/password',
-    name: 'password',
-    component: PasswordView
+    path: '/password/change',
+    name: 'passwordChange',
+    component: PasswordChangeView
   },
   {
     path: '/user',

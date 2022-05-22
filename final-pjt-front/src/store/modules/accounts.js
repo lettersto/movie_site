@@ -116,6 +116,23 @@ export default {
           // console.log(res.data)
           commit('SET_PROFILE', res.data)
         })
+    },
+
+    passwordChange({ commit, getters }, credentials) {
+      axios({
+        url: drf.accounts.passwordChange(),
+        method: 'post',
+        data: credentials,
+        headers: getters.authHeader
+      })
+        .then(() => {
+          alert('비밀번호가 변경되었습니다.')
+          router.push({ name: 'home' })
+        })
+        .catch(err => {
+          console.error(err)
+          commit('SET_AUTH_ERROR', err.response.data)
+        })
     }
 
   },
