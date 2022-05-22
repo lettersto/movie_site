@@ -4,15 +4,24 @@
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="https://movie-phinf.pstatic.net/20220516_144/1652687286550mcE4G_JPEG/movie_image.jpg?type=m203_290_2" class="img-fluid rounded-start" alt="...">
+          <img :src="movieURL" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Example heading <span class="badge bg-secondary">평점</span></h5>
-            <p class="card-text">개봉일: </p>
-            <p class="card-text">감독: </p>
-            <p class="card-text">배우: </p>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, iste laboriosam sint, nobis eaque atque veniam accusamus itaque expedita dignissimos eligendi cupiditate velit magnam dolor veritatis accusantium aliquid hic a quos doloremque. Tenetur illo culpa provident assumenda, consectetur accusamus nihil praesentium? Voluptatibus tempora quia quibusdam odio necessitatibus dolore commodi aut.</p>
+            <h5 class="card-title">{{ movie.title }} <span class="badge bg-secondary">평점</span></h5>
+            <p class="card-text">개봉일: {{ movie.release_date }}</p>
+            <div class="card-text">감독:
+              <div v-for="director_list in movie.director" :key="director_list.id">
+                {{ director_list.name }}
+              </div>
+            </div>
+            <div class="card-text">배우: 
+              <div v-for="actor_list in movie.actor" :key="actor_list.id">
+                {{ actor_list.name }}
+              </div>
+            </div>
+            <p class="card-text">{{ movie.overview }}
+            </p>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
@@ -29,6 +38,7 @@
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex'
   import CommentList from '@/components/CommentList.vue'
 
 
@@ -36,7 +46,26 @@
     name: 'MovieView.vue',
     components: {
       CommentList
+    },
+    data() {
+      return {
+        moviePk: this.$route.params.moviePk,
+      }
+    },
+    computed: {
+      ...mapGetters(['movie']),
+      movieURL() {
+      return 'https://image.tmdb.org/t/p/w500' + this.movie.poster_url
     }
+    },
+    methods: {
+      ...mapActions([
+        'fetchMovie',
+      ])
+    },
+    created() {
+      this.fetchMovie(this.moviePk)
+    },
   }
 </script>
 
