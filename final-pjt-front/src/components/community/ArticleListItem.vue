@@ -61,7 +61,7 @@
 
         const days = hours / 24;
 
-        if (days < 31) return `${days}일 전`;
+        if (days < 31) return `${Math.trunc(days)}일 전`;
         
         return `오래전`
       },
