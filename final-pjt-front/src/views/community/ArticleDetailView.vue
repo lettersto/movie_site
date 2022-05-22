@@ -4,7 +4,7 @@
     <article>
       <div class="d-flex align-items-center">
         <h1>{{ article.title }}</h1>
-        <small v-show="isCorreted">(수정)</small>
+        <!-- <small v-show="isCorreted">(수정)</small> -->
       </div>
       <p>
         {{ article.content }}
@@ -58,10 +58,10 @@
       //   });
       //   return inLike;
       // },
-      isCorreted() {
-        if (this.article.created_at !== this.article.updated_at) return true;
-        else return false;
-      }
+      // isCorreted() {
+      //   if (this.article.created_at !== this.article.updated_at) return true;
+      //   else return false;
+      // }
     },
     methods: {
       ...mapActions([
