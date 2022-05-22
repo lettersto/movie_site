@@ -36,6 +36,18 @@ class MovieSerializer(serializers.ModelSerializer):
             model = Genre
             fields = ('name',)
 
+    def votesAverage(self, obj):
+        length = obj.reviews.count()
+        if length != 0:
+            total = 0
+            for review in obj.reviews.all():
+                total += review.vote_rate
+            result = round(total/length, 2)
+        else:
+            result = 0
+        return result
+
+    vote_average = serializers.SerializerMethodField('votesAverage')
     reviews = ReviewSerializer(many=True, read_only=True)
     review_count = serializers.IntegerField(
         source='reviews.count', read_only=True
