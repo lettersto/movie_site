@@ -17,6 +17,7 @@ export default {
   },
 
   movies: {
+    movies: () => HOST + MOVIES + '',
     movie: moviePk => HOST + MOVIES + `${moviePk}/`,
     movieReviews: moviePk => HOST + MOVIES + `${moviePk}/` + 'reviews/',
     movieSearch: movieName => HOST + MOVIES + `${movieName}/`,
