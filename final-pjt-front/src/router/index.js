@@ -7,7 +7,7 @@ import SignupView from '@/views/accounts/SignupView.vue'
 import LoginView from '@/views/accounts/LoginView.vue'
 import LogoutView from '@/views/accounts/LogoutView.vue'
 import PasswordChangeView from '@/views/accounts/PasswordChangeView.vue'
-import AccountsUserView from '@/views/accounts/AccountsUserView.vue'
+// import AccountsUserView from '@/views/accounts/AccountsUserView.vue'
 import ProfileView from '@/views/accounts/ProfileView.vue'
 
 // community
@@ -52,11 +52,11 @@ const routes = [
     name: 'passwordChange',
     component: PasswordChangeView
   },
-  {
-    path: '/user',
-    name: 'user',
-    component: AccountsUserView
-  },
+  // {
+  //   path: '/user',
+  //   name: 'user',
+  //   component: AccountsUserView
+  // },
   {
     path: '/profile/:username',
     name: 'profile',
