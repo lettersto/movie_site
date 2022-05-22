@@ -1,11 +1,17 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, get_list_or_404
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Movie, Review
-from .serializers import MovieSerializer, ReviewSerializer
+from .serializers import MovieSerializer, MovieListSerializer, ReviewSerializer
 
 # Create your views here.
+@api_view(['GET'])
+def movie_list(request):
+    movies = get_list_or_404(Movie)
+    serializer = MovieListSerializer(movies, many=True)
+    return Response(serializer.data)
+
 @api_view(['GET', 'POST'])
 def movie_detail(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
