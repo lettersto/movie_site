@@ -120,6 +120,9 @@ def record_view(request, article_pk):
 
     article = get_object_or_404(Article, pk=article_pk)
 
+    if not request.session.session_key:
+        request.session.create()
+
     if not ArticleView.objects.filter(
         article=article,
         session=request.session.session_key):
