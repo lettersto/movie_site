@@ -38,6 +38,7 @@ export default {
     comment: (articlePk, commentPk) => HOST + COMMUNITY + `${articlePk}/` + 'comments/' + `${commentPk}/`,
     articleSearch: articleTitle => HOST + COMMUNITY + `${articleTitle}/`,
     announce: () => HOST + COMMUNITY + 'announce/',
-    hotTopic: () => HOST + COMMUNITY + 'hotTopic/'
+    hotTopic: () => HOST + COMMUNITY + 'hotTopic/',
+    views: articlePk => HOST + COMMUNITY + `${articlePk}/` + 'views/'
   }
 }

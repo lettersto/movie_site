@@ -23,3 +23,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.content
+
+
+class ArticleView(models.Model):
+    article = models.ForeignKey(
+        Article, 
+        related_name='article_views', 
+        on_delete=models.CASCADE
+    )
+    ip = models.CharField(max_length=40)
+    session = models.CharField(max_length=40)
+    created_at = models.DateTimeField(auto_now_add=True)
