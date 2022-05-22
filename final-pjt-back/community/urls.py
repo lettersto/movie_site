@@ -13,4 +13,5 @@ urlpatterns = [
     # path('announce/', views.),
     # path('hottopic/', views.),
     # path('article_list/', views.),
+    path('<int:article_pk>/views/', views.record_view),
 ]

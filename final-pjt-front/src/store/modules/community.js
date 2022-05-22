@@ -139,18 +139,30 @@ export default {
     },
 
     deleteComment({ commit, getters }, { articlePk, commentPk }) {
-        if (confirm('정말 삭제하시겠습니까?')) {
-          axios({
-            url: drf.community.comment(articlePk, commentPk),
-            method: 'delete',
-            data: {},
-            headers: getters.authHeader,
+      if (confirm('정말 삭제하시겠습니까?')) {
+        axios({
+          url: drf.community.comment(articlePk, commentPk),
+          method: 'delete',
+          data: {},
+          headers: getters.authHeader,
+        })
+          .then(res => {
+            commit('SET_ARTICLE_COMMENTS', res.data)
           })
-            .then(res => {
-              commit('SET_ARTICLE_COMMENTS', res.data)
-            })
-            .catch(err => console.error(err.response))
-        }
-      },
+          .catch(err => console.error(err.response))
+      }
+    },
+
+    addArticleView({ getters }, articlePk) {
+      axios({
+        url: drf.community.views(articlePk),
+        method: 'post',
+        headers: getters.authHeader
+      })
+        .then(res => {
+          console.log(res.data)
+        })
+        .catch(err => console.error(err.response))
+    }
   },
 }

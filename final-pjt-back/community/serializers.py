@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
-from .models import Article
-from .models import Comment
+from .models import Article, Comment
+
 
 User = get_user_model()
 
@@ -33,7 +33,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('pk', 'user', 'title', 'content', 'comments', 'user_like', 'created_at', 'updated_at')
+        fields = ('pk', 'user', 'title', 'content', 'comments', 'user_like', 'created_at', 'updated_at', 'article_views')
 
 
 class ArticleListSerializer(serializers.ModelSerializer):
@@ -48,4 +48,4 @@ class ArticleListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ('pk', 'user', 'title', 'comment_count', 'like_count', 'created_at')
+        fields = ('pk', 'user', 'title', 'comment_count', 'like_count', 'created_at', 'article_views')

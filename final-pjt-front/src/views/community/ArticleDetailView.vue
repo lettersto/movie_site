@@ -18,12 +18,12 @@
         <button @click="deleteArticle(articlePk)">Delete</button>
       </div>
       <!-- 좋아요 버튼 -->
-      <div>
+      <!-- <div>
         <button @click="likeArticle(articlePk)">
           <i v-show="inLikeArticleList" class="material-icons like">favorite</i>
           <i v-show="!inLikeArticleList" class="material-icons no-like">heart_broken</i>
         </button> {{ likeCount }}
-      </div>
+      </div> -->
     </article>
     
     <hr />
@@ -51,13 +51,13 @@
       likeCount() {
         return this.article.like_users?.length
       },
-      inLikeArticleList() { // 미리 계산하고 와야할 거 같은데 임시로
-        let inLike = false;
-        this.article.user_like.forEach(user => {
-          if (user.pk === this.currentUser.pk) inLike = true;
-        });
-        return inLike;
-      },
+      // inLikeArticleList() { // 미리 계산하고 와야할 거 같은데 임시로
+      //   let inLike = false;
+      //   this.article.user_like.forEach(user => {
+      //     if (user.pk === this.currentUser.pk) inLike = true;
+      //   });
+      //   return inLike;
+      // },
       isCorreted() {
         if (this.article.created_at !== this.article.updated_at) return true;
         else return false;
@@ -68,12 +68,17 @@
         'fetchArticle',
         'likeArticle',
         'deleteArticle',
+        'addArticleView',
       ])
     },
     created() {
       this.fetchArticle(this.articlePk)
     },
+    mounted() {
+      this.addArticleView(this.articlePk)
+    }
   }
+
 </script>
 
 <style scoped>

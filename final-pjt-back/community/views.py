@@ -1,13 +1,16 @@
 
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.db.models import Count
 
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import Article, Comment
-from .serializers import ArticleListSerializer, ArticleSerializer, CommentSerializer
-
+from .models import Article, Comment, ArticleView
+from .serializers import (
+    ArticleListSerializer, ArticleSerializer, 
+    CommentSerializer
+)
 
 @api_view(['GET', 'POST'])
 def article_list_or_create(request):
@@ -110,3 +113,28 @@ def comment_update_or_delete(request, article_pk, comment_pk):
         return update_comment()
     elif request.method == 'DELETE':
         return delete_comment()
+
+
+@api_view(['POST'])
+def record_view(request, article_pk):
+
+    article = get_object_or_404(Article, pk=article_pk)
+
+    if not ArticleView.objects.filter(
+        article=article,
+        session=request.session.session_key):
+
+        view = ArticleView(article=article,
+                        ip=request.META['REMOTE_ADDR'],
+                        session=request.session.session_key)
+        view.save()
+    
+    view_count = ArticleView.objects.filter(article=article).count()
+    
+    context = {
+        'viewCount': view_count
+    }
+
+    return JsonResponse(context)
+
+    # return HttpResponse("%s" % ArticleView.objects.filter(article=article).count())
