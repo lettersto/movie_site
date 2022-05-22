@@ -18,7 +18,8 @@ import ArticleNewView from '@/views/community/ArticleNewView.vue'
 
 // movies
 import MovieView from '@/views/movies/MovieView.vue'
-import MoviePeopleView from '@/views/movies/MoviePeopleView.vue'
+import ActorDetailView from '@/views/movies/ActorDetailView.vue'
+import DirectorDetailView from '@/views/movies/DirectorDetailView.vue'
 
 // 404 Not Found
 import NotFound404 from '@/views/NotFound404.vue'
@@ -92,9 +93,14 @@ const routes = [
     component: MovieView
   },
   {
-    path: '/movies/:personPk',
-    name: 'moviepeople',
-    component: MoviePeopleView
+    path: '/movies/actor/:actorPk',
+    name: 'actorDetail',
+    component: ActorDetailView
+  },
+  {
+    path: '/movies/director/:directorPk',
+    name: 'directorDetail',
+    component: DirectorDetailView
   },
 
   // 404
