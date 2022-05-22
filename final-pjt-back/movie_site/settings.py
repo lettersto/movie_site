@@ -171,3 +171,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated'
     ]
 }
+
+OLD_PASSWORD_FIELD_ENABLED = True
