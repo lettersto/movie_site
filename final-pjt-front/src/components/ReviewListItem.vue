@@ -1,22 +1,60 @@
 <template>
+  <tr>
+    <td class="text-center align-middle"><router-link :to="{ name: 'profile', params: { username: review.user.username } }">
+      {{ review.user.username }}
+    </router-link> </td>
+    <td class="text-center align-middle">
+      {{ payload.content }}
+    </td>
+    <td class="text-center align-middle">
+      {{ payload.voterate }}
+    </td>
+    <td class="text-center align-middle">
+      <span v-if="isEditing">
+      <input type="text" v-model="payload.content">
+      <button @click="onUpdate" class="btn btn-default">
+        <i class="material-icons like">update</i></button> |
+      <button @click="switchIsEditing" class="btn btn-default">
+        <i class="material-icons like">cancel</i>
+      </button>
+    </span>
+    <span v-if="currentUser.username === review.user.username && !isEditing">
+      <button @click="switchIsEditing" class="btn btn-default">
+        <i class="material-icons like">edit</i>
+        </button> |
+      <button @click="deleteReview(payload)" class="btn btn-default">
+        <i class="material-icons like">delete</i>
+      </button>
+    </span>
+    </td>
+  </tr>
   
-  <li class="review-list-item">
+  <!-- <li class="list-group-item">
     <router-link :to="{ name: 'profile', params: { username: review.user.username } }">
       {{ review.user.username }}
     </router-link>: 
     
-    <span v-if="!isEditing">{{ payload.content }} / 평점: {{ payload.voterate }}</span>
+    <span v-if="!isEditing">{{ payload.content }}
+      <br/>
+       평점: {{ payload.voterate }} </span>
 
     <span v-if="isEditing">
       <input type="text" v-model="payload.content">
-      <button @click="onUpdate">Update</button> |
-      <button @click="switchIsEditing">Cancle</button>
+      <button @click="onUpdate" class="btn btn-default">
+        <i class="material-icons like">update</i></button> |
+      <button @click="switchIsEditing" class="btn btn-default">
+        <i class="material-icons like">cancel</i>
+      </button>
     </span>
     <span v-if="currentUser.username === review.user.username && !isEditing">
-      <button @click="switchIsEditing">Edit</button> |
-      <button @click="deleteReview(payload)">Delete</button>
+      <button @click="switchIsEditing" class="btn btn-default">
+        <i class="material-icons like">edit</i>
+        </button> |
+      <button @click="deleteReview(payload)" class="btn btn-default">
+        <i class="material-icons like">delete</i>
+      </button>
     </span>
-  </li>
+  </li> -->
 </template>
 
 <script>

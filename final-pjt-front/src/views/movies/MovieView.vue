@@ -22,6 +22,10 @@
             </div>
             <p class="card-text">{{ movie.overview }}
             </p>
+            <!-- {{ video }}
+            <div v-if="video.id">
+              <iframe :src="videoURL" frameborder="0"></iframe>
+              </div> -->
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
@@ -40,7 +44,7 @@
 <script>
   import { mapGetters, mapActions } from 'vuex'
   import ReviewList from '@/components/ReviewList.vue'
-
+  // import axios from 'axios'
 
   export default {
     name: 'MovieView.vue',
@@ -56,7 +60,7 @@
       ...mapGetters(['movie']),
       movieURL() {
       return 'https://image.tmdb.org/t/p/w500' + this.movie.poster_url
-    }
+      },
     },
     methods: {
       ...mapActions([
