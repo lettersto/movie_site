@@ -1,14 +1,23 @@
 <template>
   <div>
-      <ol>
-        <li v-for="movie in movieRank" :key="movie.id">
-          <router-link 
-          :to="{ name: 'movies', params: {moviePk: movie.id} }">
-          {{ movie.title }}
-          </router-link>
-          {{ movie.vote_average }}
-        </li>
-      </ol>  
+    <ol>
+      <li v-for="movie in movieRank" :key="movie.id">
+        <router-link 
+        :to="{ name: 'movies', params: {moviePk: movie.id} }">
+        {{ movie.title }}
+        </router-link>
+        {{ movie.vote_average }}
+      </li>
+    </ol>  
+    <ol>
+      <li v-for="article in articleRank" :key="article.pk">
+        <router-link 
+        :to="{ name: 'articleDetail', params: { articlePk: article.pk } }">
+          {{ article.title }}
+        </router-link>
+      </li>
+    </ol>
+
   <!-- <div class="d-flex">
     <ranking-chart-item class="flex-grow-1" />
     <ranking-chart-item class="flex-grow-1" />
@@ -28,16 +37,20 @@ import _ from 'lodash'
       // RankingChartItem
     },
     computed: {
-      ...mapGetters(['movies']),
+      ...mapGetters(['movies', 'articles']),
       movieRank(){
         return _.orderBy(this.movies, 'vote_average', 'desc').slice(0, 3)
+      },
+      articleRank() {
+        return _.orderBy(this.articles, ['like_count', 'view_count', 'comment_count'], ['desc', 'desc', 'desc']).slice(0, 3)
       }
     },
     methods: {
-      ...mapActions(['fetchMovies'])
+      ...mapActions(['fetchMovies', 'fetchArticles'])
     },
     created() {
       this.fetchMovies()
+      this.fetchArticles()
     },
   }
 </script>
