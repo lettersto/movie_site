@@ -9,7 +9,7 @@
         <small>
           <span class="material-icons">
             visibility
-          </span> 30
+          </span> {{ article.view_count }}
         </small> |
         <small>
           <span class="material-icons">

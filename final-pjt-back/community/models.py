@@ -31,6 +31,10 @@ class ArticleView(models.Model):
         related_name='article_views', 
         on_delete=models.CASCADE
     )
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE
+    )
     ip = models.CharField(max_length=40)
-    session = models.CharField(max_length=40)
     created_at = models.DateTimeField(auto_now_add=True)
+    # session = models.CharField(max_length=40)
