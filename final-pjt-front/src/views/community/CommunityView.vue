@@ -5,7 +5,27 @@
     <div class="d-grid gap-3">
       <div class="d-flex justify-content-end">
         <div class="d-flex" style="max-width: 25em;">
-          <input class="form-control me-2" type="search" placeholder="Search Article..." aria-label="Search">
+          <!-- SearchBar -->
+          <div>
+            <input 
+              class="form-control me-2" type="search" 
+              placeholder="Search Article..." aria-label="Search"
+              v-model="typedArticleName"
+              autocomplete="off"
+              @input="filterArticle"
+            >
+            <div class="article-searchbar-wrapper">
+              <ul 
+                v-if="filteredArticles.length !== 0 && typedArticleName"
+                class="article-search-box"
+              >
+                <article-searched-items 
+                  v-for="(article, idx) in filteredArticles.slice(0, 7)" 
+                  :key="idx" :article=article
+                />
+              </ul>
+            </div>
+          </div>
           <button class="btn btn-outline-success">Search</button>
         </div>
         <button class="btn btn-outline-success">
@@ -22,18 +42,32 @@
   import { mapActions, mapGetters } from 'vuex'
   import ArticleHottopic from '@/components/community/ArticleHottopic.vue'
   import ArticleList from '@/components/community/ArticleList.vue'
+  import ArticleSearchedItems from '@/components/community/ArticleSearchedItems.vue'
 
   export default {
     name: 'CommunityView',
     components: {
       ArticleHottopic,
-      ArticleList
+      ArticleList,
+      ArticleSearchedItems
+    },
+    data() {
+      return {
+        typedArticleName: '',
+        filteredArticles: []
+      }
     },
     computed: {
       ...mapGetters(['articles'])
     },
     methods: {
-      ...mapActions(['fetchArticles'])
+      ...mapActions(['fetchArticles']),
+      filterArticle() {
+        this.filteredArticles = [];
+        this.filteredArticles = this.articles.filter(article => {
+        return article.title.toLowerCase().startsWith(this.typedArticleName.toLowerCase());
+      });
+      },
     },
     created() {
       this.fetchArticles()
@@ -47,5 +81,20 @@
   h1 {
     font-family: 'Grape Nuts', cursive;
     font-size: 3em;
+  }
+  
+  .article-search-bar-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .article-search-box {
+    position: absolute;
+    padding: 10px;
+    border: 1px solid rgba(168, 194, 236, 0.566);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.826);
+    z-index: 10;
   }
 </style>
