@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <h1>Community</h1>
+  <div class="d-grid gap-5">
+    <h1 class="text-center mt-5">Community</h1>
 
-    <div class="d-flex justify-content-end">
-      <div class="d-flex" style="max-width: 25em;">
-        <input class="form-control me-2" type="search" placeholder="Search Article..." aria-label="Search">
-        <button class="btn btn-outline-success">Search</button>
+    <div class="d-grid gap-3">
+      <div class="d-flex justify-content-end">
+        <div class="d-flex" style="max-width: 25em;">
+          <input class="form-control me-2" type="search" placeholder="Search Article..." aria-label="Search">
+          <button class="btn btn-outline-success">Search</button>
+        </div>
+        <button class="btn btn-outline-success">
+          <router-link :to="{ name: 'articleNew'}">글쓰기</router-link>
+        </button>
       </div>
-      <button class="btn btn-outline-success">
-        <router-link :to="{ name: 'articleNew'}">글쓰기</router-link>
-      </button>
+      <article-hottopic />
+      <article-list :articles=articles />
     </div>
-    <article-hottopic />
-    <article-list :articles=articles />
   </div>
 </template>
 
@@ -39,6 +41,11 @@
   }
 </script>
 
-<style>
+<style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 
+  h1 {
+    font-family: 'Grape Nuts', cursive;
+    font-size: 3em;
+  }
 </style>

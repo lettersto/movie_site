@@ -39,6 +39,10 @@ def article_list_or_create(request):
 def article_detail_or_update_or_delete(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
 
+    # article = Article.objects.annotate(
+    #         view_count=Count('article_views', distinct=True)
+    #     ).get(pk=article_pk)
+
     def article_detail():
         serializer = ArticleSerializer(article)
         return Response(serializer.data)
