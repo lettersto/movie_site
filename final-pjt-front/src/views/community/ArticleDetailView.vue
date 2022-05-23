@@ -2,28 +2,36 @@
   <div>
     <!-- 게시글 -->
     <article>
-      <div class="d-flex align-items-center">
-        <h1>{{ article.title }}</h1>
-        <!-- <small v-show="isCorreted">(수정)</small> -->
+      <div class="d-flex justify-content-between align-items-center mt-5">
+        <div class="d-flex align-items-baseline">
+          <h1>{{ article.title }}</h1>
+          <p class="text-muted"> ({{ article.user.username }})</p>
+        </div>
+        <div class="d-flex flex-column justify-content-right">
+          <small class="text-end text-muted">조회수: {{ articleHits }}</small>
+          <small class="text-end text-muted" v-show="isCorreted">({{ updatedDate }} 수정)</small>
+        </div>
       </div>
+      <hr>
       <p>
         {{ article.content }}
       </p>
-      <!-- 수정, 삭제 버튼 -->
-      <div v-if="isAuthor">
-        <router-link :to="{ name: 'articleEdit', params: { articlePk } }">
-          <button>Edit</button>
-        </router-link>
-        |
-        <button @click="deleteArticle(articlePk)">Delete</button>
+      <div class="d-flex justify-content-between">
+        <!-- 좋아요 버튼 -->
+        <div>
+          <button @click="likeArticle(articlePk)">
+            <i v-show="inLikeArticleList" class="material-icons like">favorite</i>
+            <i v-show="!inLikeArticleList" class="material-icons no-like">heart_broken</i>
+          </button> {{ likeCount }}
+        </div>
+        <!-- 수정, 삭제 버튼 -->
+        <div v-if="isAuthor">
+          <router-link :to="{ name: 'articleEdit', params: { articlePk } }">
+            <button>Edit</button>
+          </router-link> |
+          <button @click="deleteArticle(articlePk)">Delete</button>
+        </div>
       </div>
-      <!-- 좋아요 버튼 -->
-      <!-- <div>
-        <button @click="likeArticle(articlePk)">
-          <i v-show="inLikeArticleList" class="material-icons like">favorite</i>
-          <i v-show="!inLikeArticleList" class="material-icons no-like">heart_broken</i>
-        </button> {{ likeCount }}
-      </div> -->
     </article>
     
     <hr />
@@ -48,35 +56,53 @@
     },
     computed: {
       ...mapGetters(['isAuthor', 'article', 'currentUser']),
+      // 좋아요 수
       likeCount() {
         return this.article.like_users?.length
       },
-      // inLikeArticleList() { // 미리 계산하고 와야할 거 같은데 임시로
-      //   let inLike = false;
-      //   this.article.user_like.forEach(user => {
-      //     if (user.pk === this.currentUser.pk) inLike = true;
-      //   });
-      //   return inLike;
-      // },
-      // isCorreted() {
-      //   if (this.article.created_at !== this.article.updated_at) return true;
-      //   else return false;
-      // }
+      // 좋아요 하트 토글
+      inLikeArticleList() { 
+        let inLike = false;
+        if (this.article.user_like === undefined || this.article.user_like.length === 0) {
+          return inLike;
+        }
+        this.article.user_like.forEach(user => {
+          if (user.pk === this.currentUser.pk) inLike = true;
+        });
+        return inLike;
+      },
+      // 수정 여부
+      isCorreted() {
+        if (this.article.created_at !== this.article.updated_at) return true;
+        else return false;
+      },
+      // 수정일
+      updatedDate() {
+        if (this.article.updated_at !== undefined) {
+          const index = this.article.updated_at.indexOf('T');
+          return this.article.updated_at.slice(0, index);
+        } else return '';
+      },
+      // 조회수
+      articleHits() {
+        let hitsCount = 0;
+        if (this.article.article_views === undefined || this.article.article_views.length === 0) {
+          return hitsCount;
+        }
+        hitsCount = this.article.article_views.length;
+        return hitsCount
+      },
     },
     methods: {
       ...mapActions([
-        'fetchArticle',
-        'likeArticle',
-        'deleteArticle',
-        'addArticleView',
-      ])
+        'fetchArticle','likeArticle',
+        'deleteArticle','addArticleView',
+      ]),
     },
     created() {
       this.fetchArticle(this.articlePk)
-    },
-    mounted() {
       this.addArticleView(this.articlePk)
-    }
+    },
   }
 
 </script>

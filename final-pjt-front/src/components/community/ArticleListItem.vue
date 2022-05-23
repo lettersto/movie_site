@@ -7,25 +7,24 @@
       <h5 class="mb-1">{{ article.title }}</h5>
       <div>
         <small>
-          <span class="material-icons">
+          <span class="material-icons article-icons">
             visibility
           </span> {{ article.view_count }}
         </small> |
         <small>
-          <span class="material-icons">
+          <span class="material-icons article-icons">
             favorite
           </span> {{ article.like_count }}
         </small> |
         <small>
-          <span class="material-icons">
+          <span class="material-icons article-icons">
             chat
           </span> {{ article.comment_count }}
         </small>
       </div>
     </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
     <div class="d-flex justify-content-between">
-      <small>작성자</small>
+      <small>{{ article.user.username }}</small>
       <small>{{ dateDiff }}</small>
     </div>
   </router-link>
@@ -74,6 +73,8 @@
   }
 </script>
 
-<style>
-
+<style scoped>
+  .article-icons {
+    font-size: 1.5em; 
+  }
 </style>
