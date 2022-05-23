@@ -35,4 +35,8 @@
     display: none;
   }
 
+  body {
+    margin-bottom: 5em;
+  }
+
 </style>
