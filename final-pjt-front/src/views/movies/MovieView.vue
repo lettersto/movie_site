@@ -30,7 +30,7 @@
     <hr>
 
     <!-- 댓글란 -->
-    <comment-list />
+    <review-list :reviews="movie.reviews"/>
     
   </div>
 
@@ -39,13 +39,13 @@
 
 <script>
   import { mapGetters, mapActions } from 'vuex'
-  import CommentList from '@/components/CommentList.vue'
+  import ReviewList from '@/components/ReviewList.vue'
 
 
   export default {
     name: 'MovieView.vue',
     components: {
-      CommentList
+      ReviewList
     },
     data() {
       return {
