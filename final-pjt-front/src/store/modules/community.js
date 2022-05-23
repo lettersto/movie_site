@@ -159,9 +159,9 @@ export default {
         method: 'post',
         headers: getters.authHeader
       })
-        .then(res => {
-          console.log(res.data)
-        })
+        // .then(res => {
+        //   console.log(res.data)
+        // })
         .catch(err => console.error(err.response))
     }
   },
