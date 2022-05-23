@@ -18,7 +18,8 @@ def article_list_or_create(request):
     def article_list():
         articles = Article.objects.annotate(
             comment_count=Count('comments', distinct=True),
-            like_count=Count('user_like', distinct=True)
+            like_count=Count('user_like', distinct=True),
+            view_count=Count('article_views', distinct=True)
         ).order_by('-pk')
         serializer = ArticleListSerializer(articles, many=True)
         return Response(serializer.data)
@@ -117,19 +118,15 @@ def comment_update_or_delete(request, article_pk, comment_pk):
 
 @api_view(['POST'])
 def record_view(request, article_pk):
-
     article = get_object_or_404(Article, pk=article_pk)
-
-    if not request.session.session_key:
-        request.session.create()
 
     if not ArticleView.objects.filter(
         article=article,
-        session=request.session.session_key):
+        user=request.user):
 
         view = ArticleView(article=article,
                         ip=request.META['REMOTE_ADDR'],
-                        session=request.session.session_key)
+                        user=request.user)
         view.save()
     
     view_count = ArticleView.objects.filter(article=article).count()
@@ -139,5 +136,27 @@ def record_view(request, article_pk):
     }
 
     return JsonResponse(context)
+
+    # article = get_object_or_404(Article, pk=article_pk)
+
+    # if not request.session.session_key:
+    #     request.session.create()
+
+    # if not ArticleView.objects.filter(
+    #     article=article,
+    #     session=request.session.session_key):
+
+    #     view = ArticleView(article=article,
+    #                     ip=request.META['REMOTE_ADDR'],
+    #                     session=request.session.session_key)
+    #     view.save()
+    
+    # view_count = ArticleView.objects.filter(article=article).count()
+    
+    # context = {
+    #     'viewCount': view_count
+    # }
+
+    # return JsonResponse(context)
 
     # return HttpResponse("%s" % ArticleView.objects.filter(article=article).count())
