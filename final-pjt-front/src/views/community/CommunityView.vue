@@ -26,14 +26,13 @@
               </ul>
             </div>
           </div>
-          <button class="btn btn-outline-success">Search</button>
         </div>
-        <button class="btn btn-outline-success">
-          <router-link :to="{ name: 'articleNew'}">글쓰기</router-link>
+        <button class="btn btn-outline-secondary ms-2">
+          <router-link :to="{ name: 'articleNew'}" class="article-new-btn">글쓰기</router-link>
         </button>
       </div>
-      <article-hottopic />
-      <article-list :articles=articles />
+      <article-hottopic :articles=articles :isStaff="true" />
+      <article-list :articles=articles :isStaff="false" />
     </div>
   </div>
 </template>
@@ -96,5 +95,10 @@
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.826);
     z-index: 10;
+  }
+
+  .article-new-btn {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
   }
 </style>
