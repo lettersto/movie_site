@@ -1,14 +1,13 @@
 <template>
   <form @submit.prevent="onSubmit" @keyup.enter="onSubmit">
 
-    <div>
-      <div>
+    <div class="comment-form-input">
+      <hr>
+      <div class="input-group">
         <textarea v-model="content" class="form-control" 
           rows="3" placeholder="write some comments...">
         </textarea>
-      </div>
-      <div>
-        <button class="btn btn-outline-secondary">등록</button> 
+        <button class="btn btn-outline-secondary">Comment</button> 
       </div>
     </div>
     
@@ -47,5 +46,9 @@
 <style scoped>
   textarea {
     resize: none;
+  }
+
+  .comment-form-input {
+    margin: 0 .4em;
   }
 </style>

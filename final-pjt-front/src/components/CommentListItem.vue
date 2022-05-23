@@ -115,7 +115,9 @@
   }
 
   .comment-container:hover {
-    transform: scale(1.05);
+    transform: scale(1);
+    padding: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
 
   .comment-card {
@@ -125,7 +127,7 @@
     border-radius: 0.5rem;
     line-height: 1.7em;
     text-align: justify;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    
   }
 
   .comment-footer {
