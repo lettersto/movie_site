@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="d-flex">
+    <div class="flex-grow-1">
+    <div>BEST RATING MOVIE</div>
     <ol>
       <li v-for="movie in movieRank" :key="movie.id">
         <router-link 
@@ -8,7 +10,13 @@
         </router-link>
         {{ movie.vote_average }}
       </li>
-    </ol>  
+    </ol>
+    </div>
+    <div class="flex-grow-1">
+      <div>NEW MOVIE</div>
+      </div>
+    <div class="flex-grow-1">
+    <div>HOT TOPIC</div>  
     <ol>
       <li v-for="article in articleRank" :key="article.pk">
         <router-link 
@@ -17,6 +25,7 @@
         </router-link>
       </li>
     </ol>
+    </div>
 
   <!-- <div class="d-flex">
     <ranking-chart-item class="flex-grow-1" />
