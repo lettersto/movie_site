@@ -1,44 +1,47 @@
 <template>
-  <router-link
-    :to="{ name: 'articleDetail', params: {articlePk: article.pk} }"
-    class="list-group-item list-group-item-action" aria-current="true"
-  >
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">{{ article.title }}</h5>
-      <div>
-        <small>
-          <span class="material-icons article-icons">
-            visibility
-          </span> {{ article.view_count }}
-        </small> |
-        <small>
-          <span class="material-icons article-icons">
-            favorite
-          </span> {{ article.like_count }}
-        </small> |
-        <small>
-          <span class="material-icons article-icons">
-            chat
-          </span> {{ article.comment_count }}
-        </small>
+  <div v-if="article.user.is_staff === isStaff">
+    <router-link
+      :to="{ name: 'articleDetail', params: {articlePk: article.pk} }"
+      class="list-group-item list-group-item-action" aria-current="true"
+    >
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ article.title }}</h5>
+        <div>
+          <small>
+            <span class="material-icons article-icons">
+              visibility
+            </span> {{ article.view_count }}
+          </small> |
+          <small>
+            <span class="material-icons article-icons">
+              favorite
+            </span> {{ article.like_count }}
+          </small> |
+          <small>
+            <span class="material-icons article-icons">
+              chat
+            </span> {{ article.comment_count }}
+          </small>
+        </div>
       </div>
-    </div>
-    <div class="d-flex justify-content-between">
-      <small>{{ article.user.username }}</small>
-      <small>{{ dateDiff }}</small>
-    </div>
-  </router-link>
+      <div class="d-flex justify-content-between">
+        <small>{{ article.user.username }}</small>
+        <small>{{ dateDiff }}</small>
+      </div>
+    </router-link>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'ArticleListItem',
     props: {
-      article: Object
+      article: Object,
+      isStaff: Boolean
     },
     data() {
       return {
-        dateDiff:'0초 전'
+        dateDiff:'0초 전',
       }
     },
     methods: {
