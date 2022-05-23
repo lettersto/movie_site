@@ -59,6 +59,7 @@ export default {
         headers: getters.authHeader,
       })
         .then(res => {
+          console.log(res.data)
           commit('SET_ARTICLE', res.data)
           router.push({
             name: 'articleDetail',
@@ -163,6 +164,6 @@ export default {
         //   console.log(res.data)
         // })
         .catch(err => console.error(err.response))
-    }
+    },
   },
 }

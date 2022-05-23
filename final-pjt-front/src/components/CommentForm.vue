@@ -1,21 +1,51 @@
 <template>
-  <div>
-    <label for="voteRange" class="form-label">Vote range</label>
-    <input type="range" class="form-range" min="0" max="5" step="0.5" id="voteRange">
-    <div class="mb-3">
-      <label for="CommentArea" class="form-label">Comment</label>
-      <textarea class="form-control" id="CommentArea" rows="3"></textarea>
-    </div>
+  <form @submit.prevent="onSubmit" @keyup.enter="onSubmit">
 
-  </div>
+    <div>
+      <div>
+        <textarea v-model="content" class="form-control" 
+          rows="3" placeholder="write some comments...">
+        </textarea>
+      </div>
+      <div>
+        <button class="btn btn-outline-secondary">등록</button> 
+      </div>
+    </div>
+    
+  </form>
 </template>
 
 <script>
-export default {
-  name: 'CommentForm',
-}
+
+  import { mapActions, mapGetters } from 'vuex'
+
+  export default {
+    name: 'CommentForm',
+    data() {
+      return {
+        content: ''
+      }
+    },
+    computed: {
+      ...mapGetters(['article'])
+    },
+    methods: {
+      ...mapActions(['createComment']),
+      onSubmit() {
+        console.log(this.article)
+        const comment = {
+          articlePk: this.article.pk,
+          content: this.content,
+        }
+        this.createComment(comment)
+        this.content = ''
+      }
+    }
+  }
 </script>
 
-<style>
-
+<style scoped>
+  textarea {
+    resize: none;
+  }
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div v-if="isArticle">
+  <div>
     <!-- 게시글 -->
     <article>
       <div class="d-flex justify-content-between align-items-center mt-5">
         <div class="d-flex align-items-baseline">
           <h1>{{ article.title }}</h1>
-          <p class="text-muted"> ({{ article.user.username }})</p>
+          <p class="text-muted" v-if="isArticle"> ({{ article.user.username }})</p>
         </div>
         <div class="d-flex flex-column justify-content-right">
           <small class="text-end text-muted">조회수: {{ articleHits }}</small>
@@ -87,10 +87,10 @@
       articleHits() {
         let hitsCount = 0;
         if (this.isArticle) {
-          return hitsCount;
+          hitsCount = this.article.article_views.length;
         }
-        hitsCount = this.article.article_views.length;
-        return hitsCount
+        return hitsCount;
+        // return hitsCount
         // let hitsCount = 0;
         // if (this.article.article_views === undefined || this.article.article_views.length === 0) {
         //   return hitsCount;

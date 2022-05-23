@@ -39,9 +39,6 @@ def article_list_or_create(request):
 def article_detail_or_update_or_delete(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
 
-    # article = Article.objects.annotate(
-    #         view_count=Count('article_views', distinct=True)
-    #     ).get(pk=article_pk)
 
     def article_detail():
         serializer = ArticleSerializer(article)
@@ -141,26 +138,5 @@ def record_view(request, article_pk):
 
     return JsonResponse(context)
 
-    # article = get_object_or_404(Article, pk=article_pk)
 
-    # if not request.session.session_key:
-    #     request.session.create()
-
-    # if not ArticleView.objects.filter(
-    #     article=article,
-    #     session=request.session.session_key):
-
-    #     view = ArticleView(article=article,
-    #                     ip=request.META['REMOTE_ADDR'],
-    #                     session=request.session.session_key)
-    #     view.save()
-    
-    # view_count = ArticleView.objects.filter(article=article).count()
-    
-    # context = {
-    #     'viewCount': view_count
-    # }
-
-    # return JsonResponse(context)
-
-    # return HttpResponse("%s" % ArticleView.objects.filter(article=article).count())
+   
