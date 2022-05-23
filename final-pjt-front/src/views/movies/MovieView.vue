@@ -8,24 +8,21 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{ movie.title }} <span class="badge bg-secondary">평점</span></h5>
+            <h5 class="card-title">{{ movie.title }} <span class="badge bg-secondary">{{ movie.vote_average }}</span></h5>
             <p class="card-text">개봉일: {{ movie.release_date }}</p>
             <div class="card-text">감독:
               <div v-for="director_list in movie.director" :key="director_list.id">
-                {{ director_list.name }}
+                {{ director_list.name.slice(1, director_list.name.length-1) }}
               </div>
             </div>
             <div class="card-text">배우: 
               <div v-for="actor_list in movie.actor" :key="actor_list.id">
-                {{ actor_list.name }}
+                {{ actor_list.name.slice(1, actor_list.name.length-1) }}
               </div>
             </div>
             <p class="card-text">{{ movie.overview }}
             </p>
-            <!-- {{ video }}
-            <div v-if="video.id">
-              <iframe :src="videoURL" frameborder="0"></iframe>
-              </div> -->
+            <!-- <youtube-list :title="movie.title + ''"/> -->
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
@@ -44,12 +41,14 @@
 <script>
   import { mapGetters, mapActions } from 'vuex'
   import ReviewList from '@/components/ReviewList.vue'
+  // import YoutubeList from '@/components/YoutubeList.vue'
   // import axios from 'axios'
 
   export default {
     name: 'MovieView.vue',
     components: {
-      ReviewList
+      ReviewList,
+      // YoutubeList,
     },
     data() {
       return {
