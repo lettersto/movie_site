@@ -2,7 +2,7 @@
   <div>
     <article-list-item
       v-for="article in articles" :key="article.pk"
-      :article=article
+      :article=article :isStaff=isStaff
     />
   </div>
 </template>
@@ -16,7 +16,8 @@
       ArticleListItem
     },
     props: {
-      articles: Array
+      articles: Array,
+      isStaff: Boolean
     }
   }
 </script>

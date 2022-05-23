@@ -1,18 +1,27 @@
 <template>
   <div>
-    <article-hottopic-item />
+    <article-hottopic-item 
+      v-for="article in articles" :key="article.pk"
+      :article=article :isStaff=isStaff />
   </div>
 </template>
 
 <script>
-import ArticleHottopicItem from './ArticleHottopicItem.vue'
+  import ArticleHottopicItem from './ArticleHottopicItem.vue'
 
   export default {
     name: 'ArticleHottopic',
-    components: { ArticleHottopicItem },
+    props: {
+      articles: Array,
+      isStaff: Boolean
+    },
+    components: { 
+      ArticleHottopicItem, 
+    },
   }
 </script>
 
-<style>
+<style scoped>
+
 
 </style>
