@@ -1,12 +1,29 @@
 <template>
   <div class="review-list">
-    <ul>
+    <!-- <ul class="list-group">
       <review-list-item 
         v-for="review in reviews" 
         :review="review" 
         :key="review.pk">
-      </review-list-item>        
-    </ul>
+      </review-list-item>
+    </ul> -->
+    <table class="table">
+     <thead>
+    <tr>
+      <th scope="col" class="text-center">작성자</th>
+      <th scope="col" class="text-center">콘텐츠</th>
+      <th scope="col" class="text-center">평점</th>
+      <th scope="col" class="text-center">수정 및 삭제</th>
+    </tr>
+  </thead>
+  <tbody>
+      <review-list-item 
+        v-for="review in reviews" 
+        :review="review" 
+        :key="review.pk">
+      </review-list-item>
+  </tbody>
+  </table>
 
     <review-form></review-form>
   </div>
