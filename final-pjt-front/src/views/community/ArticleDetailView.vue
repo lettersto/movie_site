@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isArticle">
     <!-- 게시글 -->
     <article>
       <div class="d-flex justify-content-between align-items-center mt-5">
@@ -55,7 +55,7 @@
       }
     },
     computed: {
-      ...mapGetters(['isAuthor', 'article', 'currentUser']),
+      ...mapGetters(['isAuthor', 'article', 'isArticle', 'currentUser']),
       // 좋아요 수
       likeCount() {
         return this.article.like_users?.length
@@ -78,7 +78,7 @@
       },
       // 수정일
       updatedDate() {
-        if (this.article.updated_at !== undefined) {
+        if (this.isArticle) {
           const index = this.article.updated_at.indexOf('T');
           return this.article.updated_at.slice(0, index);
         } else return '';
@@ -86,11 +86,17 @@
       // 조회수
       articleHits() {
         let hitsCount = 0;
-        if (this.article.article_views === undefined || this.article.article_views.length === 0) {
+        if (this.isArticle) {
           return hitsCount;
         }
         hitsCount = this.article.article_views.length;
         return hitsCount
+        // let hitsCount = 0;
+        // if (this.article.article_views === undefined || this.article.article_views.length === 0) {
+        //   return hitsCount;
+        // }
+        // hitsCount = this.article.article_views.length;
+        // return hitsCount
       },
     },
     methods: {
