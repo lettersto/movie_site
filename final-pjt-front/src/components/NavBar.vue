@@ -40,7 +40,26 @@
           <li class="nav-item">
           </li>
         </ul>
-        <search-bar type="search" aria-label="Search"/>
+        <div>
+            <input 
+              class="form-control me-2" type="search" 
+              placeholder="Search Movie..." aria-label="Search"
+              v-model="typedMovieName"
+              autocomplete="off"
+              @input="filterMovie"
+            >
+            <div class="movie-searchbar-wrapper">
+              <ul 
+                v-if="filteredMovies.length !== 0 && typedMovieName"
+                class="movie-search-box"
+              >
+                <search-bar 
+                  v-for="(movie, idx) in filteredMovies.slice(0, 7)" 
+                  :key="idx" :movie=movie
+                />
+                </ul>
+              </div>
+              </div>
       </div>
     </div>
   </nav>
@@ -56,12 +75,26 @@ export default {
   components: {
     SearchBar,
   },
+  data() {
+      return {
+        typedMovieName: '',
+        filteredMovies: []
+      }
+    },
   computed: {
-    ...mapGetters(['isLoggedIn', 'currentUser']),
+    ...mapGetters(['isLoggedIn', 'currentUser', 'movies']),
     username() {
       return this.currentUser.username ? this.currentUser.username : 'guest'
     }
   },
+  methods:{
+    filterMovie() {
+        this.filteredMovies = [];
+        this.filteredMovies = this.movies.filter(movie => {
+        return movie.title.toLowerCase().startsWith(this.typedMovieName.toLowerCase());
+      })
+      },
+  }
 
 }
 </script>
@@ -72,4 +105,18 @@ export default {
     font-family: 'Poppins', sans-serif;
   }
 
+  .movie-searchbar-wrapper {
+    position: relative;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .movie-search-box {
+    position: absolute;
+    padding: 10px;
+    border: 1px solid rgba(168, 194, 236, 0.566);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.826);
+    z-index: 10;
+  }
 </style>
