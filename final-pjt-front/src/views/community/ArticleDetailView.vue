@@ -4,6 +4,9 @@
     <div class="article-detail-wrapper">
       <div class="article-detail-container">
       <p v-if="isArticle" class="article-detail-user"> {{ article.user.username }}</p>
+      <button class="btn btn-default article-detail-close-btn" @click="onClose">
+        <i class="material-icons close-btn">close</i>
+      </button>
         <div class="article-detail-header">
           <div class="article-detail-title">
             <h2>{{ article.title }}</h2>
@@ -136,6 +139,10 @@
         'fetchArticle','likeArticle',
         'deleteArticle','addArticleView',
       ]),
+
+      onClose() {
+        this.$router.back()
+      }
     },
     created() {
       this.fetchArticle(this.articlePk)
@@ -218,10 +225,20 @@
     right: 1px;
   }
 
-  /* .article-detail-footer-like {
+  .article-detail-close-btn {
     position: absolute;
-    right: 1px;
-  } */
+    right: 2.1em;
+    top: 1.6em;
+  }
+
+  .close-btn {
+    font-size: 1.3em;
+    color: rgb(82, 82, 82)
+  }
+
+  .close-btn:hover {
+    color: rgb(29, 29, 29)
+  }
 
 
   .like {
