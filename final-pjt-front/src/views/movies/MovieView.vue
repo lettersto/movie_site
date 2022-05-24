@@ -27,7 +27,9 @@
               <p>{{ movie.overview.slice(0, 222) }}...</p>
             </li>
             <li>
-              <youtube-list :title="movie.title + ''"/>
+              {{ movie.title }}
+              <youtube-list :title="movie.title" />
+
               </li>
           </ul>
         </div>
