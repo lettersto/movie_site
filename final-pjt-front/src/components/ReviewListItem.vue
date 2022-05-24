@@ -2,10 +2,21 @@
   <div>
     <div class="review-container">
     <div class="review-card">
-      <router-link :to="{ name: 'profile', params: { username: review.user.username } }"
-        class="review-link">
-        <p class="review-author">{{ payload.voterate }} {{ review.user.username }}</p>
-      </router-link>
+      <div class="review-title">
+        <div>
+          <router-link :to="{ name: 'profile', params: { username: review.user.username } }"
+            class="review-link">
+            {{ stars[payload.vote_rate] }}
+            <p class="review-author"> {{ review.user.username }}</p>
+          </router-link>
+        </div>
+        <div class="review-date">
+          {{ createdDate }} 
+          <small v-if="review.created_at !== review.updated_at">
+            ({{ updatedDate }} 수정)
+          </small>
+        </div>
+      </div>
       <p class="review-content">{{ review.content }}</p>
       <div class="review-footer" v-if="currentUser.username === review.user.username">
         <div v-if="!isEditing">
@@ -17,6 +28,20 @@
           </button>
         </div>
         <div v-if="isEditing" class="review-edit-box">
+          <div class="star-widget-container">
+            <div class="star-widget">
+              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-5" value="5">
+              <label for="rate-5" class="material-icons">star</label>
+              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-4" value="4">
+              <label for="rate-4" class="material-icons">star</label>
+              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-3" value="3">
+              <label for="rate-3" class="material-icons">star</label>
+              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-2" value="2">
+              <label for="rate-2" class="material-icons">star</label>
+              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-1" value="1">
+              <label for="rate-1" class="material-icons">star</label>
+            </div>
+          </div>
           <input type="text" v-model="payload.content" class="review-input">
           <button @click="onUpdateClick" class="review-btn">
             <i class="material-icons">update</i>
@@ -26,21 +51,6 @@
           </button>
         </div>
       </div>
-    </div>
-    {{ review }}
-  </div>
-  <div class="star-widget-container">
-    <div class="star-widget">
-      <input type="radio" name="rate-5" id="rate" value="5">
-      <label for="rate-5" class="material-icons">star</label>
-      <input type="radio" name="rate-4" id="rate" value="4">
-      <label for="rate-4" class="material-icons">star</label>
-      <input type="radio" name="rate-3" id="rate" value="3">
-      <label for="rate-3" class="material-icons">star</label>
-      <input type="radio" name="rate-2" id="rate" value="2">
-      <label for="rate-2" class="material-icons">star</label>
-      <input type="radio" name="rate-1" id="rate" value="1">
-      <label for="rate-1" class="material-icons">star</label>
     </div>
   </div>
 
@@ -92,10 +102,23 @@ export default {
         content: this.review.content,
         vote_rate: this.review.vote_rate
       },
+      stars: [
+        '', '⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐', '⭐⭐⭐⭐⭐'
+      ]
     }
   },
   computed: {
     ...mapGetters(['currentUser']),
+
+    createdDate() {
+        const index = this.review.created_at.indexOf('T');
+        return this.review.created_at.slice(0, index);
+    },
+    
+    updatedDate() {
+      const index = this.review.updated_at.indexOf('T');
+      return this.review.updated_at.slice(0, index);
+    },
     
   },
   methods: {
@@ -105,9 +128,12 @@ export default {
     },
     onUpdateClick() {
       // console.log(this.payload)
+      const starWidgets = document.querySelector(".star-widget label")
       this.updateReview(this.payload)
       this.isEditing = false
-    }
+      starWidgets.style.color = "#444"
+    },
+
   },
 
 }
@@ -133,6 +159,11 @@ export default {
     transform: scale(1);
     padding: 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .review-title {
+    display: flex;
+    justify-content: space-between;
   }
 
   .review-card {
@@ -164,6 +195,7 @@ export default {
 
   .review-author {
     color: gray;
+    margin-left: 5px;
   }
 
 
@@ -191,10 +223,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    width: 120px;
     background-color: #ffffff;
-    padding: 20px 30px;
-    border: 1px solid #444;
+    padding:0;
+    /* border: 1px solid #444; */
   }
 
   .star-widget-container .star-widget input {
@@ -207,12 +239,31 @@ export default {
     padding: 1px;
     float: right;
     transition: all 0.2s ease;
+    cursor: pointer;
   }
 
   input:not(:checked) ~ label:hover, 
   input:not(:checked) ~ label:hover ~ label {
-    color: #fd4;
+    color: rgb(255, 212, 21);
   }
+
+  input:checked ~ label {
+    color: rgb(255, 212, 21);
+  }
+
+  input#rate-5:checked ~ label {
+    color: #fe7;
+    text-shadow: 0 0 20px rgb(250, 255, 193);
+  }
+
+  .review-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: gray;
+    margin-right: 5px;
+  }
+
 
   /* input:checked ~ label {
 
