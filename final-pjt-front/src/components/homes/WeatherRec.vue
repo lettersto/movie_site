@@ -9,7 +9,6 @@
 </template>
 
 <script>
-  // import _ from 'lodash'
   import WeatherRecItem from './WeatherRecItem.vue'
   import { mapGetters, mapActions } from 'vuex'
 
@@ -35,7 +34,8 @@
     methods:{
       ...mapActions(['fetchMovies']),
       onGeoSuccess(position) {
-        const API_KEY = "1862d1c4967555764bdeddf84816fa1d";
+        const API_KEY = process.env.VUE_APP_WEATHER_API_KEY;
+
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         // console.log(latitude, longitude);
@@ -88,7 +88,7 @@
           this.currentGenreId2 = 53
           this.currentGenreId3 = 16
         }
-        console.log(this.currentGenreId1)
+        // console.log(this.currentGenreId1)
       },
 
       selectMovieBasedOnGenre(genreId1, genreId2, genreId3) {

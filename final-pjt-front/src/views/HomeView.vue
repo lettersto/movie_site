@@ -2,7 +2,7 @@
   <div>
     <event-carossel/>
     <ranking-chart />
-    <weather-rec />
+    <weather-rec v-if="isMovie" />
     <time-rec />
   </div>
 </template>
@@ -12,6 +12,7 @@
   import RankingChart from '@/components/homes/RankingChart.vue'
   import WeatherRec from '@/components/homes/WeatherRec.vue'
   import TimeRec from '@/components/homes/TimeRec.vue'
+  import { mapGetters } from 'vuex'
 
 
   export default {
@@ -22,10 +23,8 @@
       WeatherRec,
       TimeRec,
     },
-    data() {
-      return {
-
-      }
+    computed: {
+      ...mapGetters(['isMovie'])
     }
 
   }

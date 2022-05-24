@@ -2,7 +2,7 @@
     <form @submit.prevent="onSubmit" class="review-form">
 
     <div class="mb-3">
-    <label for="ReviewArea" class="form-label">Reveiw</label>
+    <label for="ReviewArea" class="form-label">Review</label>
     <textarea class="form-control" id="ReviewArea" v-model="content" rows="3"></textarea>
     </div>
     <!-- <label for="review">review: </label>
