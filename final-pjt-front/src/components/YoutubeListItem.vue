@@ -1,7 +1,6 @@
+<!--
 <template>
-  <!-- <div v-if="$store.state.youtubeVideos"> -->
     <iframe :src="videoURL" frameborder="0"></iframe>
-    <!-- </div> -->
 </template>
 
 <script>
@@ -28,3 +27,4 @@ export default {
 
 <style>
 </style>
+-->
