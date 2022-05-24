@@ -13,11 +13,20 @@ class ProfileSerializer(serializers.ModelSerializer):
             fields = '__all__'
 
     class ReviewSerializer(serializers.ModelSerializer):
+
+        class MovieSerializer(serializers.ModelSerializer):
+
+            class Meta:
+                model = Movie
+                fields = ('pk', 'title', 'poster_url',)
+        
+        movie = MovieSerializer(read_only=True)
+
         
         class Meta:
             model = Review
-            fields = ('movie',)
-            read_only_fields = ('movie', )
+            fields = ('movie','vote_rate',)
+            read_only_fields = ('movie', 'vote_rate',)
 
     like_articles = ArticleSerializer(many=True)
     articles = ArticleSerializer(many=True)
@@ -25,4 +34,4 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ('pk', 'username', 'email', 'like_articles', 'articles', 'reviews', )
+        fields = ('pk', 'username', 'email', 'like_articles', 'articles', 'reviews',)
