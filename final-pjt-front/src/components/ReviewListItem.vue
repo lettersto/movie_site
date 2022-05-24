@@ -27,6 +27,21 @@
         </div>
       </div>
     </div>
+    {{ review }}
+  </div>
+  <div class="star-widget-container">
+    <div class="star-widget">
+      <input type="radio" name="rate-5" id="rate" value="5">
+      <label for="rate-5" class="material-icons">star</label>
+      <input type="radio" name="rate-4" id="rate" value="4">
+      <label for="rate-4" class="material-icons">star</label>
+      <input type="radio" name="rate-3" id="rate" value="3">
+      <label for="rate-3" class="material-icons">star</label>
+      <input type="radio" name="rate-2" id="rate" value="2">
+      <label for="rate-2" class="material-icons">star</label>
+      <input type="radio" name="rate-1" id="rate" value="1">
+      <label for="rate-1" class="material-icons">star</label>
+    </div>
   </div>
 
     <!-- <tr>
@@ -171,5 +186,37 @@ export default {
     border-radius: 5px;
     padding: 0 10px;
   }
+
+  .star-widget-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border: 1px solid #444;
+  }
+
+  .star-widget-container .star-widget input {
+    display: none;
+  }
+
+  .star-widget label {
+    font-size: 20px;
+    color: #444;
+    padding: 1px;
+    float: right;
+    transition: all 0.2s ease;
+  }
+
+  input:not(:checked) ~ label:hover, 
+  input:not(:checked) ~ label:hover ~ label {
+    color: #fd4;
+  }
+
+  /* input:checked ~ label {
+
+  } */
+
 
 </style>

@@ -63,7 +63,7 @@
     <hr> -->
     <!-- <youtube-list :title="movie.title + ''"/> -->
     <!-- 댓글란 -->
-    <review-list :reviews="movie.reviews"/>
+    <review-list :reviews="movie.reviews" class="mt-5"/>
     
   </div>
 
