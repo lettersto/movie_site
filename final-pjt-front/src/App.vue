@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-cloak>
-    <nav-bar />
-    <router-view/>
+    <nav-bar class="nav-bar" />
+    <router-view class="router-view" />
   </div>
 </template>
 
@@ -37,6 +37,14 @@
 
   body {
     margin-bottom: 5em;
+  }
+  
+  .nav-bar {
+    z-index: 1000
+  }
+
+  .router-view {
+    z-index: -1
   }
 
 </style>

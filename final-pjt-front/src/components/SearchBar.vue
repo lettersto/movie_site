@@ -1,63 +1,21 @@
 <template>
-  <div>
-    <div class="focus-out" @click="modal=false"></div>
-    <div class="serach-bar">
-      <div class="search-box">
-        <input 
-          type="text" id="movie-search-input" 
-          placeholder="영화 검색" 
-          autocomplete="off"
-          v-model="inputMovie"
-          @input="filterMovie"
-          @focus="modal=true"
-        />
-        <ul 
-          v-if="filteredMovies.length !== 0 && modal && inputMovie"
-          class="searched-list" 
-        >
-          <li 
-            v-for="(movie, idx) in filteredMovies.slice(0, 10)" 
-            :key="idx"
-            @click="setInputValue(movie)"
-            class="list-items"
-          >
-            {{ movie }}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <li @click="onClick(movie.id)" class="movie-searched-list-items">
+    {{ movie.title }}
+  </li>
 </template>
 
 <script>
 export default {
   name: 'SearchBar',
-  data() {
-    return {
-      inputMovie: "",
-      modal: false,
-      movies: [
-        "The Marked Heart", "The Flash", "Heartstopper", "Encanto", "Bravo, My Life",
-        "WandaVision", "Conversations with a Killer", "The King's Man", "Grey's Anatomy",
-        "The Ice Age Adventures of Buck Wild", "Eternals", "No Exit", "All of Us Are Dead",
-      ],
-      filteredMovies: [],
-    }
+
+  props: {
+      movie: Object
   },
-
   methods: {
-    filterMovie() {
-      this.filteredMovies = [];
-      this.filteredMovies = this.movies.filter(movie => {
-        return movie.toLowerCase().startsWith(this.inputMovie.toLowerCase());
-      });
-    },
-
-    setInputValue(movie) {
-      this.inputMovie = movie;
-      this.modal = false;
-    },
-  }
+      onClick(movieId) {
+        this.$router.push({ name: 'movies', params: { moviePk: movieId}})
+      }
+    }
 
 }
 </script>
@@ -113,6 +71,15 @@ export default {
   .list-items:hover {
     cursor: pointer;
     color: #000000;
+    font-weight: bold;
+  }
+
+  .movie-searched-list-items {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .movie-searched-list-items:hover {
     font-weight: bold;
   }
 
