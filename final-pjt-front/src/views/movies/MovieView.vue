@@ -26,6 +26,9 @@
             <li class="movie-detail-item">
               <p>{{ movie.overview.slice(0, 222) }}...</p>
             </li>
+            <li>
+              <youtube-list :title="movie.title + ''"/>
+              </li>
           </ul>
         </div>
       </div>
@@ -71,14 +74,14 @@
   import { mapGetters, mapActions } from 'vuex'
   import ReviewList from '@/components/ReviewList.vue'
   import _ from 'lodash'
-  // import YoutubeList from '@/components/YoutubeList.vue'
+  import YoutubeList from '@/components/YoutubeList.vue'
   // import axios from 'axios'
 
   export default {
     name: 'MovieView.vue',
     components: {
       ReviewList,
-      // YoutubeList,
+      YoutubeList,
     },
     data() {
       return {

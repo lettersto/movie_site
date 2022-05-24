@@ -1,4 +1,3 @@
-<!--
 <template>
   <ul class="youtube-list">
     <youtube-list-item
@@ -28,7 +27,7 @@ export default {
       'youtubeVideos'
     ])
   },
-    created() {
+  mounted() {
     this.$store.dispatch('searchYoutube', this.title)
   },
 }
@@ -37,4 +36,3 @@ export default {
 <style>
 
 </style>
--->
