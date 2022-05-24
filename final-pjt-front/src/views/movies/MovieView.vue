@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isMovieDetail">
     <div class="movie-detail-wrapper container">
       <div class="movie-detail-container row">
         <div class="movie-detail-poster col-12 col-lg-6">
@@ -70,6 +70,7 @@
 <script>
   import { mapGetters, mapActions } from 'vuex'
   import ReviewList from '@/components/ReviewList.vue'
+  import _ from 'lodash'
   // import YoutubeList from '@/components/YoutubeList.vue'
   // import axios from 'axios'
 
@@ -89,6 +90,9 @@
       movieURL() {
       return 'https://image.tmdb.org/t/p/w500' + this.movie.poster_url
       },
+      isMovieDetail() {
+        return !_.isEmpty(this.movie)
+      }
     },
     methods: {
       ...mapActions([

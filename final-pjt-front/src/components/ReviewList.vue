@@ -1,13 +1,11 @@
 <template>
   <div class="review-list">
-    <!-- <ul class="list-group">
-      <review-list-item 
-        v-for="review in reviews" 
-        :review="review" 
-        :key="review.pk">
-      </review-list-item>
-    </ul> -->
-    <table class="table">
+    <review-list-item 
+      v-for="review in reviews" 
+      :review="review" 
+      :key="review.pk">
+    </review-list-item>
+    <!-- <table class="table">
      <thead>
     <tr>
       <th scope="col" class="text-center">작성자</th>
@@ -23,7 +21,7 @@
         :key="review.pk">
       </review-list-item>
   </tbody>
-  </table>
+  </table> -->
 
     <review-form></review-form>
   </div>
@@ -32,7 +30,6 @@
 <script>
 import ReviewForm from '@/components/ReviewForm.vue'
 import ReviewListItem from '@/components/ReviewListItem.vue'
-// import { mapGetters, mapActions } from 'vuex'
 
 
 export default {
@@ -43,4 +40,5 @@ export default {
 </script>
 
 <style>
+
 </style>
