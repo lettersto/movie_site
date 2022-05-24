@@ -1,10 +1,13 @@
 <template>
+<div>
+{{ this.title }}
   <ul class="youtube-list">
     <youtube-list-item
       v-for="video in youtubeVideos"
       :key="video.id.videoId"
       :video="video"/>
   </ul>
+</div>
 </template>
 
 <script>
@@ -15,27 +18,33 @@ import axios from 'axios'
 
 export default {
   name: 'YoutubeList',
-  data(){
-    return{
-    youtubeVideos: [],
-    }
+  components: {
+    YoutubeListItem
   },
   props: {
     title: {
       type: String,
-      required: true
+      // required: true
     }
   },
-  components: {
-    YoutubeListItem
+  data(){
+    return{
+    youtubeVideos: []
+    }
   },
+  computed:{
+    movietitle(){
+      return this.title
+    },
+    },
+
   // computed: {
   //   ...mapGetters([
   //     'youtubeVideos'
   //   ])
   // },
   created() {
-    console.log(this.title)
+    console.log(this.movietitle)
     const API_KEY = process.env.VUE_APP_YOUTUBE_API_KEY
     const API_URL = 'https://www.googleapis.com/youtube/v3/search'
         axios({
@@ -44,7 +53,7 @@ export default {
           params: {
             key: API_KEY,
             part: 'snippet',
-            q: this.title,
+            q: this.movietitle,
             type: 'video',
             maxResults: 1,
           }
