@@ -1,60 +1,65 @@
 <template>
-  <tr>
-    <td class="text-center align-middle"><router-link :to="{ name: 'profile', params: { username: review.user.username } }">
-      {{ review.user.username }}
-    </router-link> </td>
-    <td class="text-center align-middle">
-      {{ payload.content }}
-    </td>
-    <td class="text-center align-middle">
-      {{ payload.voterate }}
-    </td>
-    <td class="text-center align-middle">
-      <span v-if="isEditing">
-      <input type="text" v-model="payload.content">
-      <button @click="onUpdate" class="btn btn-default">
-        <i class="material-icons like">update</i></button> |
-      <button @click="switchIsEditing" class="btn btn-default">
-        <i class="material-icons like">cancel</i>
-      </button>
-    </span>
-    <span v-if="currentUser.username === review.user.username && !isEditing">
-      <button @click="switchIsEditing" class="btn btn-default">
-        <i class="material-icons like">edit</i>
-        </button> |
-      <button @click="deleteReview(payload)" class="btn btn-default">
-        <i class="material-icons like">delete</i>
-      </button>
-    </span>
-    </td>
-  </tr>
-  
-  <!-- <li class="list-group-item">
-    <router-link :to="{ name: 'profile', params: { username: review.user.username } }">
-      {{ review.user.username }}
-    </router-link>: 
-    
-    <span v-if="!isEditing">{{ payload.content }}
-      <br/>
-       평점: {{ payload.voterate }} </span>
+  <div>
+    <div class="review-container">
+    <div class="review-card">
+      <router-link :to="{ name: 'profile', params: { username: review.user.username } }"
+        class="review-link">
+        <p class="review-author">{{ payload.voterate }} {{ review.user.username }}</p>
+      </router-link>
+      <p class="review-content">{{ review.content }}</p>
+      <div class="review-footer" v-if="currentUser.username === review.user.username">
+        <div v-if="!isEditing">
+          <button @click="switchIsEditing" class="review-btn">
+            <i class="material-icons">edit</i>
+          </button>
+          <button @click="deleteReview(payload)" class="review-btn">
+            <i class="material-icons">delete</i>
+          </button>
+        </div>
+        <div v-if="isEditing" class="review-edit-box">
+          <input type="text" v-model="payload.content" class="review-input">
+          <button @click="onUpdateClick" class="review-btn">
+            <i class="material-icons">update</i>
+          </button>
+          <button @click="switchIsEditing" class="review-btn">
+            <i class="material-icons">edit_off</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <span v-if="isEditing">
-      <input type="text" v-model="payload.content">
-      <button @click="onUpdate" class="btn btn-default">
-        <i class="material-icons like">update</i></button> |
-      <button @click="switchIsEditing" class="btn btn-default">
-        <i class="material-icons like">cancel</i>
-      </button>
-    </span>
-    <span v-if="currentUser.username === review.user.username && !isEditing">
-      <button @click="switchIsEditing" class="btn btn-default">
-        <i class="material-icons like">edit</i>
-        </button> |
-      <button @click="deleteReview(payload)" class="btn btn-default">
-        <i class="material-icons like">delete</i>
-      </button>
-    </span>
-  </li> -->
+    <!-- <tr>
+      <td class="text-center align-middle"><router-link :to="{ name: 'profile', params: { username: review.user.username } }">
+        {{ review.user.username }}
+      </router-link> </td>
+      <td class="text-center align-middle">
+        {{ payload.content }}
+      </td>
+      <td class="text-center align-middle">
+        {{ payload.voterate }}
+      </td>
+      <td class="text-center align-middle">
+        <span v-if="isEditing">
+        <input type="text" v-model="payload.content">
+        <button @click="onUpdate" class="btn btn-default">
+          <i class="material-icons like">update</i></button> |
+        <button @click="switchIsEditing" class="btn btn-default">
+          <i class="material-icons like">cancel</i>
+        </button>
+      </span>
+      <span v-if="currentUser.username === review.user.username && !isEditing">
+        <button @click="switchIsEditing" class="btn btn-default">
+          <i class="material-icons like">edit</i>
+          </button> |
+        <button @click="deleteReview(payload)" class="btn btn-default">
+          <i class="material-icons like">delete</i>
+        </button>
+      </span>
+      </td>
+    </tr> -->
+  </div>
+  
 </template>
 
 <script>
@@ -70,7 +75,7 @@ export default {
         moviePk: this.review.movie,
         reviewPk: this.review.pk,
         content: this.review.content,
-        voterate: this.review.vote_rate
+        vote_rate: this.review.vote_rate
       },
     }
   },
@@ -83,7 +88,8 @@ export default {
     switchIsEditing() {
       this.isEditing = !this.isEditing
     },
-    onUpdate() {
+    onUpdateClick() {
+      // console.log(this.payload)
       this.updateReview(this.payload)
       this.isEditing = false
     }
@@ -93,4 +99,77 @@ export default {
 </script>
 
 <style>
+  *, 
+  *::before, 
+  *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .review-container {
+    position: relative;
+    padding: 0 5px;
+    margin-bottom: 1em;
+    transition: .3s;
+  }
+
+  .review-container:hover {
+    transform: scale(1);
+    padding: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .review-card {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    line-height: 1.7em;
+    text-align: justify;
+    
+  }
+
+  .review-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .review-btn {
+    background: none;
+    border: none;
+    padding: 0 5px;
+    margin-top: 4px;
+  }
+
+  .review-link {
+    text-decoration: none;
+  }
+
+  .review-author {
+    color: gray;
+  }
+
+
+  .review-author:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .review-edit-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .review-input {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
 </style>
