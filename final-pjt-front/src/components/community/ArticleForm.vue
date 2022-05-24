@@ -19,19 +19,6 @@
       </button>
     </div>
   </form>
-  <!-- <form @submit.prevent="onSubmit">
-    <div>
-      <label for="title">title: </label>
-      <input v-model="newArticle.title" type="text" id="title" />
-    </div>
-    <div>
-      <label for="content">contnet: </label>
-      <textarea v-model="newArticle.content" type="text" id="content"></textarea>
-    </div>
-    <div>
-      <button>{{ action }}</button>
-    </div>
-  </form> -->
 </template>
 
 <script>
