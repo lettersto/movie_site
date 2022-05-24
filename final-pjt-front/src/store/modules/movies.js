@@ -8,19 +8,19 @@ export default {
   state: {
     movies: [],
     movie: {},
-    youtubeVideos: [],
+    // youtubeVideos: [],
   },
   getters: {
     movies: state => state.movies,
     movie: state => state.movie,
-    youtubeVideos: state => state.youtubeVideos,
+    // youtubeVideos: state => state.youtubeVideos,
     isMovie: state => !_.isEmpty(state.movies),
     },
   mutations: {
     SET_MOVIES: (state, movies) => state.movies = movies,
     SET_MOVIE: (state, movie) => state.movie = movie,
     SET_MOVIE_REVIEWS: (state, reviews) => (state.movie.reviews = reviews),
-    SEARCH_VIDEOS: (state, youtubeVideos) => (state.youtubeVideos = youtubeVideos),
+    // SEARCH_VIDEOS: (state, youtubeVideos) => (state.youtubeVideos = youtubeVideos),
   },
   actions: {
     fetchMovies({ commit, getters }) {
@@ -91,24 +91,24 @@ export default {
             .catch(err => console.error(err.response))
         }
       },
-    searchYoutube({ commit }, searchText) {
-        const API_KEY = process.env.VUE_APP_YOUTUBE_API_KEY
-        const API_URL = 'https://www.googleapis.com/youtube/v3/search'
-        axios({
-          method: 'get',
-          url: API_URL,
-          params: {
-            key: API_KEY,
-            part: 'snippet',
-            q: searchText,
-            type: 'video',
-            maxResults: 1,
-          }
-        })
-        .then(response => {
-          // console.log(response.data.items)
-          commit('SEARCH_VIDEOS', response.data.items)
-        })
-      },
+    // searchYoutube({ commit }, searchText) {
+    //     const API_KEY = process.env.VUE_APP_YOUTUBE_API_KEY
+    //     const API_URL = 'https://www.googleapis.com/youtube/v3/search'
+    //     axios({
+    //       method: 'get',
+    //       url: API_URL,
+    //       params: {
+    //         key: API_KEY,
+    //         part: 'snippet',
+    //         q: searchText,
+    //         type: 'video',
+    //         maxResults: 3,
+    //       }
+    //     })
+    //     .then(response => {
+    //       console.log(response.data.items)
+    //       commit('SEARCH_VIDEOS', response.data.items)
+    //     })
+    //   },
   },
 }
