@@ -17,7 +17,7 @@ export default {
     ...mapGetters(['youtubeVideos']),
     videoURL: function () {
       const { videoId } = this.video.id
-      console.log(videoId)
+      // console.log(videoId)
       return `https://www.youtube.com/embed/${videoId}`
     },
   }

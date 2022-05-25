@@ -107,7 +107,7 @@ export default {
           }
         })
         .then(response => {
-          console.log(response.data.items)
+          // console.log(response.data.items)
           commit('SEARCH_VIDEOS', response.data.items)
         })
       },

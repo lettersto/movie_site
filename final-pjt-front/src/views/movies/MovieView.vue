@@ -3,7 +3,11 @@
     <div class="movie-detail-wrapper container">
       <div class="movie-detail-container row">
         <div class="movie-detail-poster col-12 col-lg-6">
-          <img :src="movieURL" alt="영화 포스터">
+          
+        <img :src="movieURL" alt="영화 포스터" id="show-modal" @click="showModal = true">
+     <modal-view :movieId="movie.id" v-if="showModal" @close="showModal = false">  
+     </modal-view>
+          <!-- <img :src="movieURL" alt="영화 포스터"> -->
         </div>
         <div class="movie-detail-description col-12 col-lg-6">
           <ul class="movie-detail-list">
@@ -26,11 +30,9 @@
             <li class="movie-detail-item">
               <p>{{ movie.overview.slice(0, 222) }}...</p>
             </li>
-            <li>
-              {{ isMovieDetail }}
-              {{ movie.title }}
+            <!-- <li>
               <youtube-list v-if="isTitle" :title="movie.title" />
-              </li>
+              </li> -->
           </ul>
         </div>
       </div>
@@ -46,18 +48,20 @@
   import { mapGetters, mapActions } from 'vuex'
   import ReviewList from '@/components/ReviewList.vue'
   import _ from 'lodash'
-  import YoutubeList from '@/components/YoutubeList.vue'
-  // import axios from 'axios'
+  // import YoutubeList from '@/components/YoutubeList.vue'
+  import ModalView from '@/components/ModalView.vue'
 
   export default {
     name: 'MovieView.vue',
     components: {
       ReviewList,
-      YoutubeList,
+      // YoutubeList,
+      ModalView,
     },
     data() {
       return {
         moviePk: this.$route.params.moviePk,
+        showModal: false,
       }
     },
     computed: {
@@ -73,7 +77,7 @@
     methods: {
       ...mapActions([
         'fetchMovie',
-      ])
+      ]),
     },
     created() {
       this.$store.commit('SET_MOVIE', null)
@@ -82,7 +86,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .movie-detail-wrapper {
     margin: 0 auto;
     width: 90%;
