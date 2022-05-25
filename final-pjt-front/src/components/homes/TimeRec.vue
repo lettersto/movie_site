@@ -86,9 +86,18 @@ export default {
 }
 </script>
 
-<style>
-img {
-  width: 100%;
-  height: 500px;
+<style scoped>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* { 
+font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+h2 {
+  font-family: 'Pretendard', cursive;
+  font-size: 3em;
+  color: #000000;
+  /* text-shadow: 5px 5px #bfcee0; */
+  margin: 0;
 }
 </style>
