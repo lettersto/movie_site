@@ -2,7 +2,7 @@
   <div>
     <event-carossel/>
     <ranking-chart />
-    <!-- <weather-rec v-if="isMovie" /> -->
+    <weather-rec v-if="isMovie" class="row d-flex justify-content-center weather-box" />
     <!-- <time-rec /> -->
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
   import EventCarossel from '@/components/homes/EventCarossel.vue'
   import RankingChart from '@/components/homes/RankingChart.vue'
-  // import WeatherRec from '@/components/homes/WeatherRec.vue'
+  import WeatherRec from '@/components/homes/WeatherRec.vue'
   // import TimeRec from '@/components/homes/TimeRec.vue'
   import { mapGetters } from 'vuex'
 
@@ -20,7 +20,7 @@
     components: {
       EventCarossel,
       RankingChart,
-      // WeatherRec,
+      WeatherRec,
       // TimeRec,
     },
     computed: {
@@ -32,5 +32,12 @@
 
 <style scoped>
 
+ .weather-box {
+  background-color: #ffffff;
+  padding: 2em 8px;
+  border: 1px solid rgba(84, 84, 84, 0.1);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 
+ }
 </style>
