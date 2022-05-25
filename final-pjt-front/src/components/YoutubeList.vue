@@ -1,8 +1,7 @@
-<!--
 <template>
 <div>
-{{ this.title }}
-{{ youtubeVideos }}
+<!-- {{ this.title }} -->
+<!-- {{ youtubeVideos }} -->
   <ul class="youtube-list">
     <youtube-list-item
       v-for="video in youtubeVideos"
@@ -15,8 +14,8 @@
 <script>
 import YoutubeListItem from '@/components/YoutubeListItem.vue'
 // import axios from 'axios'
-
-import { mapGetters } from 'vuex'
+import _ from 'lodash'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'YoutubeList',
@@ -26,15 +25,27 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     }
   },
   computed:{
     ...mapGetters(['youtubeVideos']),
+    isMovietitle() {
+        return !_.isEmpty(this.title)
+      },
+  
   },
-  updated(){
-    this.$store.dispatch('searchYoutube')
-  }
+  methods: {
+      ...mapActions([
+        'searchYoutube',
+        
+      ]),
+  },
+  created(){
+    console.log(this.title)
+    this.searchYoutube(this.title)
+  },
+  
   
 }
 </script>
@@ -42,4 +53,3 @@ export default {
 <style>
 
 </style>
--->

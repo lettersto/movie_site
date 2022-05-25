@@ -1,4 +1,3 @@
-<!--
 <template>
     <iframe :src="videoURL" frameborder="0"></iframe>
 </template>
@@ -27,4 +26,3 @@ export default {
 
 <style>
 </style>
--->

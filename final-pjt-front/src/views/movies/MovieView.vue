@@ -26,11 +26,11 @@
             <li class="movie-detail-item">
               <p>{{ movie.overview.slice(0, 222) }}...</p>
             </li>
-            <!-- <li>
+            <li>
+              {{ isMovieDetail }}
               {{ movie.title }}
-              <youtube-list :title="movie.title" />
-
-              </li> -->
+              <youtube-list v-if="isTitle" :title="movie.title" />
+              </li>
           </ul>
         </div>
       </div>
@@ -46,14 +46,14 @@
   import { mapGetters, mapActions } from 'vuex'
   import ReviewList from '@/components/ReviewList.vue'
   import _ from 'lodash'
-  // import YoutubeList from '@/components/YoutubeList.vue'
+  import YoutubeList from '@/components/YoutubeList.vue'
   // import axios from 'axios'
 
   export default {
     name: 'MovieView.vue',
     components: {
       ReviewList,
-      // YoutubeList,
+      YoutubeList,
     },
     data() {
       return {
@@ -61,13 +61,14 @@
       }
     },
     computed: {
-      ...mapGetters(['movie']),
+      ...mapGetters(['movie', 'isTitle']),
       movieURL() {
       return 'https://image.tmdb.org/t/p/w500' + this.movie.poster_url
       },
       isMovieDetail() {
         return !_.isEmpty(this.movie)
-      }
+      },
+
     },
     methods: {
       ...mapActions([
@@ -75,6 +76,7 @@
       ])
     },
     created() {
+      this.$store.commit('SET_MOVIE', null)
       this.fetchMovie(this.moviePk)
     },
   }
