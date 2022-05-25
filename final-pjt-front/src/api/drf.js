@@ -40,6 +40,7 @@ export default {
     articleSearch: articleTitle => HOST + COMMUNITY + `${articleTitle}/`,
     announce: () => HOST + COMMUNITY + 'announce/',
     hotTopic: () => HOST + COMMUNITY + 'hotTopic/',
-    views: articlePk => HOST + COMMUNITY + `${articlePk}/` + 'views/'
+    views: articlePk => HOST + COMMUNITY + `${articlePk}/` + 'views/',
+    // articlePage: pageNum => HOST + COMMUNITY + 'articlelist/' + '?page=' + `${pageNum}`
   }
 }

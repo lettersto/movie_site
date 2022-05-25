@@ -7,11 +7,13 @@ import _ from 'lodash'
 export default {
   state: {
     articles: [],
+    // articles2: [],
     article: {},
   },
 
   getters: {
     articles: state => state.articles,
+    // articles2: state => state.articles2,
     article: state => state.article,
     isAuthor: (state, getters) => {
       return state.article.user?.username === getters.currentUser.username
@@ -21,6 +23,7 @@ export default {
 
   mutations: {
     SET_ARTICLES: (state, articles) => state.articles = articles,
+    // SET_ARTICLES2: (state, articles2) => state.articles2 = articles2,
     SET_ARTICLE: (state, article) => state.article = article,
     SET_ARTICLE_COMMENTS: (state, comments) => (state.article.comments = comments),
   },
@@ -35,6 +38,22 @@ export default {
         .then(res => commit('SET_ARTICLES', res.data))
         .catch(err => console.error(err.response))
     },
+
+    // paginator
+    // async fetchArticlePage({ commit, getters }, pageNum) {
+    //   await axios({
+    //     url:drf.community.articlePage(pageNum),
+    //     method: 'get',
+    //     headers: getters.authHeader,
+    //   })
+    //     .then(res => {
+    //       commit('SET_ARTICLES2', [])
+    //       console.log(res.data)
+    //       console.log(drf.community.articlePage(pageNum))
+    //       commit('SET_ARTICLES2', res.data)
+    //     })
+    //     .catch(err => console.error(err))
+    // },
 
     fetchArticle({ commit, getters }, articlePk) {
       axios({
