@@ -1,10 +1,10 @@
 <template>
-  <div class="d-flex" >
+  <div class="d-flex my-3" >
+    <h3 class="weather-title">{{weatherRecSentence}}</h3>
     <weather-rec-item 
       v-for="movie in seletedWeatherMovie" :key="movie.id"
       :movie=movie
     />
-    <hr>
   </div>
 </template>
 
@@ -23,7 +23,8 @@
         currentGenreId1: 10749,
         currentGenreId2: 12,
         currentGenreId3: 28,
-        seletedWeatherMovie: []
+        seletedWeatherMovie: [],
+        weatherRecSentence: ""
       }
     },
 
@@ -59,34 +60,42 @@
           this.currentGenreId1 = 10749
           this.currentGenreId2 = 12
           this.currentGenreId3 = 28
+          this.weatherRecSentence = "☀️날씨가 맑아 기분 좋은 오늘의 영화"
         } else if (weather >= 801 && weather < 805) {
           this.currentGenreId1 = 10752
           this.currentGenreId2 = 10751
           this.currentGenreId3 = 10770
+          this.weatherRecSentence = "☁️구름 껴 꿀꿀한 오늘의 영화"
         } else if (weather >= 700 && weather < 800) {
           this.currentGenreId1 = 9648
           this.currentGenreId2 = 99
           this.currentGenreId3 = 878
+          this.weatherRecSentence = "🌪️흐린 날 스릴넘치는 영화"
         } else if (weather >= 600 && weather < 700) {
           this.currentGenreId1 = 10751
           this.currentGenreId2 = 10749
           this.currentGenreId3 = 18
+          this.weatherRecSentence = "☃️눈오는 날 크리스마스를 기다리는 영화"
         } else if (weather >= 500 && weather < 600) {
           this.currentGenreId1 = 36
           this.currentGenreId2 = 10752
           this.currentGenreId3 = 80
+          this.weatherRecSentence = "☔비오는 날 추적추적한 영화"
         } else if (weather >= 300 && weather < 400) {
           this.currentGenreId1 = 878
           this.currentGenreId2 = 14
           this.currentGenreId3 = 12
+          this.weatherRecSentence = "🌂미묘한 날씨엔 미묘한 영화"
         } else if (weather >= 200 && weather < 300) {
           this.currentGenreId1 = 27
           this.currentGenreId2 = 37
           this.currentGenreId3 = 53
+          this.weatherRecSentence = "⚡번개치는 날씨엔 번쩍번쩍한 영화"
         } else {
           this.currentGenreId1 = 35
           this.currentGenreId2 = 53
           this.currentGenreId3 = 16
+          this.weatherRecSentence = "🎬 아무 이유 없이 보고싶은 영화"
         }
         // console.log(this.currentGenreId1)
       },
@@ -112,6 +121,14 @@
 
 </script>
 
-<style>
+<style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
+
+ .weather-title {
+   font-family: 'Nanum Pen Script', cursive;
+   font-weight: bold;
+   padding-bottom: 5px;
+   margin-left: 23px;
+ }
 </style>
