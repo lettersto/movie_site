@@ -1,4 +1,5 @@
 <template>
+
   <div class="d-grid gap-5">
     <h1 class="text-center mt-5">Community</h1>
 
@@ -35,6 +36,7 @@
       <article-list :articles=articles :isStaff="false" />
     </div>
   </div>
+
 </template>
 
 <script>
@@ -53,7 +55,7 @@
     data() {
       return {
         typedArticleName: '',
-        filteredArticles: []
+        filteredArticles: [],
       }
     },
     computed: {
@@ -61,16 +63,20 @@
     },
     methods: {
       ...mapActions(['fetchArticles']),
+
       filterArticle() {
         this.filteredArticles = [];
         this.filteredArticles = this.articles.filter(article => {
-        return article.title.toLowerCase().startsWith(this.typedArticleName.toLowerCase());
-      });
+          return article.title.toLowerCase().startsWith(this.typedArticleName.toLowerCase());
+        });
       },
+
     },
+
     created() {
       this.fetchArticles()
     },
+
   }
 </script>
 
