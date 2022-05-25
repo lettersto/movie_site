@@ -10,11 +10,7 @@
         <div class="article-detail-header">
           <div class="article-detail-title">
             <h2>{{ article.title }}</h2>
-            <small class="article-detail-author">
-             <!-- <span class="material-icons">
-                 person
-              </span> -->
-            </small>
+            <small class="article-detail-author"></small>
           </div>
           <div class="article-detail-title-info">
             <small>조회수: {{ articleHits }}</small>
@@ -44,39 +40,6 @@
     </div>
 
     <br />
-
-    <!-- <article>
-      <div class="d-flex justify-content-between align-items-center mt-5">
-        <div class="d-flex align-items-baseline">
-          <h1>{{ article.title }}</h1>
-          <p class="text-muted" v-if="isArticle"> ({{ article.user.username }})</p>
-        </div>
-        <div class="d-flex flex-column justify-content-right">
-          <small class="text-end text-muted">조회수: {{ articleHits }}</small>
-          <small class="text-end text-muted" v-show="isCorreted">({{ updatedDate }} 수정)</small>
-        </div>
-      </div>
-      <hr>
-      <p class="article-detail-content">
-        {{ article.content }}
-      </p>
-      <div class="d-flex justify-content-between">
-        <div>
-          <button @click="likeArticle(articlePk)">
-            <i v-show="inLikeArticleList" class="material-icons like">favorite</i>
-            <i v-show="!inLikeArticleList" class="material-icons no-like">heart_broken</i>
-          </button> {{ likeCount }}
-        </div>
-        <div v-if="isAuthor">
-          <router-link :to="{ name: 'articleEdit', params: { articlePk } }">
-            <button>Edit</button>
-          </router-link> |
-          <button @click="deleteArticle(articlePk)">Delete</button>
-        </div>
-      </div>
-    </article> -->
-    
-    <!-- <hr /> -->
     
     <!-- Comment section -->
     <comment-list :comments="article.comments"></comment-list>
@@ -141,8 +104,8 @@
       ]),
 
       onClose() {
-        this.$router.back()
-      }
+        this.$router.push({name: 'community'})
+      },
     },
     created() {
       this.fetchArticle(this.articlePk)

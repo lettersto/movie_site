@@ -1,6 +1,5 @@
 <template>
   <div class="page-content page-container" id="page-content">
-    <!-- {{likeMovies}} -->
     <div class="padding">
       <div class="row container d-flex justify-content-center">
         <div class="card user-card-full">
@@ -10,10 +9,11 @@
                 <div class="row">
                   <div class="poster-box">
                     <p class="m-b-10 f-w-600" v-if="isLikeMovies">좋아하는 영화</p>
-                    <div class="posters">
-                      <div v-for="movie in likeMovies" :key="movie.movie.pk">
-                        <!-- {{ movie.movie.poster_url }} -->
-                        <img :src="'https://image.tmdb.org/t/p/w500' + movie.movie.poster_url" alt="">
+                    <div class="posters row">
+                      <div class="col-12 col-lg-4" v-for="movie in likeMovies" :key="movie.movie.pk">
+                        <router-link :to="{ name: 'movies' , params:{ moviePk: movie.movie.pk }}">
+                          <img :src="'https://image.tmdb.org/t/p/w500' + movie.movie.poster_url" alt="">
+                        </router-link>
                       </div>
                     </div>
                   </div>
@@ -22,26 +22,21 @@
               <div class="row">
                 <div class="col-sm-6">
                   <p class="m-b-10 f-w-600">작성한 글</p>
-                  <div v-for="article in profile.articles" :key="article.id">
-                    <router-link :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
-                      <h6 class="text-muted f-w-400">{{ article.title }}</h6>
+                  <div v-for="article in wroteArticles" :key="article.id">
+                    <router-link class="link-text" :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
+                      <h6 class="text-muted f-w-400 link-text">{{ article.title }}</h6>
                     </router-link>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <p class="m-b-10 f-w-600">좋아요 누른 게시글</p>
-                    <div v-for="article in profile.like_articles" :key="article.id">
-                      <router-link :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
+                    <div v-for="article in likeArticles" :key="article.id">
+                      <router-link class="link-text" :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
                         <h6 class="text-muted f-w-400">{{ article.title }}</h6>
                       </router-link>
                     </div>
                 </div>
               </div>
-              <ul class="social-link list-unstyled m-t-40 m-b-10">
-                  <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i class="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
-                  <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i class="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
-                  <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i class="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
-              </ul>
             </div>
           </div>
         </div>
@@ -114,11 +109,7 @@
 
   export default {
     name: 'ProfileView',
-    data() {
-      return {
-        // likeMovies: []
-      }
-    },
+
     computed: {
       ...mapGetters(['profile', 'currentUser']),
       sameUser() {
@@ -130,21 +121,28 @@
       },
 
       likeMovies() {
-        return _.orderBy(this.profile.reviews, ['vote_rate'], ['desc']).slice(0, 3)
+        return _.orderBy(this.profile.reviews, ['vote_rate', 'release_date'], ['desc', 'desc']).slice(0, 3);
+      },
+
+      likeArticles() {
+        if (this.isLikeMovies) {
+          return this.profile.like_articles.slice(0, 5);
+        } return []
+      },
+
+      wroteArticles() {
+        if (this.isLikeMovies) {
+          return this.profile.articles.slice(0, 5);
+        } return []
       }
     },
     methods: {
       ...mapActions(['fetchProfile']),
-      // fetchLikeMovies() {
-      //   const reviews = this.profile.reviews;
-      //   console.log(this.profile.reviews)
-      //   this.likeMovies = _.orderBy(reviews, ['vote_rate'], ['desc']).slice(0, 3)
-      // }
+
     },
     created() {
       const payload = { username: this.$route.params.username }
       this.fetchProfile(payload)
-      // this.fetchLikeMovies()
     }
 
   }
@@ -152,139 +150,135 @@
 
 <style scoped>
   body {
-      background-color: #f9f9fa
+    background-color: #f9f9fa
   }
 
   .padding {
-      padding: 3rem !important
+    padding: 3rem !important
   }
 
   .user-card-full {
-      overflow: hidden;
+    overflow: hidden;
   }
 
   .card {
-      border-radius: 5px;
-      -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
-      box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
-      border: none;
-      margin-bottom: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+    border: none;
+    margin-bottom: 30px;
   }
 
   .m-r-0 {
-      margin-right: 0px;
+    margin-right: 0px;
   }
 
   .m-l-0 {
-      margin-left: 0px;
+    margin-left: 0px;
   }
 
   .user-card-full .user-profile {
-      border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
   }
 
   .bg-c-lite-green {
-          background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
-      background: linear-gradient(to right, #ee5a6f, #f29263);
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263);
   }
 
   .user-profile {
-      padding: 20px 0;
+    padding: 20px 0;
   }
 
   .card-block {
-      padding: 1.25rem;
+    padding: 1.25rem;
   }
 
   .m-b-25 {
-      margin-bottom: 25px;
+    margin-bottom: 25px;
   }
 
   .img-radius {
-      border-radius: 5px;
+    border-radius: 5px;
   }
 
 
   
   h6 {
-      font-size: 14px;
+    font-size: 14px;
   }
 
   .card .card-block p {
-      line-height: 25px;
+    line-height: 25px;
   }
 
   @media only screen and (min-width: 1400px){
   p {
-      font-size: 14px;
+    font-size: 14px;
   }
   }
 
   .card-block {
-      padding: 1.25rem;
+    padding: 1.25rem;
   }
 
   .b-b-default {
-      border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   .m-b-20 {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .p-b-5 {
-      padding-bottom: 5px !important;
+    padding-bottom: 5px !important;
   }
 
   .card .card-block p {
-      line-height: 25px;
+    line-height: 25px;
   }
 
   .m-b-10 {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .text-muted {
-      color: #919aa3 !important;
-  }
-
-  .b-b-default {
-      border-bottom: 1px solid #e0e0e0;
+    color: #919aa3 !important;
   }
 
   .f-w-600 {
-      font-weight: 600;
+    font-weight: 600;
   }
 
   .m-b-20 {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .m-t-40 {
-      margin-top: 20px;
+    margin-top: 20px;
   }
 
   .p-b-5 {
-      padding-bottom: 5px !important;
+    padding-bottom: 5px !important;
   }
 
   .m-b-10 {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .m-t-40 {
-      margin-top: 20px;
+    margin-top: 20px;
   }
 
   .user-card-full .social-link li {
-      display: inline-block;
+    display: inline-block;
   }
 
   .user-card-full .social-link li a {
-      font-size: 20px;
-      margin: 0 10px 0 0;
-      -webkit-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .poster-box {
@@ -296,5 +290,9 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .link-text {
+    text-decoration: none;
+  } 
 
 </style>
