@@ -1,40 +1,62 @@
 <template>
-  <div>
+  <div class="d-flex my-5">
     <div v-show="6 <= hour && hour < 14">
-      <h2>오늘 아침 피곤을 날려버릴 영화</h2>
-      <div class="card-deck d-flex justify-content-around">
-        <div class="col-sm-4 card" v-for="rec in morningRecommend" :key="rec.pk">
-          <router-link 
-            :to="{ name: 'movies', params: { moviePk: rec['pk'] } }">
-            <img class="card-body" :src="'https://image.tmdb.org/t/p/w500' + rec['poster_url']" alt="...">
+      <div class="row d-flex justify-content-around time-box">
+        <h3 class="time-title">오늘 아침 피곤을 날려버릴 영화</h3>
+        <div class="time-wrapper time-card col-md-8 col-lg-4" v-for="rec in morningRecommend" :key="rec.pk">
+          <router-link class="time-link"
+            :to="{ name: 'movies', params: { moviePk: rec.pk } }">
+            <img :src="'https://image.tmdb.org/t/p/w500' + rec.poster_url" alt="...">
           </router-link>
         </div>
       </div>
     </div>
     <div v-show="14 <= hour && hour < 20">
-      <h2>나른한 오후 나를 흥미진진하게 할 영화</h2>
-      <div class="card-deck d-flex justify-content-around">
-        <div class="col-sm-4 card" v-for="rec in eveningRecommend" :key="rec.pk">
-          <router-link 
-            :to="{ name: 'movies', params: { moviePk: rec['pk'] } }">
-            <img class="card-body" :src="'https://image.tmdb.org/t/p/w500' + rec['poster_url']" alt="...">
+      <div class="row d-flex justify-content-around time-box">
+        <h3 class="time-title">나른한 오후 나를 흥미진진하게 할 영화</h3>
+        <div class="time-wrapper time-card col-md-8 col-lg-4" v-for="rec in eveningRecommend" :key="rec.pk">
+          <router-link class="time-link"
+            :to="{ name: 'movies', params: { moviePk: rec.pk } }">
+            <img :src="'https://image.tmdb.org/t/p/w500' + rec.poster_url" alt="...">
           </router-link>
         </div>
       </div>
     </div>
-    <!-- &&을 모두 &으로 쓰고 범위가 틀렸었오..! 다른 시간대는 모르겠지만 여기는 정상적으로 뜨는 중 -->
     <div v-show="20 <= hour && hour <= 24 || 0 <= hour && hour < 6">
-      <h2>오늘 저녁 나와 함께 할 영화</h2>
-      <div class="card-deck d-flex justify-content-around">
-        <div class="col-sm-4 card" v-for="rec in nightRecommend" :key="rec.pk">
-          <router-link 
+      <div class="row d-flex justify-content-around time-box">
+        <h3 class="time-title">오늘 저녁 나와 함께 할 영화</h3>
+        <div class="time-wrapper time-card col-md-8 col-lg-4" v-for="rec in nightRecommend" :key="rec.pk">
+          <router-link class="time-link"
             :to="{ name: 'movies', params: { moviePk: rec.pk } }">
-            <img class="card-body" :src="'https://image.tmdb.org/t/p/w500' + rec.poster_url" alt="...">
+            <img :src="'https://image.tmdb.org/t/p/w500' + rec.poster_url" alt="...">
           </router-link>
         </div>
       </div>
     </div>
   </div>
+    <!-- <div v-show="6 <= hour && hour < 14">
+      <h3 class="time-title">오늘 아침 피곤을 날려버릴 영화</h3>
+      <div>
+        <div v-for="rec in morningRecommend" :key="rec.pk">
+          <router-link 
+            :to="{ name: 'movies', params: { moviePk: rec['pk'] } }">
+            <img :src="'https://image.tmdb.org/t/p/w500' + rec['poster_url']" alt="...">
+          </router-link>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div v-show="14 <= hour && hour < 20">
+      <h3 class="time-title">나른한 오후 나를 흥미진진하게 할 영화</h3>
+      <div>
+        <div v-for="rec in eveningRecommend" :key="rec.pk">
+          <router-link 
+            :to="{ name: 'movies', params: { moviePk: rec['pk'] } }">
+            <img :src="'https://image.tmdb.org/t/p/w500' + rec['poster_url']" alt="...">
+          </router-link>
+        </div>
+      </div>
+    </div> -->
+
 </template>
 
 <script>
@@ -87,17 +109,60 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 * { 
 font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
-h2 {
+h3 {
   font-family: 'Pretendard', cursive;
   font-size: 3em;
   color: #000000;
-  /* text-shadow: 5px 5px #bfcee0; */
+  text-shadow: 5px 5px #bfcee0;
   margin: 0;
-}
+} */
+
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+  /* .time-box {
+    position: relative;
+  } */
+  .time-title {
+    /* position: absolute; */
+    font-family: 'Nanum Pen Script', cursive;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-left: 1.2rem;
+  }
+
+  .time-wrapper {
+    width: 90%;
+  }
+
+  @media (min-width: 992px) {
+    .time-wrapper {
+      width: 30% !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .time-wrapper {
+      width: 220px;
+    }
+
+    .time-title {
+      margin-left: 3rem;
+    }
+  }
+
+  .time-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .time-card img {
+    width: 90%;
+  }
+
 </style>
