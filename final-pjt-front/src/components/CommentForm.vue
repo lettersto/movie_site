@@ -31,7 +31,7 @@
     methods: {
       ...mapActions(['createComment']),
       onSubmit() {
-        console.log(this.article)
+        // console.log(this.article)
         const comment = {
           articlePk: this.article.pk,
           content: this.content,

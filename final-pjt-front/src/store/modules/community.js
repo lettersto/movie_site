@@ -59,7 +59,7 @@ export default {
         headers: getters.authHeader,
       })
         .then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           commit('SET_ARTICLE', res.data)
           router.push({
             name: 'articleDetail',
@@ -93,7 +93,7 @@ export default {
         })
           .then(() => {
             commit('SET_ARTICLE', {})
-            router.push({ name: 'articleDetail' })
+            router.push({ name: 'community' })
           })
           .catch(err => console.error(err.response))
       }

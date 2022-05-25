@@ -14,7 +14,7 @@
         v-model="newArticle.content"
       >
       </textarea>
-      <button class="btn btn-default" @click="onSubmit">
+      <button class="btn btn-default">
         <i class="material-icons article-form-btn">edit</i>
       </button>
     </div>
@@ -54,7 +54,7 @@
       },
 
       onClose() {
-        this.$router.back()
+        this.$router.push({ name : 'community'})
       }
     },
   }
