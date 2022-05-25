@@ -14,7 +14,6 @@
 <script>
 import YoutubeListItem from '@/components/YoutubeListItem.vue'
 // import axios from 'axios'
-import _ from 'lodash'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -30,9 +29,6 @@ export default {
   },
   computed:{
     ...mapGetters(['youtubeVideos']),
-    isMovietitle() {
-        return !_.isEmpty(this.title)
-      },
   
   },
   methods: {
@@ -42,8 +38,8 @@ export default {
       ]),
   },
   created(){
-    console.log(this.title)
-    this.searchYoutube(this.title)
+    // console.log(this.title)
+    // this.searchYoutube(this.title)
   },
   
   
