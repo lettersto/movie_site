@@ -1,11 +1,12 @@
-
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.db.models import Count
+# from django.core.paginator import Paginator
 
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+
 from .models import Article, Comment, ArticleView
 from .serializers import (
     ArticleListSerializer, ArticleSerializer, 
@@ -34,6 +35,26 @@ def article_list_or_create(request):
         return article_list()
     elif request.method == 'POST':
         return create_article()
+
+
+# community articles paginator
+# @api_view(['GET'])
+# def article_paginator(request):
+#     articles = Article.objects.annotate(
+#             comment_count=Count('comments', distinct=True),
+#             like_count=Count('user_like', distinct=True),
+#             view_count=Count('article_views', distinct=True)
+#         ).order_by('-pk')
+#     paginator = Paginator(articles, 10)
+
+#     page_number = request.GET.get('page')
+#     page_obj = paginator.get_page(page_number)
+
+#     serializer = ArticleListSerializer(page_obj, many=True)
+
+#     return Response(serializer.data)
+
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def article_detail_or_update_or_delete(request, article_pk):
@@ -65,6 +86,7 @@ def article_detail_or_update_or_delete(request, article_pk):
         if request.user == article.user:
             return delete_article()
 
+
 @api_view(['POST'])
 def like_article(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
@@ -78,6 +100,7 @@ def like_article(request, article_pk):
         serializer = ArticleSerializer(article)
         return Response(serializer.data)
 
+
 @api_view(['POST'])
 def create_comment(request, article_pk):
     user = request.user
@@ -89,6 +112,7 @@ def create_comment(request, article_pk):
         comments = article.comments.all()
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 @api_view(['PUT', 'DELETE'])
 def comment_update_or_delete(request, article_pk, comment_pk):

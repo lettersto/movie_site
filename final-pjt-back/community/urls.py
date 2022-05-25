@@ -10,8 +10,5 @@ urlpatterns = [
     path('<int:article_pk>/comments/', views.create_comment, name="create_comment"),
     path('<int:article_pk>/comments/<int:comment_pk>/', views.comment_update_or_delete, name="comment_update_or_delete"),
     path('<int:article_pk>/views/', views.record_view),
-    # path('<str:article_title>/', views.),   # search
-    # path('announce/', views.),
-    # path('hottopic/', views.),
-    # path('article_list/', views.),
+    # path('articlelist/', views.article_paginator),
 ]
