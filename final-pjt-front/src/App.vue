@@ -36,6 +36,7 @@
   }
 
   body {
+    margin-top: 7em;
     margin-bottom: 5em;
   }
   
