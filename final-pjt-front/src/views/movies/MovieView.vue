@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isMovieDetail">
+  <div v-if="isMovieDetail" class="mt-5">
     <div class="movie-detail-wrapper container">
       <div class="movie-detail-container row">
         <div class="movie-detail-poster col-12 col-lg-6">
@@ -35,36 +35,6 @@
         </div>
       </div>
     </div>
-    <!-- 영화 포스터란 -->
-    <!-- <div class="card mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img :src="movieURL" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{ movie.title }} <span class="badge bg-secondary">{{ movie.vote_average }}</span></h5>
-            <p class="card-text">개봉일: {{ movie.release_date }}</p>
-            <div class="card-text">감독:
-              <div v-for="director_list in movie.director" :key="director_list.id">
-                {{ director_list.name.slice(1, director_list.name.length-1) }}
-              </div>
-            </div>
-            <div class="card-text">배우: 
-              <div v-for="actor_list in movie.actor" :key="actor_list.id">
-                {{ actor_list.name.slice(1, actor_list.name.length-1) }}
-              </div>
-            </div>
-            <p class="card-text">{{ movie.overview }}
-            </p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr> -->
-    <!-- <youtube-list :title="movie.title + ''"/> -->
-    <!-- 댓글란 -->
     <review-list :reviews="movie.reviews" class="mt-5"/>
     
   </div>
