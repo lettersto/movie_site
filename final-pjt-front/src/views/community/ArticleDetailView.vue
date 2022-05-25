@@ -33,7 +33,8 @@
             <button @click="likeArticle(articlePk)" class="btn btn-default">
               <i v-show="inLikeArticleList" class="material-icons like">favorite</i>
               <i v-show="!inLikeArticleList" class="material-icons no-like">heart_broken</i>
-            </button> {{ likeCount }} <!--like count 수정 필요-->
+            </button> 
+            <!-- {{ likeCount }} like count 수정 필요 -->
           </div>
         </div>
       </div>
@@ -62,9 +63,13 @@
     computed: {
       ...mapGetters(['isAuthor', 'article', 'isArticle', 'currentUser']),
       // 좋아요 수
-      likeCount() {
-        return this.article.like_users?.length
-      },
+      // likeCount() {
+      //   // if (this.isArticle) {
+
+      //   //   console.log(this.article.user_like)
+      //   // }
+      //   return this.article.user_like?.length
+      // },
       // 좋아요 하트 토글
       inLikeArticleList() { 
         let inLike = false;
