@@ -14,6 +14,15 @@
     </div>
     <div class="flex-grow-1">
       <div>NEW MOVIE</div>
+      <ol>
+      <li v-for="movie in movieNewRank" :key="movie.id">
+        <router-link 
+        :to="{ name: 'movies', params: {moviePk: movie.id} }">
+        {{ movie.title }}
+        </router-link>
+        {{ movie.release_date }}
+      </li>
+      </ol>
       </div>
     <div class="flex-grow-1">
     <div>HOT TOPIC</div>  
@@ -49,6 +58,9 @@ import _ from 'lodash'
       ...mapGetters(['movies', 'articles']),
       movieRank(){
         return _.orderBy(this.movies, 'vote_average', 'desc').slice(0, 3)
+      },
+      movieNewRank(){
+        return _.orderBy(this.movies, 'release_date', 'desc').slice(0, 3)
       },
       articleRank() {
         return _.orderBy(this.articles, ['like_count', 'view_count', 'comment_count'], ['desc', 'desc', 'desc']).slice(0, 3)
