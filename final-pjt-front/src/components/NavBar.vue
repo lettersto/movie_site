@@ -169,7 +169,7 @@
   .navi-list ul li .navi-link::after {
     content: "";
     position: absolute;
-    background-color: #272d2dde;
+    background-color: rgba(98, 122, 144, 0.664);
     height: 3px;
     width: 0;
     left: 0;
@@ -179,6 +179,12 @@
 
   .navi-list ul li .navi-link:hover::after {
     width: 100%;
+  }
+
+  @media (max-width: 700px) {
+    .navi-list ul li .navi-link {
+      padding: 0;
+    }
   }
 
   .navi-list ul li button {
