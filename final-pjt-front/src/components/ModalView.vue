@@ -1,14 +1,14 @@
 <template>
-   <transition name="modal">
-   <div class="modal-mask d-flex justify-content-end align-items-end">
-       <iframe id="video" :src="videoURL" frameborder="0"></iframe>
-       <div class="">
-       <button class="modal-body" @click="$emit('close')">
-         그만보기
-        </button>
-        </div>
-   </div>
-  </transition>
+  <transition name="modal">
+  <div class="modal-mask d-flex justify-content-end align-items-end">
+    <iframe id="video" :src="videoURL" frameborder="0"></iframe>
+    <div class="modal-body" @click="$emit('close')">
+      <!-- <button class="modal-body" @click="$emit('close')">
+        그만보기
+      </button> -->
+    </div>
+  </div>
+</transition>
 </template>
 
 
@@ -59,29 +59,39 @@ export default {
 
 
 <style scoped>
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);;
-  width: 70%;
-  height: 70%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  align-content:center;
-  transition: opacity .3s ease;
-}
+  .modal-mask {
+    position: fixed;
+    z-index: 9998;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);;
+    width: 70%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    align-content:center;
+    transition: opacity .3s ease;
+  }
 
-#video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+  #video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-body {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    transform: translate(-15%, -15%);
+  }
 
 
 

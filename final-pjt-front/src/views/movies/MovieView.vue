@@ -4,9 +4,9 @@
       <div class="movie-detail-container row">
         <div class="movie-detail-poster col-12 col-lg-6">
           
-        <img :src="movieURL" alt="영화 포스터" id="show-modal" @click="showModal = true">
-     <modal-view :movieId="movie.id" v-if="showModal" @close="showModal = false">  
-     </modal-view>
+          <img :src="movieURL" alt="영화 포스터" id="show-modal" @click="showModal = true">
+          <modal-view :movieId="movie.id" v-if="showModal" @close="showModal = false">  
+          </modal-view>
           <!-- <img :src="movieURL" alt="영화 포스터"> -->
         </div>
         <div class="movie-detail-description col-12 col-lg-6">
