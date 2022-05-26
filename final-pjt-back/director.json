@@ -947,15 +947,6 @@
     },
     {
         "model": "movies.director",
-        "pk": 939243,
-        "fields": {
-            "name": [
-                "Jeff Fowler"
-            ]
-        }
-    },
-    {
-        "model": "movies.director",
         "pk": 698508,
         "fields": {
             "name": [
