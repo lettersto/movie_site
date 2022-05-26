@@ -161,6 +161,3 @@ def record_view(request, article_pk):
     }
 
     return JsonResponse(context)
-
-
-   
