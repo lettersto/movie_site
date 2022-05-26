@@ -262,6 +262,8 @@
 
   .movie-poster-size {
     width: 100%;
+    max-height: 480px; 
+    /* 추가부분 */
   }
 
 
