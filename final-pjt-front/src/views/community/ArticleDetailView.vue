@@ -14,7 +14,7 @@
           </div>
           <div class="article-detail-title-info">
             <small>조회수: {{ articleHits }}</small>
-            <small v-show="isCorreted">({{ updatedDate }} 수정)</small>
+            <small>{{ createdDate }}<span v-show="isCorreted">({{ updatedDate }} 수정)</span></small>
           </div>
         </div>
         <div class="article-detail-body">
@@ -77,6 +77,14 @@
         if (this.article.created_at !== this.article.updated_at) return true;
         else return false;
       },
+      // 생성일
+      createdDate() {
+        if (this.isArticle) {
+          const index = this.article.created_at.indexOf('T');
+          return this.article.created_at.slice(0, index);
+        } else return '';
+      },
+
       // 수정일
       updatedDate() {
         if (this.isArticle) {

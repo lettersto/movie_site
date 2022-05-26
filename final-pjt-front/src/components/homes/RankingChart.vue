@@ -3,7 +3,7 @@
     <div class="chart-wrapper row mb-4">
       <!-- Best Rating -->
       <div class="chart-container col-md-8 col-lg-4">
-        <h3 class="chart-title title-box">BEST RATING</h3>
+        <h3 class="chart-title title-box mb-3">BEST RATING</h3>
         <div class="chart-box" v-for="movie in movieRank" :key="movie.id">
           <router-link class="chart-link"
             :to="{ name: 'movies', params: {moviePk: movie.id} }">
@@ -18,7 +18,7 @@
       </div>
       <!-- New Movie -->
       <div class="chart-container col-md-8 col-lg-4">
-        <h3 class="chart-title title-box">NEW MOVIE</h3>
+        <h3 class="chart-title title-box mb-3">NEW MOVIE</h3>
         <div class="chart-box" v-for="movie in movieNewRank" :key="movie.id">
           <router-link class="chart-link"
             :to="{ name: 'movies', params: {moviePk: movie.id} }">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="chart-container col-md-8 col-lg-4">
-        <h3 class="chart-title title-box">HOT TOPIC</h3>
+        <h3 class="chart-title title-box mb-3">HOT TOPIC</h3>
         <div class="chart-box" v-for="article in articleRank" :key="article.pk">
           <router-link class="chart-link"
             :to="{ name: 'articleDetail', params: { articlePk: article.pk } }">
@@ -46,72 +46,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <hr> -->
-    <!-- 구분선 -->
-
-    <!-- <div class="d-flex justify-content-between">
-      <div class="leaderboard flex-grow-1 card">
-      <div class="leaderboard_header card-title">
-        <h3>
-        <i class="material-icons">hotel_class</i>
-        BEST RATING MOVIE
-        </h3></div>
-      <div class="leaderboard_content card-content">
-      <ul>
-        <li v-for="movie in movieRank" :key="movie.id">
-          <div class="name">
-          <router-link class="header"
-          :to="{ name: 'movies', params: {moviePk: movie.id} }">
-          {{ movie.title }}
-          </router-link>
-          <span class="stat">{{ movie.vote_average }}</span>
-          </div>
-        </li>
-      </ul>
-      </div>
-      </div>
-      <div class="leaderboard flex-grow-1 card">
-        <div class="leaderboard_header card-title">
-        <h3>
-        <i class="material-icons">hotel_class</i>
-        NEW MOVIE
-        </h3></div>
-        <div class="leaderboard_content card-content">
-        <ul>
-        <li v-for="movie in movieNewRank" :key="movie.id">
-          <div class="name">
-          <router-link class="header"
-          :to="{ name: 'movies', params: {moviePk: movie.id} }">
-          {{ movie.title }}
-          </router-link>
-          <br/>
-          <span class="date">{{ movie.release_date }}</span>
-          </div>
-        </li>
-        </ul>
-        </div>
-        </div>
-      <div class="leaderboard flex-grow-1 card">
-        <div class="leaderboard_header card-title">
-        <h3>
-        <i class="material-icons">hotel_class</i>
-        HOT TOPIC
-        </h3></div>
-        <div class="leaderboard_content card-content">
-      <ul>
-        <li v-for="article in articleRank" :key="article.pk">
-          <div class="name">
-          <router-link class="header"
-          :to="{ name: 'articleDetail', params: { articlePk: article.pk } }">
-            {{ article.title }}
-          </router-link>
-          </div>
-        </li>
-      </ul>
-      </div>
-      </div>
-  </div> -->
 
   </div>
 </template>

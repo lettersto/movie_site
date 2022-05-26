@@ -2,10 +2,18 @@
   <div>
     <div class="comment-container">
       <div class="comment-card">
-        <router-link :to="{ name: 'profile', params: { username: comment.user.username } }"
-          class="comment-link">
-          <p class="comment-author">{{ comment.user.username }}</p>
-        </router-link>
+        <class class="comment-title">
+          <router-link :to="{ name: 'profile', params: { username: comment.user.username } }"
+            class="comment-link">
+            <p class="comment-author">{{ comment.user.username }}</p>
+          </router-link>
+          <div class="comment-date">
+            {{ createdDate }}  
+            <small v-if="comment.created_at !== comment.updated_at">
+              ({{ updatedDate }} 수정)
+            </small>
+          </div>
+        </class>
         <p class="comment-content">{{ comment.content }}</p>
         <div class="comment-footer" v-if="currentUser.username === comment.user.username">
           <div v-if="!isEditing">
@@ -28,38 +36,6 @@
         </div>
       </div>
     </div>
-    <!-- <tr>
-      <td class="text-center align-middle">
-        <router-link :to="{ name: 'profile', params: { username: comment.user.username } }"
-          class="author">
-          {{ comment.user.username }}
-        </router-link> </td>
-      <td class="text-center align-middle">
-        {{ comment.content }}
-      </td>
-      <td class="text-center align-middle">
-        <div v-if="currentUser.username === comment.user.username">
-          <div v-if="!isEditing">
-            <button @click="toggleEditingBtn" class="btn btn-default">
-              <i class="material-icons">edit</i>
-            </button>
-            <button @click="deleteComment(newComment)" class="btn btn-default">
-              <i class="material-icons">delete</i>
-            </button>
-          </div>
-        </div>
-        <div v-if="isEditing">
-          <input type="text" v-model="newComment.content">
-          <button @click="onUpdate" class="btn btn-default">
-            <i class="material-icons">file_upload</i>
-          </button>
-          <button @click="toggleEditingBtn" class="btn btn-default">
-            <i class="material-icons">edit_off</i>
-          </button>
-        </div>
-      </td>
-    </tr> -->
-
   </div>
 </template>
 
@@ -83,7 +59,15 @@
       }
     },
     computed: {
-      ...mapGetters(['currentUser'])
+      ...mapGetters(['currentUser']),
+      createdDate() {
+        const index = this.comment.created_at.indexOf('T');
+        return this.comment.created_at.slice(0, index);
+      },
+      updatedDate() {
+        const index = this.comment.updated_at.indexOf('T');
+        return this.comment.updated_at.slice(0, index);
+      },
     },
     methods: {
       ...mapActions(['updateComment', 'deleteComment']),
@@ -170,6 +154,18 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 0 10px;
+  }
+
+  .comment-date {
+    display: flex;
+    justify-content: flex-end;
+    color: gray;
+    font-weight: 200;
+  }
+
+  .comment-title {
+    display: flex;
+    justify-content: space-between;
   }
 
   /* .comment-container::before {
