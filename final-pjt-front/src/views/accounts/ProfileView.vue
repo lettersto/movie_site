@@ -17,7 +17,7 @@
                     <div class="posters row">
                       <div class="col-12 col-lg-4" v-for="movie in likeMovies" :key="movie.movie.pk">
                         <router-link :to="{ name: 'movies' , params:{ moviePk: movie.movie.pk }}">
-                          <img :src="'https://image.tmdb.org/t/p/w500' + movie.movie.poster_url" alt="">
+                          <img class="movie-poster-size" :src="'https://image.tmdb.org/t/p/w500' + movie.movie.poster_url" alt="">
                         </router-link>
                       </div>
                     </div>
@@ -25,7 +25,7 @@
                 </div>
               <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">활동</h6>
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-12 col-lg-6 profile-text-list">
                   <p class="m-b-10 f-w-600">작성한 글</p>
                   <div v-for="article in wroteArticles" :key="article.id">
                     <router-link class="link-text" :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
@@ -33,7 +33,7 @@
                     </router-link>
                   </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-12 col-lg-6 profile-text-list">
                   <p class="m-b-10 f-w-600">좋아요 누른 게시글</p>
                     <div v-for="article in likeArticles" :key="article.id">
                       <router-link class="link-text" :to="{ name: 'articleDetail' , params:{ articlePk: article.id }}">
@@ -164,9 +164,9 @@
   }
 
   @media only screen and (min-width: 1400px){
-  p {
-    font-size: 14px;
-  }
+    p {
+      font-size: 14px;
+    }
   }
 
   .card-block {
@@ -242,6 +242,16 @@
     justify-content: space-between;
   }
 
+  @media (max-width: 992px) {
+    .posters {
+      justify-content: center;
+    }
+    .profile-text-list {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  }
+
   .link-text {
     text-decoration: none;
   } 
@@ -249,5 +259,11 @@
   .password-change {
     color:#5d6369;
   }
+
+  .movie-poster-size {
+    width: 100%;
+  }
+
+
 
 </style>
