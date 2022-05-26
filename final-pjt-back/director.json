@@ -1,10 +1,10 @@
 [
     {
         "model": "movies.director",
-        "pk": 675353,
+        "pk": 526896,
         "fields": {
             "name": [
-                "Jeff Fowler"
+                "Daniel Espinosa"
             ]
         }
     },
@@ -19,6 +19,15 @@
                 "Aaron Nee",
                 "Mayret Velasquez",
                 "Yve Figuereo"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 675353,
+        "fields": {
+            "name": [
+                "Jeff Fowler"
             ]
         }
     },
@@ -51,10 +60,32 @@
     },
     {
         "model": "movies.director",
-        "pk": 526896,
+        "pk": 335787,
         "fields": {
             "name": [
-                "Daniel Espinosa"
+                "Ruben Fleischer",
+                "Mathias Datow"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 634649,
+        "fields": {
+            "name": [
+                "David H. Venghaus Jr.",
+                "George Cottle",
+                "Jon Watts",
+                "Brian Avery Galligan"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 836225,
+        "fields": {
+            "name": [
+                "Alejandro Hidalgo"
             ]
         }
     },
@@ -70,6 +101,27 @@
     },
     {
         "model": "movies.director",
+        "pk": 628900,
+        "fields": {
+            "name": [
+                "Tarik Saleh"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 338953,
+        "fields": {
+            "name": [
+                "David Yates",
+                "Josh Robertson",
+                "Stephen Woolfenden",
+                "David Keadell"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
         "pk": 629542,
         "fields": {
             "name": [
@@ -79,10 +131,29 @@
     },
     {
         "model": "movies.director",
-        "pk": 628900,
+        "pk": 508947,
         "fields": {
             "name": [
-                "Tarik Saleh"
+                "Rachel Slansky",
+                "Domee Shi"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 785985,
+        "fields": {
+            "name": [
+                "Louis Leterrier"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 406759,
+        "fields": {
+            "name": [
+                "Roland Emmerich"
             ]
         }
     },
@@ -106,10 +177,14 @@
     },
     {
         "model": "movies.director",
-        "pk": 883502,
+        "pk": 864116,
         "fields": {
             "name": [
-                "Josh Sternfeld"
+                "Kieran Gallagher",
+                "Wes Miller",
+                "Jamar Hawkins",
+                "Tamara Hansen",
+                "Kimya Mallory"
             ]
         }
     },
@@ -124,10 +199,171 @@
     },
     {
         "model": "movies.director",
+        "pk": 883502,
+        "fields": {
+            "name": [
+                "Josh Sternfeld"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 951470,
+        "fields": {
+            "name": [
+                "Mandlakayise Walter Dube, Jr."
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 606402,
+        "fields": {
+            "name": [
+                "Na Hyun"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 845885,
+        "fields": {
+            "name": [
+                "Harold Trompetero"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 284052,
+        "fields": {
+            "name": [
+                "Scott Derrickson",
+                "Jo Beckett",
+                "Michael Lerman",
+                "Daisy Baldry",
+                "Joey Coughlin",
+                "Teresa Orlando"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
         "pk": 294793,
         "fields": {
             "name": [
                 "Janus Metz"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 919689,
+        "fields": {
+            "name": [
+                "Maximilian Elfeldt"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 800937,
+        "fields": {
+            "name": [
+                "Alex Hardcastle"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 568124,
+        "fields": {
+            "name": [
+                "Byron Howard",
+                "Jared Bush",
+                "Charise Castro Smith"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 829557,
+        "fields": {
+            "name": [
+                "Barbara Bialowas",
+                "Tomasz Mandes"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 768744,
+        "fields": {
+            "name": [
+                "Kenji Nagasaki",
+                "Kenji Nagasaki",
+                "Kotaro Tamura",
+                "Tomo Ookubo",
+                "Shouji Ikeno"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 585083,
+        "fields": {
+            "name": [
+                "Derek Drymon",
+                "Jennifer Kluska"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 361743,
+        "fields": {
+            "name": [
+                "Joseph Kosinski"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 823625,
+        "fields": {
+            "name": [
+                "Guy Norris",
+                "Mark Williams",
+                "Matt Enfield",
+                "Ted Green",
+                "Oliver Tummel",
+                "Dean Fay"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 843241,
+        "fields": {
+            "name": [
+                "Takayuki Hamana"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 635302,
+        "fields": {
+            "name": [
+                "Haruo Sotozaki",
+                "Haruo Sotozaki",
+                "Hideki Hosokawa",
+                "Kei Tsunematsu",
+                "Takashi Suhara",
+                "Masashi Takeuchi",
+                "Toshiyuki Shirai",
+                "Shinya Shimomura",
+                "Seiji Harada"
             ]
         }
     },
@@ -142,13 +378,56 @@
     },
     {
         "model": "movies.director",
-        "pk": 338953,
+        "pk": 774825,
         "fields": {
             "name": [
-                "David Yates",
-                "Josh Robertson",
-                "Stephen Woolfenden",
-                "David Keadell"
+                "John C. Donkin"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 580489,
+        "fields": {
+            "name": [
+                "Andy Serkis",
+                "K.C. Hodenfield",
+                "Brian Smrz",
+                "Max Sturgeon"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 696806,
+        "fields": {
+            "name": [
+                "Shawn Levy"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 756187,
+        "fields": {
+            "name": [
+                "Elizabeth Allen Rosenbaum",
+                "Mohammad Ghorbankarimi",
+                "Andrew Shea",
+                "Sarah Campbell",
+                "Brad Wetherly",
+                "MK Morris",
+                "Patrick Hagarty",
+                "Micah Warry-Smith"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 937337,
+        "fields": {
+            "name": [
+                "Pedro Pablo Ibarra"
             ]
         }
     },
@@ -163,6 +442,106 @@
     },
     {
         "model": "movies.director",
+        "pk": 833425,
+        "fields": {
+            "name": [
+                "Damien Power",
+                "Guy Campbell",
+                "Seumas Cooney",
+                "Esther Collas"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 760868,
+        "fields": {
+            "name": [
+                "Adam Berg"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 801071,
+        "fields": {
+            "name": [
+                "Lawrence Fowler",
+                "Robert Howgate"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 566525,
+        "fields": {
+            "name": [
+                "Bradley James Allan",
+                "Destin Daniel Cretton",
+                "Jeff Okabayashi",
+                "Chung Chi Li"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 892153,
+        "fields": {
+            "name": [
+                "Darrell Van Citters"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 524434,
+        "fields": {
+            "name": [
+                "Chloé Zhao",
+                "Dan DeLeeuw",
+                "Simon Warnock",
+                "Joe Geary"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 803114,
+        "fields": {
+            "name": [
+                "Lê Văn Kiệt"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 818397,
+        "fields": {
+            "name": [
+                "Martin Campbell"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 938596,
+        "fields": {
+            "name": [
+                "Brett Bentman"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 476669,
+        "fields": {
+            "name": [
+                "Matthew Vaughn"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
         "pk": 676705,
         "fields": {
             "name": [
@@ -172,13 +551,84 @@
     },
     {
         "model": "movies.director",
-        "pk": 678287,
+        "pk": 760926,
         "fields": {
             "name": [
-                "Mark A.Z. Dippé",
-                "Phil Nibbelink",
-                "Youngki Lee",
-                "Matt Philip Whelan"
+                "Anthony Hayes",
+                "John Duong",
+                "Julian Ryan"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 460458,
+        "fields": {
+            "name": [
+                "Johannes Roberts",
+                "Adam Bocknek",
+                "Samantha McMeekin",
+                "Chris Feltis",
+                "Abel Erazo-Ibarra",
+                "Alessia Spalvieri"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 800510,
+        "fields": {
+            "name": [
+                "Steven Soderbergh",
+                "Scott Peterson",
+                "Alina Gatti",
+                "Jody Spilkoman",
+                "Jeremy Silveira"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 860623,
+        "fields": {
+            "name": [
+                "Fansu Njie"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 828853,
+        "fields": {
+            "name": [
+                "Jeff Tremaine"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 425909,
+        "fields": {
+            "name": [
+                "Jason Reitman"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 795514,
+        "fields": {
+            "name": [
+                "Megan Park"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 459151,
+        "fields": {
+            "name": [
+                "Tom McGrath"
             ]
         }
     },
@@ -196,16 +646,308 @@
     },
     {
         "model": "movies.director",
-        "pk": 661231,
+        "pk": 678287,
         "fields": {
             "name": [
-                "John Madden"
+                "Mark A.Z. Dippé",
+                "Phil Nibbelink",
+                "Youngki Lee",
+                "Matt Philip Whelan"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 675353,
+        "pk": 632727,
+        "fields": {
+            "name": [
+                "Antony Tanev",
+                "Monika Hristova",
+                "Maria Djidrova",
+                "David Blue Garcia",
+                "Margarita Aneva",
+                "Kristiya Tombusheva"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 656663,
+        "fields": {
+            "name": [
+                "Jeff Tremaine"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 420821,
+        "fields": {
+            "name": [
+                "Akiva Schaffer",
+                "Scott Peterson",
+                "Gregory J. Pawlik Jr.",
+                "Graham Geraghty",
+                "Larry D. Katz",
+                "Jesse Bellis",
+                "Jaysene Overton",
+                "Ruddy Salazar"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 624860,
+        "fields": {
+            "name": [
+                "Lana Wachowski",
+                "Michael Salven",
+                "Kim Whittaker",
+                "Michael Saunders"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 19995,
+        "fields": {
+            "name": [
+                "James Cameron",
+                "Josh McLaglen",
+                "Marc Ashton",
+                "Luca Kouimelis",
+                "Ana Maria Quintana",
+                "Sarah Hinch",
+                "Stephen Painter",
+                "Michael Musteric",
+                "Simon Carlile",
+                "Brad Blackbourn",
+                "Maria Battle Campbell",
+                "Richard Matthews",
+                "Darren Mackie",
+                "Stephanie Weststrate",
+                "Del Chatterton",
+                "Bryon Darling",
+                "Jacqui Pryor",
+                "Judith Wayers",
+                "Steve Hardy",
+                "Daniel Buhigas",
+                "James Harmer",
+                "Jorge Pimentel",
+                "Keir Longden",
+                "Melvin Polayah",
+                "Rob Zohrab"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 840439,
+        "fields": {
+            "name": [
+                "Celia Catunda",
+                "Kiko Mistrorigo"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 585245,
+        "fields": {
+            "name": [
+                "Walt Becker"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 860159,
+        "fields": {
+            "name": [
+                "Sammi Cohen"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 949270,
+        "fields": {
+            "name": [
+                "Pietro Loprieno"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 753232,
+        "fields": {
+            "name": [
+                "Philip Tan",
+                "Asif Akbar"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 778106,
+        "fields": {
+            "name": [
+                "Sofia Alvarez"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 928381,
+        "fields": {
+            "name": [
+                "Régis Blondeau"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 744,
+        "fields": {
+            "name": [
+                "Tony Scott",
+                "June Samson"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 829920,
+        "fields": {
+            "name": [
+                "Toshifumi Akai",
+                "Toshifumi Akai",
+                "Katsuya Shigehara",
+                "Shingo Uchida",
+                "Isao Hayashi",
+                "Yousuke Yamamoto"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 507086,
+        "fields": {
+            "name": [
+                "Colin Trevorrow"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 926899,
+        "fields": {
+            "name": [
+                "Paloma Baeza",
+                "Niki Lindroth von Bahr",
+                "Emma De Swaef",
+                "Marc James Roels",
+                "Leigh Manning"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 818750,
+        "fields": {
+            "name": [
+                "Arie Posin"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 1865,
+        "fields": {
+            "name": [
+                "Rob Marshall",
+                "Kerry Lyn McKissick"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 928999,
+        "fields": {
+            "name": [
+                "Michael Feifer"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 58,
+        "fields": {
+            "name": [
+                "Gore Verbinski",
+                "Peter Kohn",
+                "David H. Venghaus Jr.",
+                "Sharron Reynolds-Enriquez",
+                "Charles Gibson",
+                "Jeffrey Schwartz",
+                "Gary Romolo Fiorelli",
+                "Jeff Okabayashi",
+                "Steven F. Beaupre",
+                "Clark Credle"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 783461,
+        "fields": {
+            "name": [
+                "Aakash Bhatia"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 890656,
+        "fields": {
+            "name": [
+                "Roel Reiné"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 935819,
+        "fields": {
+            "name": [
+                "Pedro Flores Maldonado"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 299536,
+        "fields": {
+            "name": [
+                "Anthony Russo",
+                "Joe Russo",
+                "Eli Sasich",
+                "Lori Grabowski",
+                "Chris Castaldi",
+                "David Sardi",
+                "Jeff Okabayashi",
+                "Mark Rossini",
+                "Simon Downes",
+                "Hajar Mainl",
+                "Kenneth Malicdem",
+                "Alex McKay",
+                "Paul Schneider"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 939243,
         "fields": {
             "name": [
                 "Jeff Fowler"
@@ -214,187 +956,240 @@
     },
     {
         "model": "movies.director",
-        "pk": 752623,
+        "pk": 698508,
         "fields": {
             "name": [
+                "D. J. Caruso"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 789171,
+        "fields": {
+            "name": [
+                "Drew Mylrea"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 454626,
+        "fields": {
+            "name": [
+                "David Arnold",
                 "Peter Lyons Collister",
-                "Mike Gunther",
-                "Adam Nee",
-                "Aaron Nee",
-                "Mayret Velasquez",
-                "Yve Figuereo"
+                "Jeff Fowler",
+                "Susan Lambie",
+                "Gurjit Chohan",
+                "Shamess Shute",
+                "Justin Muller",
+                "Eddy Santos",
+                "Jay Williams",
+                "Scott Catolico",
+                "Haley Lauten",
+                "Tatiana Ragsdale",
+                "Megan Schaufele"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 639933,
+        "pk": 512195,
         "fields": {
             "name": [
-                "Robert Eggers",
-                "Giulia Patanè",
-                "Ben Burt",
-                "Therese Friel",
-                "Chris McCormick",
-                "James Harris",
-                "Paul Moran"
+                "Rawson Marshall Thurber",
+                "James Bitonti"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 414906,
+        "pk": 460465,
         "fields": {
             "name": [
-                "Matt Reeves",
-                "Bradley Parker",
-                "Robert Alonzo",
-                "Toby Hefferman"
+                "Oksana Sokol",
+                "Taera Shroff",
+                "P.J. Voeten",
+                "Chris Webb",
+                "Danielle Blake",
+                "Simon McQuoid"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 526896,
+        "pk": 877183,
         "fields": {
             "name": [
-                "Daniel Espinosa"
+                "David Silverman"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 453395,
+        "pk": 550988,
         "fields": {
             "name": [
-                "Sam Raimi",
-                "Dominic Fysh"
+                "Josh McLaglen",
+                "Shawn Levy",
+                "Chris O'Hara",
+                "Isaac Nadreau",
+                "Carolina Jiménez"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 629542,
+        "pk": 810171,
         "fields": {
             "name": [
-                "Pierre Perifel"
+                "Frank Capra III",
+                "Richard Wong"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 628900,
+        "pk": 597208,
         "fields": {
             "name": [
-                "Tarik Saleh"
+                "Guillermo del Toro"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 763285,
+        "pk": 285,
         "fields": {
             "name": [
-                "Michael Bay"
+                "Gore Verbinski",
+                "Pamela Alch",
+                "Sharron Reynolds-Enriquez",
+                "Karen Golden"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 893370,
+        "pk": 22,
         "fields": {
             "name": [
-                "Gustavo Hernández"
+                "Gore Verbinski",
+                "Bruce Hendricks",
+                "Peter Kohn",
+                "Gary Romolo Fiorelli",
+                "Susan J. Hellmann",
+                "Steven F. Beaupre",
+                "Lisa Mantoux"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 883502,
+        "pk": 870671,
         "fields": {
             "name": [
-                "Josh Sternfeld"
+                "Mark Andrew Hamer"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 799876,
+        "pk": 436969,
         "fields": {
             "name": [
-                "Graham Moore"
+                "James Gunn"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 294793,
+        "pk": 337404,
         "fields": {
             "name": [
-                "Janus Metz"
+                "Craig Gillespie"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 661791,
+        "pk": 508943,
         "fields": {
             "name": [
-                "Paco Plaza"
+                "Enrico Casarosa",
+                "Kelly Bonbright",
+                "Seong-Young Kim",
+                "Rayna Helgens"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 338953,
+        "pk": 522016,
+        "fields": {
+            "name": [
+                "Simon Kinberg"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 840882,
+        "fields": {
+            "name": [
+                "Kim Farrant"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 675445,
+        "fields": {
+            "name": [
+                "Cal Brunker"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 259316,
         "fields": {
             "name": [
                 "David Yates",
                 "Josh Robertson",
-                "Stephen Woolfenden",
-                "David Keadell"
+                "Anna Worley",
+                "Katharina Hingst"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 438695,
+        "pk": 918832,
         "fields": {
             "name": [
-                "Garth Jennings"
+                "Doug Murphy"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 676705,
+        "pk": 385128,
         "fields": {
             "name": [
-                "Julien Fournet"
+                "Justin Lin",
+                "Vincent Lascoumes",
+                "Jeremy Moffett",
+                "Sarah Mulberge"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 678287,
+        "pk": 589761,
         "fields": {
             "name": [
-                "Mark A.Z. Dippé",
-                "Phil Nibbelink",
-                "Youngki Lee",
-                "Matt Philip Whelan"
-            ]
-        }
-    },
-    {
-        "model": "movies.director",
-        "pk": 646385,
-        "fields": {
-            "name": [
-                "Matt Bettinelli-Olpin",
-                "Tyler Gillett",
-                "Scott Oberholzer",
-                "Kara McGee"
+                "Danila Kozlovsky"
             ]
         }
     },
@@ -409,205 +1204,985 @@
     },
     {
         "model": "movies.director",
-        "pk": 675353,
+        "pk": 916740,
         "fields": {
             "name": [
-                "Jeff Fowler"
+                "Monika Mitchell",
+                "Deirdre De Butler",
+                "Blair Dykes",
+                "Sandra Mayo"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 752623,
+        "pk": 886897,
         "fields": {
             "name": [
-                "Peter Lyons Collister",
-                "Mike Gunther",
-                "Adam Nee",
-                "Aaron Nee",
-                "Mayret Velasquez",
-                "Yve Figuereo"
+                "Ibon Cormenzana"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 639933,
+        "pk": 842052,
         "fields": {
             "name": [
-                "Robert Eggers",
-                "Giulia Patanè",
-                "Ben Burt",
-                "Therese Friel",
-                "Chris McCormick",
-                "James Harris",
-                "Paul Moran"
+                "Cristian Bernard"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 414906,
+        "pk": 589754,
         "fields": {
             "name": [
-                "Matt Reeves",
-                "Bradley Parker",
+                "Dmitriy Dyachenko"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 766907,
+        "fields": {
+            "name": [
+                "Edward Drake"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 829358,
+        "fields": {
+            "name": [
+                "Patrick White"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 955971,
+        "fields": {
+            "name": [
+                "Paco Caballero"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 818647,
+        "fields": {
+            "name": [
+                "Marçal Forés"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 438631,
+        "fields": {
+            "name": [
+                "Denis Villeneuve",
+                "Chris Carreras",
+                "Tom Struthers",
+                "Tom Rye",
+                "Marlon Beyer Rieger"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 10195,
+        "fields": {
+            "name": [
+                "Kenneth Branagh",
+                "Vic Armstrong",
+                "Luc Etienne",
+                "Kerry Lyn McKissick",
+                "Greg Hale"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 810693,
+        "fields": {
+            "name": [
+                "Yosuke Takada",
+                "Miyuki Ooshiro",
+                "Sunghoo Park",
+                "Sunghoo Park",
+                "Yui Umemoto",
+                "Yui Umemoto",
+                "Masataka Akai"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 685274,
+        "fields": {
+            "name": [
+                "Shuko Murase",
+                "Kou Matsuo",
+                "Mitsuhiro Yoneda",
+                "Hidekazu Hara"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 811072,
+        "fields": {
+            "name": [
+                "Mar Targarona",
+                "Mike Hostench"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 497698,
+        "fields": {
+            "name": [
+                "Cate Shortland",
+                "Alexander Yurchikov",
+                "Jamie Christopher",
+                "Philip Banks",
+                "Glen Caroll",
+                "Mark Cockren",
+                "Josh Goodman"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 399566,
+        "fields": {
+            "name": [
+                "Adam Wingard",
+                "Thomas Robinson Harper",
+                "Kerry Lyn McKissick",
+                "Nick Satriano",
+                "Brian Avery Galligan",
+                "Ashley Douglass"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 774741,
+        "fields": {
+            "name": [
+                "Swinton O. Scott III"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 482321,
+        "fields": {
+            "name": [
+                "Sarah Smith",
+                "Jean-Philippe Vine",
+                "Octavio E. Rodriguez"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 811592,
+        "fields": {
+            "name": [
+                "James Nunn"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 939336,
+        "fields": {
+            "name": [
+                "William Reiss",
+                "Ryan Gillis",
+                "Eddie Trigueros"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 516329,
+        "fields": {
+            "name": [
+                "Pierre Henry",
+                "Scott Cooper",
+                "John Hanley",
+                "Lorie Gibson"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 284053,
+        "fields": {
+            "name": [
+                "Ben Cooke",
+                "Taika Waititi",
+                "Kerry Lyn McKissick",
+                "Vincent Lascoumes",
+                "Tom Hooper",
+                "Marieke Spence"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 791373,
+        "fields": {
+            "name": [
+                "Zack Snyder",
+                "Damon Caro",
+                "Kimi Webber",
+                "Ben Howard",
+                "Misha Bukowski",
+                "Gabriela Gomez",
+                "Zoé Denis"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 744275,
+        "fields": {
+            "name": [
+                "Castille Landon"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 24428,
+        "fields": {
+            "name": [
+                "Joss Whedon",
+                "Brian Relyea",
+                "Trudy Ramirez",
+                "Lars P. Winther",
+                "Gregory Doucette",
+                "Judi Townsend",
+                "John Mahaffie",
+                "Nick Satriano"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 803104,
+        "fields": {
+            "name": [
+                "Talia Osteen"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 703771,
+        "fields": {
+            "name": [
+                "Sung Jin Ahn"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 568620,
+        "fields": {
+            "name": [
+                "Robert Schwentke",
+                "James Madigan"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 303857,
+        "fields": {
+            "name": [
+                "Tadayoshi Yamamuro",
+                "Yasunori Goto"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 609972,
+        "fields": {
+            "name": [
+                "William Eubank",
+                "Shane B. Scott",
+                "Rob Burgess"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 135397,
+        "fields": {
+            "name": [
+                "David Leitch",
+                "Colin Trevorrow",
+                "Chris Castaldi",
+                "Zack Smith",
+                "Jason Roberts"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 338952,
+        "fields": {
+            "name": [
+                "David Yates"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 871799,
+        "fields": {
+            "name": [
+                "Brian Skiba"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 592350,
+        "fields": {
+            "name": [
+                "Ikuro Sato",
+                "Kenji Nagasaki",
+                "Kenji Nagasaki",
+                "Tomo Ookubo",
+                "Shouji Ikeno"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 423108,
+        "fields": {
+            "name": [
+                "Jeffrey Wetzel",
+                "Jody Blose",
+                "Michael Chaves",
+                "David Waters",
+                "Joann Connolly"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 299534,
+        "fields": {
+            "name": [
+                "Anthony Russo",
+                "Joe Russo",
+                "Mark Johnston",
+                "Chris Castaldi",
+                "Simon Downes",
+                "Edward Catley",
+                "Paul Schneider"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 610150,
+        "fields": {
+            "name": [
+                "Tetsuro Kodama"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 166426,
+        "fields": {
+            "name": [
+                "Joachim Rønning",
+                "Espen Sandberg",
+                "Joecy Shepherd",
+                "Carolina Häggström",
+                "Victoria Sullivan"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 633802,
+        "fields": {
+            "name": [
+                "Svyatoslav Podgaevsky"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 739413,
+        "fields": {
+            "name": [
+                "Mattson Tomlin"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 379686,
+        "fields": {
+            "name": [
+                "Malcolm D. Lee",
+                "Rhys Summerhayes",
+                "Michael J. Moore"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 370172,
+        "fields": {
+            "name": [
+                "Cary Joji Fukunaga"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 50468,
+        "fields": {
+            "name": [
+                "Philip DeGuere Jr."
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 451048,
+        "fields": {
+            "name": [
+                "Jaume Collet-Serra"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 523936,
+        "fields": {
+            "name": [
+                "Mathieu Turi",
+                "Thierry Lecomte"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 763788,
+        "fields": {
+            "name": [
+                "David Hackl"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 671,
+        "fields": {
+            "name": [
+                "David R. Ellis",
+                "Chris Columbus",
+                "Annie Penn",
+                "Chris Carreras",
+                "Michael Stevenson",
+                "Michael Michael",
+                "R.J. Mino",
+                "Ian Dray",
+                "Charlotte Mason-Apps"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 632357,
+        "fields": {
+            "name": [
+                "Evan Spiliotopoulos"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 619979,
+        "fields": {
+            "name": [
+                "Adrian Lyne",
+                "Dan Bradley",
+                "Doug Torres",
+                "James Roque Jr."
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 887074,
+        "fields": {
+            "name": [
+                "Zhao Renqi"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 910596,
+        "fields": {
+            "name": [
+                "Christopher Borrelli"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 588228,
+        "fields": {
+            "name": [
+                "Chris McKay",
+                "Thomas Robinson Harper",
+                "Jody Blose",
+                "Ashley Patterson",
+                "Laurie Bookhardt",
+                "Nick Satriano",
+                "Matt Haggerty"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 545611,
+        "fields": {
+            "name": [
+                "Daniel Scheinert",
+                "Daniel Kwan",
+                "Julia Schachter",
+                "Ken C. Wu",
+                "Rod Smith"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 522402,
+        "fields": {
+            "name": [
+                "Miguel Sapochnik"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 751237,
+        "fields": {
+            "name": [
+                "Iris K. Shim"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 739993,
+        "fields": {
+            "name": [
+                "Tim Johnson",
+                "Peter Sollett",
+                "James Moran"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 616037,
+        "fields": {
+            "name": [
+                "Taika Waititi",
+                "Mitchell Bulfin"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 527774,
+        "fields": {
+            "name": [
+                "Don Hall",
+                "Paul Briggs",
+                "Carlos López Estrada",
+                "John Ripa"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 756403,
+        "fields": {
+            "name": [
+                "Dave Rosenbaum",
+                "Eamonn Butler"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 793269,
+        "fields": {
+            "name": [
+                "Ray Giarratana"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 293660,
+        "fields": {
+            "name": [
+                "Tim Miller",
+                "Bryan Goeres",
+                "James Bitonti",
+                "Susan Lambie",
                 "Robert Alonzo",
-                "Toby Hefferman"
+                "David Klohn",
+                "Karin Behrenz",
+                "Scott Kukurudz",
+                "Dan Mansfield",
+                "Eddy Santos",
+                "Rhonda Taylor",
+                "Benjamin Cairns"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 526896,
+        "pk": 76338,
         "fields": {
             "name": [
-                "Daniel Espinosa"
+                "Alan Taylor",
+                "Samantha C. Kirkeby",
+                "Cathy Doubleday",
+                "Jane Burrows",
+                "Bethan Lloyd",
+                "Stanley Chan Wan Sze"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 453395,
+        "pk": 317442,
         "fields": {
             "name": [
-                "Sam Raimi",
-                "Dominic Fysh"
+                "Tsuneo Kobayashi"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 629542,
+        "pk": 820511,
         "fields": {
             "name": [
-                "Pierre Perifel"
+                "Steven Lawson"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 628900,
+        "pk": 784500,
         "fields": {
             "name": [
-                "Tarik Saleh"
+                "Shunji Yoshida",
+                "Chiaki Kon",
+                "Chiaki Kon",
+                "Tomomi Ikeda",
+                "Akira Hashimoto"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 763285,
+        "pk": 351286,
         "fields": {
             "name": [
-                "Michael Bay"
+                "J. A. Bayona",
+                "Jo Beckett",
+                "Rebecca Sheridan",
+                "Claire Chang",
+                "Erin Mast"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 893370,
+        "pk": 529203,
         "fields": {
             "name": [
-                "Gustavo Hernández"
+                "Joel Crawford"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 883502,
+        "pk": 719088,
         "fields": {
             "name": [
-                "Josh Sternfeld"
+                "Masahiro Takata"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 799876,
+        "pk": 800407,
         "fields": {
             "name": [
-                "Graham Moore"
+                "Jota Linares"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 294793,
+        "pk": 755812,
         "fields": {
             "name": [
-                "Janus Metz"
+                "Thomas Astruc"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 661791,
+        "pk": 76600,
         "fields": {
             "name": [
-                "Paco Plaza"
+                "James Cameron"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 338953,
+        "pk": 639721,
         "fields": {
             "name": [
-                "David Yates",
-                "Josh Robertson",
-                "Stephen Woolfenden",
-                "David Keadell"
+                "Conrad Vernon",
+                "Greg Tiernan"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 438695,
+        "pk": 198663,
         "fields": {
             "name": [
-                "Garth Jennings"
+                "H.H. Cooper",
+                "Wes Ball",
+                "Nancy Breaux",
+                "Steve Gehrke",
+                "Mirashyam Blakeslee",
+                "Vanessa Hickey"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 676705,
+        "pk": 765119,
         "fields": {
             "name": [
-                "Julien Fournet"
+                "James O'Donnell",
+                "Judd Apatow",
+                "Mark Layton",
+                "Ben Howard",
+                "William Booker",
+                "Annie Hitchcock",
+                "Charlotte Amelia Miles",
+                "Jason Rickwood",
+                "Charlie Vaughan",
+                "Robbie Davidson",
+                "James Excell"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 678287,
+        "pk": 14836,
         "fields": {
             "name": [
-                "Mark A.Z. Dippé",
-                "Phil Nibbelink",
-                "Youngki Lee",
-                "Matt Philip Whelan"
+                "Henry Selick",
+                "David J. Rowe",
+                "Yona Prost",
+                "Matthew Fried",
+                "Jocelyn Pascall",
+                "Daniel Pascall",
+                "Dielle Alexandre",
+                "Jodi Clark",
+                "Melissa St. Onge"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 646385,
+        "pk": 754934,
         "fields": {
             "name": [
-                "Matt Bettinelli-Olpin",
-                "Tyler Gillett",
-                "Scott Oberholzer",
-                "Kara McGee"
+                "Ivan Kavanagh",
+                "Michael A. Toscano",
+                "Andrew George",
+                "Laura Wilbanks Cruz"
             ]
         }
     },
     {
         "model": "movies.director",
-        "pk": 661231,
+        "pk": 682344,
         "fields": {
             "name": [
-                "John Madden"
+                "Marcos Carnevale"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 876716,
+        "fields": {
+            "name": [
+                "Leo Santos",
+                "Kelly Bonbright",
+                "McKenna Jean Harris"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 20982,
+        "fields": {
+            "name": [
+                "Hajime Kamegaki"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 926980,
+        "fields": {
+            "name": [
+                "Felix Fuchssteiner",
+                "Katharina Schöde"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 726684,
+        "fields": {
+            "name": [
+                "Thomas Astruc"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 617653,
+        "fields": {
+            "name": [
+                "Ridley Scott"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 581726,
+        "fields": {
+            "name": [
+                "Antoine Fuqua",
+                "Simon Crane",
+                "Nicoletta Mani",
+                "Max Keene",
+                "Paul Bennett"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 354912,
+        "fields": {
+            "name": [
+                "Lee Unkrich",
+                "Adrian Molina",
+                "Seong-Young Kim"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 770254,
+        "fields": {
+            "name": [
+                "Harry Cripps",
+                "Claire Knight"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 631843,
+        "fields": {
+            "name": [
+                "M. Night Shyamalan",
+                "Tudor Jones",
+                "Darrin Brown"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 615904,
+        "fields": {
+            "name": [
+                "Kat Coiro"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 372058,
+        "fields": {
+            "name": [
+                "Makoto Shinkai",
+                "Yoshitoshi Shinomiya",
+                "Kenji Imura"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 1930,
+        "fields": {
+            "name": [
+                "Marc Webb",
+                "Steve Love",
+                "Trisha Burton",
+                "Richard Graves"
+            ]
+        }
+    },
+    {
+        "model": "movies.director",
+        "pk": 762433,
+        "fields": {
+            "name": [
+                "Abel Ferrara",
+                "Giulio Donato"
             ]
         }
     }
