@@ -16,10 +16,12 @@
           <li v-if="isLoggedIn"><router-link class="navi-link" :to="{ name: 'logout' }">Logout</router-link></li>
           <li v-if="showSearchBar">
             <div>
-              <input 
-                class="form-control me-2 px-1" type="search" 
+                <!-- class="form-control me-2 px-1" autocomplete="off"  -->
+              <input
+                type="text" 
                 placeholder="Search Movie..." aria-label="Search"
                 v-model="typedMovieName"
+                class="form-control me-2 px-1"
                 autocomplete="off"
                 @input="filterMovie"
                 @keyup.enter="enterSearch"
@@ -29,10 +31,17 @@
                   v-if="filteredMovies.length !== 0 && typedMovieName"
                   class="movie-search-box"
                 >
-                  <search-bar 
+                  <!-- <search-bar 
                     v-for="(movie, idx) in filteredMovies.slice(0, 7)" 
                     :key="idx" :movie=movie
-                  />
+                  /> -->
+                  <div v-for="(movie, idx) in filteredMovies.slice(0, 7)" 
+                    :key="idx"
+                  >
+                    <li @click="onSearchClick(movie.id)" class="movie-searched-list-items">
+                      {{ movie.title }}
+                    </li>
+                  </div>
                 </ul>
               </div>
             </div>
@@ -50,14 +59,14 @@
 </template>
 
 <script>
-  import SearchBar from './SearchBar.vue'
+  // import SearchBar from './SearchBar.vue'
   import { mapGetters } from 'vuex'
   // import _ from 'lodash'
 
   export default {
     name: 'NavBar',
     components: {
-      SearchBar,
+      // SearchBar,
     },
     data() {
       return {
@@ -84,13 +93,24 @@
         this.showSearchBar = !this.showSearchBar;
       },
 
+      onSearchClick(movieId) {
+        this.$router.push({ name: 'movies', params: { moviePk: movieId }}).catch(()=>{})
+        
+        // try {
+        //   console.log(movieId)
+        //   this.$router.push({ name: 'movies', params: { moviePk: movieId }}).catch(()=>{})
+        // } catch {
+
+        // }
+      },
+
       enterSearch() {
-        console.log(this.filteredMovies)
+        // console.log(this.filteredMovies)
         if (this.filteredMovies.length >= 1) {
           let movieId = this.filteredMovies[0].id;
           // const nextPath = '/movies/' + `${movieId}`
           // if (this.$route.path!== nextPath) this.$router.push(nextPath);
-          console.log(this.$router)
+          // console.log(this.$router)
           this.$router.push({ name: 'movies', params: { moviePk: movieId }}).catch(()=>{});
           // this.$router.push({ name: 'movies', params: { moviePk: movieId }, replace:true});
           // this.$router.go(this.$router.currentRoute)
@@ -139,9 +159,6 @@
   }
 
   .navi-list ul {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around; */
     align-items: center;
     list-style: none;
     width: 100%;
@@ -236,6 +253,63 @@
 
   .navi-logo-link {
     text-decoration: none;
+  }
+
+  /* 추가 부분 */
+
+  .focus-out {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+  }
+
+  .serach-bar {
+    display: flex;
+  }
+
+  .search-box {
+    position: relative;
+    width: 30vw;
+  }
+
+
+  input[type="text"] {
+    width: 100%;
+    padding: 5px 13px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    background-color: #fffffffa;
+    font-size: 16px;
+    z-index: 10;
+  }
+
+  .movie-searched-list-items:hover {
+    cursor: pointer;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .list-items {
+    width: 100%;
+    background-color: #fffffffa;
+    color: #00171F;
+    padding: 0 13px 1em;
+    font-size: 16px;
+  }
+
+  .list-items:hover {
+    cursor: pointer;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .movie-searched-list-items {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .movie-searched-list-items:hover {
+    font-weight: bold;
   }
 
 </style>
