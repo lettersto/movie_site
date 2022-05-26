@@ -129,6 +129,12 @@
    font-family: 'Nanum Pen Script', cursive;
    font-weight: bold;
    padding-bottom: 5px;
-   margin-left: 23px;
+   margin-left: 3rem;
  }
+
+  @media (max-width: 768px){
+    .weather-title {
+      margin-left: 6rem !important;
+    }
+  }
 </style>

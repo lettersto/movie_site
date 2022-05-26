@@ -34,28 +34,6 @@
       </div>
     </div>
   </div>
-    <!-- <div v-show="6 <= hour && hour < 14">
-      <h3 class="time-title">오늘 아침 피곤을 날려버릴 영화</h3>
-      <div>
-        <div v-for="rec in morningRecommend" :key="rec.pk">
-          <router-link 
-            :to="{ name: 'movies', params: { moviePk: rec['pk'] } }">
-            <img :src="'https://image.tmdb.org/t/p/w500' + rec['poster_url']" alt="...">
-          </router-link>
-        </div>
-      </div>
-    </div> -->
-    <!-- <div v-show="14 <= hour && hour < 20">
-      <h3 class="time-title">나른한 오후 나를 흥미진진하게 할 영화</h3>
-      <div>
-        <div v-for="rec in eveningRecommend" :key="rec.pk">
-          <router-link 
-            :to="{ name: 'movies', params: { moviePk: rec['pk'] } }">
-            <img :src="'https://image.tmdb.org/t/p/w500' + rec['poster_url']" alt="...">
-          </router-link>
-        </div>
-      </div>
-    </div> -->
 
 </template>
 
@@ -109,31 +87,15 @@ export default {
 </script>
 
 <style scoped>
-/* @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
-* { 
-font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-}
-
-h3 {
-  font-family: 'Pretendard', cursive;
-  font-size: 3em;
-  color: #000000;
-  text-shadow: 5px 5px #bfcee0;
-  margin: 0;
-} */
 
   @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
-  /* .time-box {
-    position: relative;
-  } */
   .time-title {
     /* position: absolute; */
     font-family: 'Nanum Pen Script', cursive;
     font-weight: bold;
     padding-bottom: 5px;
-    margin-left: 1.2rem;
+    margin-left: 3rem;
   }
 
   .time-wrapper {
@@ -143,6 +105,9 @@ h3 {
   @media (min-width: 992px) {
     .time-wrapper {
       width: 30% !important;
+    }
+    .time-title {
+      margin-left: 6rem !important;
     }
   }
 
