@@ -1,88 +1,58 @@
 <template>
   <div>
     <div class="review-container">
-    <div class="review-card">
-      <div class="review-title">
-        <div>
-          <router-link :to="{ name: 'profile', params: { username: review.user.username } }"
-            class="review-link">
-            {{ stars[payload.vote_rate] }}
-            <p class="review-author"> {{ review.user.username }}</p>
-          </router-link>
-        </div>
-        <div class="review-date">
-          {{ createdDate }} 
-          <small v-if="review.created_at !== review.updated_at">
-            ({{ updatedDate }} 수정)
-          </small>
-        </div>
-      </div>
-      <p class="review-content">{{ review.content }}</p>
-      <div class="review-footer" v-if="currentUser.username === review.user.username">
-        <div v-if="!isEditing">
-          <button @click="switchIsEditing" class="review-btn">
-            <i class="material-icons">edit</i>
-          </button>
-          <button @click="deleteReview(payload)" class="review-btn">
-            <i class="material-icons">delete</i>
-          </button>
-        </div>
-        <div v-if="isEditing" class="review-edit-box">
-          <div class="star-widget-container">
-            <div class="star-widget">
-              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-5" value="5">
-              <label for="rate-5" class="material-icons">star</label>
-              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-4" value="4">
-              <label for="rate-4" class="material-icons">star</label>
-              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-3" value="3">
-              <label for="rate-3" class="material-icons">star</label>
-              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-2" value="2">
-              <label for="rate-2" class="material-icons">star</label>
-              <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-1" value="1">
-              <label for="rate-1" class="material-icons">star</label>
-            </div>
+      <div class="review-card">
+        <div class="review-title">
+          <div>
+            <router-link :to="{ name: 'profile', params: { username: review.user.username } }"
+              class="review-link">
+              {{ stars[payload.vote_rate] }}
+              <p class="review-author"> {{ review.user.username }}</p>
+            </router-link>
           </div>
-          <input type="text" v-model="payload.content" class="review-input">
-          <button @click="onUpdateClick" class="review-btn">
-            <i class="material-icons">update</i>
-          </button>
-          <button @click="switchIsEditing" class="review-btn">
-            <i class="material-icons">edit_off</i>
-          </button>
+          <div class="review-date">
+            {{ createdDate }} 
+            <small v-if="review.created_at !== review.updated_at">
+              ({{ updatedDate }} 수정)
+            </small>
+          </div>
+        </div>
+        <p class="review-content">{{ review.content }}</p>
+        <div class="review-footer" v-if="currentUser.username === review.user.username">
+          <div v-if="!isEditing">
+            <button @click="switchIsEditing" class="review-btn">
+              <i class="material-icons">edit</i>
+            </button>
+            <button @click="deleteReview(payload)" class="review-btn">
+              <i class="material-icons">delete</i>
+            </button>
+          </div>
+          <div v-if="isEditing" class="review-edit-box">
+            <div class="star-widget-container">
+              <div class="star-widget">
+                <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-5" value="5">
+                <label for="rate-5" class="material-icons">star</label>
+                <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-4" value="4">
+                <label for="rate-4" class="material-icons">star</label>
+                <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-3" value="3">
+                <label for="rate-3" class="material-icons">star</label>
+                <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-2" value="2">
+                <label for="rate-2" class="material-icons">star</label>
+                <input type="radio" v-model="payload.vote_rate" name="rate" id="rate-1" value="1">
+                <label for="rate-1" class="material-icons">star</label>
+              </div>
+            </div>
+            <input type="text" v-model="payload.content" class="review-input">
+            <button @click="onUpdateClick" class="review-btn">
+              <i class="material-icons">update</i>
+            </button>
+            <button @click="switchIsEditing" class="review-btn">
+              <i class="material-icons">edit_off</i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-    <!-- <tr>
-      <td class="text-center align-middle"><router-link :to="{ name: 'profile', params: { username: review.user.username } }">
-        {{ review.user.username }}
-      </router-link> </td>
-      <td class="text-center align-middle">
-        {{ payload.content }}
-      </td>
-      <td class="text-center align-middle">
-        {{ payload.voterate }}
-      </td>
-      <td class="text-center align-middle">
-        <span v-if="isEditing">
-        <input type="text" v-model="payload.content">
-        <button @click="onUpdate" class="btn btn-default">
-          <i class="material-icons like">update</i></button> |
-        <button @click="switchIsEditing" class="btn btn-default">
-          <i class="material-icons like">cancel</i>
-        </button>
-      </span>
-      <span v-if="currentUser.username === review.user.username && !isEditing">
-        <button @click="switchIsEditing" class="btn btn-default">
-          <i class="material-icons like">edit</i>
-          </button> |
-        <button @click="deleteReview(payload)" class="btn btn-default">
-          <i class="material-icons like">delete</i>
-        </button>
-      </span>
-      </td>
-    </tr> -->
   </div>
   
 </template>
