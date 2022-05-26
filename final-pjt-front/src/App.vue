@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-cloak>
     <nav-bar class="nav-bar" />
-    <router-view class="router-view" />
+    <router-view class="router-view" :key="$route.fullpath"/>
   </div>
 </template>
 

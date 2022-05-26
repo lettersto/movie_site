@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store'
+
+// Home
 import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
 
 // accounts
 import SignupView from '@/views/accounts/SignupView.vue'
@@ -31,6 +35,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: AboutView
   },
   // Accounts
   {
@@ -126,5 +135,25 @@ const router = new VueRouter({
 
 
 // Navigation Guard 필요
+// Navigation Guard
+
+router.beforeEach((to, from, next) => {
+  const { isLoggedIn } = store.getters
+
+  const noAuthPages = ['login', 'signup']
+
+  const isAuthRequired = !noAuthPages.includes(to.name)
+
+  if (isAuthRequired && !isLoggedIn) {
+    alert('로그인이 필요합니다.')
+    next({ name: 'login' })
+  } else {
+    next()
+  }
+
+  if (!isAuthRequired && isLoggedIn) {
+    next({ name: 'community' })
+  }
+})
 
 export default router
