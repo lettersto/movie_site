@@ -1,7 +1,7 @@
 <template>
 
   <div class="d-grid gap-5">
-    <h1 class="text-center mt-5">Community</h1>
+    <h1 class="text-center community-title">Community</h1>
 
     <div class="d-grid gap-3">
       <div class="d-flex justify-content-end">
@@ -14,6 +14,7 @@
               v-model="typedArticleName"
               autocomplete="off"
               @input="filterArticle"
+              @keyup.enter="enterSearch"
             >
             <div class="article-searchbar-wrapper">
               <ul 
@@ -32,8 +33,8 @@
           <router-link :to="{ name: 'articleNew'}" class="article-new-btn">글쓰기</router-link>
         </button>
       </div>
-      <article-hottopic :articles=articles :isStaff="true" />
-      <article-list :articles=articles :isStaff="false" />
+      <article-hottopic :articles=articles :isStaff="true" class="mb-5" />
+      <article-list :articles=articles :isStaff="false" class="article-list-box" />
     </div>
   </div>
 
@@ -44,6 +45,7 @@
   import ArticleHottopic from '@/components/community/ArticleHottopic.vue'
   import ArticleList from '@/components/community/ArticleList.vue'
   import ArticleSearchedItems from '@/components/community/ArticleSearchedItems.vue'
+  import _ from 'lodash'
 
   export default {
     name: 'CommunityView',
@@ -70,6 +72,16 @@
           return article.title.toLowerCase().startsWith(this.typedArticleName.toLowerCase());
         });
       },
+      
+      enterSearch() {
+        if (!_.isEmpty(this.filteredArticles)) {
+          let articleId = this.filteredArticles[0].pk;
+          // console.log(this.filteredArticles[0])
+          this.$router.push({ name: 'articleDetail', params: { articlePk: articleId }});
+          // this.$router.go(this.$router.currentRoute);
+          this.typedArticleName = "";
+        }
+      },
 
     },
 
@@ -86,6 +98,8 @@
   h1 {
     font-family: 'Grape Nuts', cursive;
     font-size: 3em;
+    color: #272d2ddd;
+    margin: 3em 0 2em 0;
   }
   
   .article-search-bar-wrapper {
@@ -107,4 +121,13 @@
     text-decoration: none;
     color: rgba(0, 0, 0, 0.8);
   }
+
+  .article-list-box {
+    padding: 1rem .8rem 2.2rem .8rem;
+    background-color: #ffffff;
+    border: 1px solid #b8c5d657;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(75, 81, 94, 0.15);
+  }
+
 </style>
