@@ -810,15 +810,6 @@
     },
     {
         "model": "movies.actor",
-        "pk": 939243,
-        "fields": {
-            "name": [
-                "Ben Schwartz"
-            ]
-        }
-    },
-    {
-        "model": "movies.actor",
         "pk": 698508,
         "fields": {
             "name": [

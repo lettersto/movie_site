@@ -1817,27 +1817,6 @@
     },
     {
         "model": "movies.movie",
-        "pk": 939243,
-        "fields": {
-            "title": "수퍼 소닉 3",
-            "overview": "",
-            "poster_url": "/aNSBaYTgPz8QEADi3xiD52X4uVF.jpg",
-            "release_date": "",
-            "genres": [
-                28,
-                12,
-                14
-            ],
-            "actor": [
-                939243
-            ],
-            "director": [
-                939243
-            ]
-        }
-    },
-    {
-        "model": "movies.movie",
         "pk": 698508,
         "fields": {
             "title": "리디밍 러브",
