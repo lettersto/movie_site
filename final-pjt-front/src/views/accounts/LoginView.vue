@@ -26,6 +26,7 @@
           id="password" 
           required
         />
+        <i class="material-icons password-visibility" id="pass-vi" @click="visibilityToggle()">visibility</i>
         <span></span>
         <label for="password">Password</label>
       </div>
@@ -55,7 +56,8 @@
         credentials: {
           username: "",
           password: ""
-        }
+        },
+        visbilityState: false,
       }
     },
     computed: {
@@ -67,12 +69,23 @@
         this.login(credentials)
         this.credentials.username = "",
         this.credentials.password = ""
+      },
+      visibilityToggle() {
+        if (this.visbilityState) {
+          document.querySelector("#password").setAttribute("type", "password");
+          document.querySelector("#pass-vi").innerText="visibility";
+          this.visbilityState = false;
+        } else {
+          document.querySelector("#password").setAttribute("type", "text");
+          document.querySelector("#pass-vi").innerText="visibility_off";
+          this.visbilityState = true;
+        }
       }
     },
 
     created() {
       this.$store.commit('SET_AUTH_ERROR', null)
-    }
+    },
   }
   
 </script>
@@ -196,6 +209,17 @@
   .signup-link .signup-text:hover {
     text-decoration: underline;
   }
+
+  .password-visibility {
+    position: absolute;
+    right: 10px;
+    transform: translate(0, -40%);
+    top: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #a6a6a6;
+  }
+
 
 
 </style>

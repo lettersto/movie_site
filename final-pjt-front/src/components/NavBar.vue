@@ -3,10 +3,12 @@
     <div class="navi-list">
       <ul>
         <div class="navi-item">
-          <div class="navi-brand">
-            <h1>Ghost</h1>
-          </div>
-          <li><router-link class="navi-link" :to="{ name: 'home' }">Home</router-link></li>
+          <router-link class="navi-logo-link" :to="{ name: 'home' }">
+            <div class="navi-brand">
+              <h1>Ghost</h1>
+            </div>
+          </router-link>
+          <li><router-link class="navi-link" :to="{ name: 'about' }">About Us</router-link></li>
           <li><router-link class="navi-link" :to="{ name: 'community' }">Community</router-link></li>
           <li v-if="!isLoggedIn"><router-link class="navi-link" :to="{ name: 'signup' }">Signup</router-link></li>
           <li v-if="!isLoggedIn"><router-link class="navi-link" :to="{ name: 'login' }">Login</router-link></li>
@@ -230,6 +232,10 @@
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.826);
     z-index: 10;
+  }
+
+  .navi-logo-link {
+    text-decoration: none;
   }
 
 </style>

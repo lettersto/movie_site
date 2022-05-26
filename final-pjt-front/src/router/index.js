@@ -4,6 +4,7 @@ import store from '../store'
 
 // Home
 import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
 
 // accounts
 import SignupView from '@/views/accounts/SignupView.vue'
@@ -34,6 +35,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: AboutView
   },
   // Accounts
   {

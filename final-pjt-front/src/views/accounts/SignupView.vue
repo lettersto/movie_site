@@ -24,6 +24,7 @@
           v-model="credentials.password1" type="password" 
           id="password1" required
         />
+        <i class="material-icons password-visibility" id="pass-vi-1" @click="visibilityToggle(1)">visibility</i>
         <span></span>
         <label for="password1">Password</label>
       </div>
@@ -33,6 +34,7 @@
           v-model="credentials.password2" type="password" 
           id="password2" required
         />
+        <i class="material-icons password-visibility" id="pass-vi-2" @click="visibilityToggle(2)">visibility</i>
         <span></span>
         <label for="password2">Password Confirmation</label>
       </div>
@@ -60,7 +62,8 @@
           username: "",
           password1: "",
           password2: ""
-        }
+        },
+        visbilityState: false,
       }
     },
 
@@ -75,6 +78,17 @@
         this.credentials.username = ""
         this.credentials.password1 = ""
         this.credentials.password2  = ""
+      },
+      visibilityToggle(num) {
+        if (this.state) {
+          document.querySelector(`#password${num}`).setAttribute("type", "password");
+          document.querySelector(`#pass-vi-${num}`).innerText="visibility";
+          this.state = false;
+        } else {
+          document.querySelector(`#password${num}`).setAttribute("type", "text");
+          document.querySelector(`#pass-vi-${num}`).innerText="visibility_off";
+          this.state = true;
+        }
       }
 
     },
@@ -182,6 +196,16 @@
   input[type="submit"]:hover {
     border-color: #B8C5D6;
     transition: .5s;
+  }
+
+  .password-visibility {
+    position: absolute;
+    right: 10px;
+    transform: translate(0, -40%);
+    top: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #a6a6a6;
   }
 
 
