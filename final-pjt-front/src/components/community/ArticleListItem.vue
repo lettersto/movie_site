@@ -43,7 +43,7 @@
     },
     data() {
       return {
-        dateDiff:'0초 전',
+        dateDiff:'',
       }
     },
     methods: {
