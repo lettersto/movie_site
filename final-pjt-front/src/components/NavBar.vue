@@ -4,7 +4,7 @@
       <ul>
         <div class="navi-item">
           <div class="navi-brand">
-            <h1>Movie</h1>
+            <h1>Ghost</h1>
           </div>
           <li><router-link class="navi-link" :to="{ name: 'home' }">Home</router-link></li>
           <li><router-link class="navi-link" :to="{ name: 'community' }">Community</router-link></li>
@@ -50,7 +50,7 @@
 <script>
   import SearchBar from './SearchBar.vue'
   import { mapGetters } from 'vuex'
-  import _ from 'lodash'
+  // import _ from 'lodash'
 
   export default {
     name: 'NavBar',
@@ -83,10 +83,15 @@
       },
 
       enterSearch() {
-        if (!_.isEmpty(this.filteredMovies)) {
+        console.log(this.filteredMovies)
+        if (this.filteredMovies.length >= 1) {
           let movieId = this.filteredMovies[0].id;
-          this.$router.push({ name: 'movies', params: { moviePk: movieId }});
-          // this.$router.go(this.$router.currentRoute);
+          // const nextPath = '/movies/' + `${movieId}`
+          // if (this.$route.path!== nextPath) this.$router.push(nextPath);
+          console.log(this.$router)
+          this.$router.push({ name: 'movies', params: { moviePk: movieId }}).catch(()=>{});
+          // this.$router.push({ name: 'movies', params: { moviePk: movieId }, replace:true});
+          // this.$router.go(this.$router.currentRoute)
           this.typedMovieName = "";
         }
       }
