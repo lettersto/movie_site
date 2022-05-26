@@ -108,6 +108,7 @@
         // console.log(this.filteredMovies)
         if (this.filteredMovies.length >= 1) {
           let movieId = this.filteredMovies[0].id;
+          this.$router.push({ name: 'movies', params: { moviePk: movieId }});
           // const nextPath = '/movies/' + `${movieId}`
           // if (this.$route.path!== nextPath) this.$router.push(nextPath);
           // console.log(this.$router)
@@ -115,10 +116,11 @@
           // this.$router.push({ name: 'movies', params: { moviePk: movieId }, replace:true});
           // this.$router.go(this.$router.currentRoute)
           this.typedMovieName = "";
-        }
+          
       }
     }
 
+  }
   }
 </script>
 
