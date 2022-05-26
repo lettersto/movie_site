@@ -2,15 +2,17 @@
   <div>
     <article-list-item
       v-for="article in paginatedData" :key="article.pk"
-      :article=article :isStaff=isStaff
+      :article=article :isStaff=isStaff 
     />
     <div class="btn-cover">
-      <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">
-        이전
+      <button :disabled="pageNum === 0" @click="prevPage" 
+        class="page-btn material-icons">
+        arrow_left
       </button>
-      <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }} 페이지</span>
-      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">
-        다음
+      <span class="page-count">{{ pageNum + 1 }} / {{ pageCount }}</span>
+      <button :disabled="pageNum >= pageCount - 1" @click="nextPage" 
+        class="page-btn material-icons">
+        arrow_right
       </button>
     </div>
   </div>
@@ -35,7 +37,7 @@
       pageSize: {
         type: Number,
         required: false,
-        default: 10
+        default: 8
     }
     },
   methods: {
@@ -65,16 +67,27 @@
 </script>
 
 <style scoped>
-.btn-cover {
-  margin-top: 1.5rem;
-  text-align: center;
-}
-.btn-cover .page-btn {
-  width: 5rem;
-  height: 2rem;
-  letter-spacing: 0.5px;
-}
-.btn-cover .page-count {
-  padding: 0 1rem;
-}
+  .btn-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    text-align: center;
+    color: #272d2ddd;
+  }
+  .btn-cover .page-btn {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 3em;
+    color: #272d2ddd;
+  }
+
+  .btn-cover .page-btn:disabled {
+    color: #464b4b7c;
+  }
+
+  .btn-cover .page-count {
+    padding: 0;
+  }
 </style>
