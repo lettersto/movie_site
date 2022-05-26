@@ -19,10 +19,12 @@
     - 사이트 영상 송출
     - 사이트 핵심 추천 알고리즘 중 하나인 시간대와 장르에 기반한 영화 추천 제안 및 작성
     - 발표
-
 - **시작일** : 2022.05.20. (금)
 - **완료일** : 2022.05.26. (목)
-- **기술 스택** : Python, Django, Javascript, Vue, HTML, CSS
+- **기술 스택** : Python, django, Javascript, Vue.js, HTML, CSS
+  - django REST API를 활용한 백엔드와 Vue.js 프론트엔드로 나눠서 구현
+  - 되도록이면 반응형 웹 디자인
+
 - **Notion** : https://utopian-manatee-ff7.notion.site/Movie-Site-Project-8b0d4ffc6118494e8a45aaf5a59e5880
 
 <br>
