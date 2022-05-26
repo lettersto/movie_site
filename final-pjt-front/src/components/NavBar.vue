@@ -86,12 +86,13 @@
         if (!_.isEmpty(this.filteredMovies)) {
           let movieId = this.filteredMovies[0].id;
           this.$router.push({ name: 'movies', params: { moviePk: movieId }});
-          // this.$router.go(this.$router.currentRoute);
+          // // this.$router.go(this.$router.currentRoute);
           this.typedMovieName = "";
-        }
+          
       }
     }
 
+  }
   }
 </script>
 

@@ -122,6 +122,9 @@ const router = new VueRouter({
   routes
 })
 
+
+
+
 // Navigation Guard 필요
 
 export default router

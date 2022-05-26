@@ -13,7 +13,7 @@ export default {
   },
   methods: {
       onClick(movieId) {
-        this.$router.push({ name: 'movies', params: { moviePk: movieId}})
+        this.$router.push({ name: 'movies', params: { moviePk: movieId}})        
       }
     }
 
