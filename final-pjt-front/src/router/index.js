@@ -131,6 +131,10 @@ const router = new VueRouter({
   routes
 })
 
+
+
+
+// Navigation Guard 필요
 // Navigation Guard
 
 router.beforeEach((to, from, next) => {
